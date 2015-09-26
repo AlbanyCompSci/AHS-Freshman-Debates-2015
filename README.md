@@ -1,1 +1,2 @@
-'AHS Freshman Debates project. 2015.' 
+AHS Freshman Debates project.
+Using Django for development.
