@@ -71,3 +71,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Secret codes file
+AHS_Freshman_Debates/settings_secret.py
