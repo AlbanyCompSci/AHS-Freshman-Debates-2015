@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+import settings_secret
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'a7kbo^fv7x66pjnw9zow=al(_5d+qlh5b)!wriz0htp9(vt^ru'
+SECRET_KEY = settings_secret.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,7 +41,9 @@ DEFAULT_APPS = (
     'django.contrib.staticfiles',
 )
 
-THIRD_PARTY_APPS = ()
+THIRD_PARTY_APPS = (
+    'social.apps.django_app.default',
+)
 
 LOCAL_APPS = (
     'group_manager',
@@ -112,3 +116,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#OAUTH STUFF
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = settings_secret.OAUTH2_SOCIAL_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = settings_secret.OAUTH2_CLIENT_SECRET
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend')
