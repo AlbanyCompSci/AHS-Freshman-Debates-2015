@@ -90,9 +90,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'debates',
-        'USER': 'root',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
+        'USER': settings_secret.DATABASE_USERNAME,
+        'PASSWORD': settings_secret.DATABASE_PASSWORD,
+        'HOST': '',
         'PORT': '3306',
     }
 }
