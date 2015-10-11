@@ -88,12 +88,12 @@ WSGI_APPLICATION = 'AHS_Freshman_Debates.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'debates',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ahs_freshman_debates',
         'USER': settings_secret.DATABASE_USERNAME,
         'PASSWORD': settings_secret.DATABASE_PASSWORD,
-        'HOST': '',
-        'PORT': '3306',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
