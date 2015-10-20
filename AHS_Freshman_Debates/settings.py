@@ -14,8 +14,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 import AHS_Freshman_Debates.settings_secret as settings_secret
+import dj_database_url
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +28,7 @@ SECRET_KEY = settings_secret.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'AHS_Freshman_Debates.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ahs_freshman_debates',
@@ -95,7 +96,15 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     }
-}
+}"""
+
+# Parse database configuration from $DATABASE_URL
+DATABASES = {'default': dj_database_url.config()}
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+STATIC_ROOT = 'staticfiles'
 
 
 # Internationalization
@@ -116,8 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static')
+)
 
-#OAUTH STUFF
+"""#OAUTH STUFF
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = settings_secret.OAUTH2_SOCIAL_KEY
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = settings_secret.OAUTH2_CLIENT_SECRET
 
@@ -168,4 +180,4 @@ SOCIAL_ATUH_PIPELINE = (
 
     # Update the user record with any changed info from the auth service.
     'social.pipeline.user.user_details'
-)
+)"""
