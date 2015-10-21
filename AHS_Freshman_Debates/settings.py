@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'AHS_Freshman_Debates.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 # Parse database configuration from $DATABASE_URL
-DATABASES = {'default': dj_database_url.config()}
+DATABASES = {'default': dj_database_url.config(default='postgres://ahs_freshman_debates_user@localhost:5432/ahs_freshman_debates')}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -113,9 +113,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
+"""STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static')
-)
+)"""
 
 #OAUTH STUFF
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('OAUTH2_SOCIAL_KEY')
