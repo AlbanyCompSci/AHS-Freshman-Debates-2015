@@ -117,9 +117,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static')
 )
 
-"""#OAUTH STUFF
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = settings_secret.OAUTH2_SOCIAL_KEY
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = settings_secret.OAUTH2_CLIENT_SECRET
+#OAUTH STUFF
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('OAUTH2_SOCIAL_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('OAUTH2_CLIENT_SECRET')
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.google.GoogleOAuth2',
@@ -168,4 +168,4 @@ SOCIAL_ATUH_PIPELINE = (
 
     # Update the user record with any changed info from the auth service.
     'social.pipeline.user.user_details'
-)"""
+)
