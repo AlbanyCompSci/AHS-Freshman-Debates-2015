@@ -71,10 +71,15 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.debug',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
+                'django.core.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -87,7 +92,7 @@ WSGI_APPLICATION = 'AHS_Freshman_Debates.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 # Parse database configuration from $DATABASE_URL
-DATABASES = {'default': dj_database_url.config(default='postgres://ahs_freshman_debates_user@localhost:5432/ahs_freshman_debates')}
+DATABASES = {'default': dj_database_url.config()}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -118,14 +123,18 @@ STATIC_URL = '/static/'
 )"""
 
 #OAUTH STUFF
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('OAUTH2_SOCIAL_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('OAUTH2_CLIENT_SECRET')
+SOCIAL_AUTH_GOOGLE_PLUS_KEY = os.environ.get('GOOGLE_PLUS_SOCIAL_KEY')
+SOCIAL_AUTH_GOOGLE_PLUS_SECRET = os.environ.get('GOOGLE_PLUS_CLIENT_SECRET')
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL ='/home/'
+SOCIAL_AUTH_LOGIN_URL ='/'
 
 AUTHENTICATION_BACKENDS = (
-    'social.backends.google.GoogleOAuth2',
-    'django.contrib.auth.backends.ModelBackend')
+    'social.backends.google.GooglePlusAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
-SOCIAL_ATUH_PIPELINE = (
+"""SOCIAL_ATUH_PIPELINE = (
     # Get the information we can about the user and return it in a simple
     # format to create the user instance later. On some cases the details are
     # already part of the auth response from the provider, but sometimes this
@@ -168,4 +177,4 @@ SOCIAL_ATUH_PIPELINE = (
 
     # Update the user record with any changed info from the auth service.
     'social.pipeline.user.user_details'
-)
+)"""
