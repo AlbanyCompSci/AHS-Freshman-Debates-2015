@@ -36,18 +36,20 @@ class English_Class (models.Model):
 
 
 class Student (models.Model):
-    user = models.OneToOneField(User, limit_choices_to={
-                                'groups__name': 'student'
-                                })
+
+    first_name = models.CharField(max_length=140)
+    last_name = models.CharField(max_length=140)
+    email = models.EmailField()
+    english_period = models.IntegerField()
+    course_id = models.CharField(max_length=20)
     group = models.ForeignKey(Student_Group)
-    english_class = models.ForeignKey(English_Class)
 
     class Meta:
         verbose_name = "Student"
         verbose_name_plural = "Students"
 
     def __str__(self):
-        return "%s %s" % (self.user.first_name, self.user.last_name)
+        return "%s %s" % (self.first_name, self.last_name)
 
 
 class Debate_Group (models.Model):
