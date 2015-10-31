@@ -20,28 +20,44 @@ class Student_Group (models.Model):
         return "%s%i" % (self.teacher.last_name[0], self.id)
 
 
-class English_Class (models.Model):
+class Class (models.Model):
 #   A single English class period
+    ENGLISH_TYPE = 1
+    IHS_TYPE = 2
+    TYPE_CHOICES = (
+        (ENGLISH_TYPE, 'English'),
+        (IHS_TYPE, 'IHS'),
+    )
+
     teacher = models.ForeignKey(User, limit_choices_to={
         'groups__name': 'teacher'
     })
     period = models.IntegerField()
+    type = models.IntegerField(choices=TYPE_CHOICES)
 
     class Meta:
-        verbose_name = "English Class"
-        verbose_name_plural = "English Classses"
+        verbose_name = "Class"
+        verbose_name_plural = "Classes"
 
     def __str__(self):
-        return "%s's %d period" % (self.teacher.last_name, self.period)
+        return "%s's %d period %s class" % (
+            self.teacher.last_name, self.period,
+            'English' if self.type == ENGLISH_TYPE else 'IHS'
+        )
 
 
 class Student (models.Model):
 
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
-    email = models.EmailField()
-    english_period = models.IntegerField()
-    course_id = models.CharField(max_length=20)
+    email = models.EmailField(unique=True)
+    english_class = models.ForeignKey(Class, related_name="english_class",
+                                      limit_choices_to={
+                                        'type': '1'
+                                        })
+    ihs_class = models.ForeignKey(Class, limit_choices_to={
+        'type': '2'
+    })
     group = models.ForeignKey(Student_Group)
 
     class Meta:
@@ -52,6 +68,12 @@ class Student (models.Model):
         return "%s %s" % (self.first_name, self.last_name)
 
 
+class Judge (models.Model):
+    first_name = models.CharField(max_length=140)
+    last_name = models.CharField(max_length=140)
+    email = models.EmailField(unique=True)
+
+
 class Debate_Group (models.Model):
 #    A debate. Main components are the two groups.
     affTeam = models.OneToOneField(Student_Group, related_name='affTeam')
@@ -59,9 +81,7 @@ class Debate_Group (models.Model):
     title = models.CharField(max_length=140)
     time = models.DateTimeField()
     location = models.CharField(max_length=140)
-    judge = models.ManyToManyField(User, limit_choices_to={
-                                   'groups__name': 'judge'
-                                   })
+    judge = models.ManyToManyField(Judge)
 
     class Meta:
         verbose_name = "Debate"
