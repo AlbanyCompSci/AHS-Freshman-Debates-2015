@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+
 @login_required
 def index(request):
-    HttpResponse("It's working!")
+    return HttpResponse("It's working!")
