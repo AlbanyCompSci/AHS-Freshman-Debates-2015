@@ -48,6 +48,7 @@ class Class (models.Model):
 
 class Student (models.Model):
 
+    student_id = models.BigIntegerField()
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
@@ -69,6 +70,7 @@ class Student (models.Model):
 
 
 class Judge (models.Model):
+    student_id = models.BigIntegerField()
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
