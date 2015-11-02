@@ -42,7 +42,7 @@ class Class (models.Model):
     def __str__(self):
         return "%s's %d period %s class" % (
             self.teacher.last_name, self.period,
-            'English' if self.type == ENGLISH_TYPE else 'IHS'
+            'English' if self.type == self.ENGLISH_TYPE else 'IHS'
         )
 
 
@@ -54,10 +54,10 @@ class Student (models.Model):
     email = models.EmailField(unique=True)
     english_class = models.ForeignKey(Class, related_name="english_class",
                                       limit_choices_to={
-                                        'type': '1'
+                                        'type': Class.ENGLISH_TYPE
                                         })
     ihs_class = models.ForeignKey(Class, limit_choices_to={
-        'type': '2'
+        'type': Class.IHS_TYPE
     })
     group = models.ForeignKey(Student_Group)
 
