@@ -61,7 +61,7 @@ class Student (models.Model):
     ihs_class = models.ForeignKey(Class, limit_choices_to={
         'type': Class.IHS_TYPE
     })
-    group = models.ForeignKey(Student_Group)
+    group = models.ForeignKey(Student_Group, null=True)
 
     class Meta:
         verbose_name = "Student"
