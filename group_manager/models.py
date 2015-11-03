@@ -10,20 +10,22 @@ class Student_Group (models.Model):
     teacher = models.ForeignKey(User, limit_choices_to={
         'groups__name': 'teacher'
     })
-    id = models.AutoField(primary_key=True)
 
     class Meta:
         verbose_name = "Student Group"
         verbose_name_plural = "Student Groups"
 
     def __str__(self):
-        return "%s%i" % (self.teacher.last_name[0], self.id)
+        return "%s%i" % (self.teacher.last_name[0],
+            list(Student_Group.objects.filter(teacher=self.teacher).order_by('pk')).index(self) + 1
+        )
 
 
 class Class (models.Model):
 #   A single English class period
-    ENGLISH_TYPE = 1
-    IHS_TYPE = 2
+    ENGLISH_TYPE = 0
+    IHS_TYPE = 1
+
     TYPE_CHOICES = (
         (ENGLISH_TYPE, 'English'),
         (IHS_TYPE, 'IHS'),
@@ -48,7 +50,7 @@ class Class (models.Model):
 
 class Student (models.Model):
 
-    student_id = models.BigIntegerField()
+    student_id = models.BigIntegerField(primary_key=True)
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
@@ -70,10 +72,17 @@ class Student (models.Model):
 
 
 class Judge (models.Model):
-    student_id = models.BigIntegerField()
+    student_id = models.BigIntegerField(primary_key=True)
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
+
+    class Meta:
+        verbose_name = "Judge"
+        verbose_name_plural = "Judges"
+
+    def __str__(self):
+        return "%s %s" % (self.first_name, self.last_name)
 
 
 class Debate_Group (models.Model):
