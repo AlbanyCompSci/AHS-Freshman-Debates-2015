@@ -20,3 +20,7 @@ class IndexView (LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         """Returns all groups belonging to user"""
         return Student_Group.objects.filter(teacher=self.request.user)
+
+
+class GroupDetailView (generic.DetailView):
+    model = Student_Group
