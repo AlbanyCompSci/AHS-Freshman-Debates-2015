@@ -11,3 +11,12 @@ class LoginRequiredMixin (object):
     def as_view(cls, **initkwargs):
         view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
         return login_required(view)
+
+
+class IndexView (LoginRequiredMixin, generic.ListView):
+    template_name = 'group_manager/index.html'
+    context_object_name = 'groups'
+
+    def get_queryset(self):
+        """Returns all groups belonging to user"""
+        return Student_Group.objects.filter(teacher=self.request.user)
