@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.views import generic
 from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -24,3 +27,7 @@ class IndexView (LoginRequiredMixin, generic.ListView):
 
 class GroupDetailView (generic.DetailView):
     model = Student_Group
+
+
+class StudentDetailView (generic.DetailView):
+    model = Student
