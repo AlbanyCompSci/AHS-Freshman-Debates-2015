@@ -1,6 +1,0 @@
-<h1>{{ object }}</h1>
-<h2>Teacher: {{ object.teacher.first_name }} {{ object.teacher.last_name }}</h2>
-<p>Students:</p>
-{% for student in object.student_set.all %}
-    <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student.first_name}} {{ student.last_name }}</a></li>
-{% endfor %}
