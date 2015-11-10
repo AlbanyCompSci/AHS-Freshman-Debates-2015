@@ -46,6 +46,7 @@ class Student_Class (models.Model):
     class Meta:
         verbose_name = "Class"
         verbose_name_plural = "Classes"
+        ordering = ['teacher', 'period']
 
     def __str__(self):
         return "%s's %d period %s class" % (
@@ -73,6 +74,7 @@ class Student (models.Model):
     class Meta:
         verbose_name = "Student"
         verbose_name_plural = "Students"
+        ordering = ['last_name', 'first_name']
 
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
@@ -87,6 +89,7 @@ class Judge (models.Model):
     class Meta:
         verbose_name = "Judge"
         verbose_name_plural = "Judges"
+        ordering = ['last_name', 'first_name']
 
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
