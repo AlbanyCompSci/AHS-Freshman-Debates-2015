@@ -1,15 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 
 
 # Create your models here.
 
 class Student_Group (models.Model):
-#   A single group of students.
-#   Stduents use foreign keys to refer to group
+    """A single group of students.
+    Stduents use foreign keys to refer to group"""
     teacher = models.ForeignKey(User, limit_choices_to={
         'groups__name': 'teacher'
     })
+
+    def get_success_url(self):
+        return reverse('GroupDetailView', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = "Student Group"
@@ -17,12 +21,14 @@ class Student_Group (models.Model):
 
     def __str__(self):
         return "%s%i" % (self.teacher.last_name[0],
-            list(Student_Group.objects.filter(teacher=self.teacher).order_by('pk')).index(self) + 1
-        )
+                         list(Student_Group.objects
+                              .filter(teacher=self.teacher).order_by('pk'))
+                         .index(self) + 1
+                         )
 
 
-class Class (models.Model):
-#   A single English class period
+class Student_Class (models.Model):
+    """A single English class period"""
     ENGLISH_TYPE = 0
     IHS_TYPE = 1
 
@@ -54,12 +60,13 @@ class Student (models.Model):
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
-    english_class = models.ForeignKey(Class, related_name="english_class",
+    english_class = models.ForeignKey(Student_Class,
+                                      related_name="english_class",
                                       limit_choices_to={
-                                        'type': Class.ENGLISH_TYPE
+                                        'type': Student_Class.ENGLISH_TYPE
                                         })
-    ihs_class = models.ForeignKey(Class, limit_choices_to={
-        'type': Class.IHS_TYPE
+    ihs_class = models.ForeignKey(Student_Class, limit_choices_to={
+        'type': Student_Class.IHS_TYPE
     })
     group = models.ForeignKey(Student_Group, null=True, blank=True)
 
@@ -86,7 +93,7 @@ class Judge (models.Model):
 
 
 class Debate_Group (models.Model):
-#    A debate. Main components are the two groups.
+    """A debate. Main components are the two groups."""
     affTeam = models.OneToOneField(Student_Group, related_name='affTeam')
     negTeam = models.OneToOneField(Student_Group, related_name='negTeam')
     title = models.CharField(max_length=140)
