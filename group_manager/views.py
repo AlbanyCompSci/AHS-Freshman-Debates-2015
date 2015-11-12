@@ -45,13 +45,4 @@ class StudentGroupCreate (LoginRequiredMixin, generic.FormView):
         form_uncommited.teacher = self.request.user
         form_uncommited.save()
         form.cleaned_data['students'].update(group=form_uncommited)
-        return super().form_valid(form)
-
-
-
-    """def form_valid(self, form):
-        form_uncommited = form.save(commit=False)
-        form_uncommited.teacher = self.request.user
-        form.mod_students(form_uncommited)
-        form_uncommited.save()
-        return super().form_valid(form)"""
+        return super().form_valid(form_uncommited)
