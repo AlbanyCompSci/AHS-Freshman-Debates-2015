@@ -1,0 +1,10 @@
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {% for period in periods %}
+        <input type="checkbox" name="period" id="period{{ period }}" value="{{ period.period }}" />
+        <label for="period{{ period }}">{{ period }}</label><br />
+    {% endfor %}
+    <input type="submit" value="Submit" />
+</form>

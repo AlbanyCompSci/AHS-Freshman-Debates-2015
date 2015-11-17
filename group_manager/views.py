@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 from . import models
 from . import forms
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -37,12 +38,55 @@ class StudentGroupCreate (LoginRequiredMixin, generic.FormView):
     template_name = 'group_manager/student_group_form.html'
     form_class = forms.StudentGroupForm
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+                      'teacher': self.kwargs['teacher'],
+                      'periods': (int(i) for i in self.kwargs['periods'])
+                      })
+        return kwargs
+
     def get_success_url(self):
         return reverse('groups:index')
 
     def form_valid(self, form):
-        form_uncommited = form.save(commit=False, user=self.request.user)
-        form_uncommited.teacher = self.request.user
+        form_uncommited = form.save(commit=False)
+        form_uncommited.teacher = User.objects.get(pk=self.kwargs['teacher'])
         form_uncommited.save()
         form.cleaned_data['students'].update(group=form_uncommited)
         return super().form_valid(form_uncommited)
+
+
+def StudentGroupPeriodSelect(request, teacher):
+    obj = get_object_or_404(User, groups__name='teacher', pk=teacher)
+    selected = request.POST.getlist('period')
+    if not selected:
+        return render(request, 'group_manager/student_group_period_select.html', {
+                'periods': models.Student_Class.objects
+                .filter(type=models.Student_Class.ENGLISH_TYPE)
+                .filter(teacher__pk=teacher),
+                'error_message': "You didn't select a choice."
+            })
+    else:
+        return HttpResponseRedirect(
+            reverse('groups:student_group_form', kwargs={
+                        'teacher': teacher,
+                        'periods': ''.join(selected),
+                    }))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
