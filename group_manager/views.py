@@ -73,20 +73,3 @@ def StudentGroupPeriodSelect(request, teacher):
                         'teacher': teacher,
                         'periods': ''.join(selected),
                     }))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
