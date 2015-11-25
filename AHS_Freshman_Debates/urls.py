@@ -17,6 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    # Files
+    url(r'jsi18n/$', 'django.views.i18n.javascript_catalog', name='jsi18n'),
+
+    # Sites
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^groups/', include('group_manager.urls', namespace="groups"))

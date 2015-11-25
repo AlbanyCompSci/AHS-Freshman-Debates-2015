@@ -6,6 +6,8 @@ from django.views import generic
 from . import models
 from . import forms
 from django.contrib.auth.models import User
+from django.forms import SplitDateTimeField
+from django.forms.models import modelform_factory
 
 # Create your views here.
 
@@ -17,21 +19,19 @@ class LoginRequiredMixin (object):
         return login_required(view)
 
 
+class ModelFormWidgetMixin(object):
+    def get_form_class(self):
+        return modelform_factory(self.model, fields=self.fields,
+                                 widgets=self.widgets)
+
+
 class IndexView (LoginRequiredMixin, generic.ListView):
-    template_name = 'group_manager/index.html'
-    context_object_name = 'groups'
+    model = models.Student_Group
+    #template_name = 'group_manager/index.html'
 
     def get_queryset(self):
-        """Returns all groups belonging to user"""
-        return models.Student_Group.objects.filter(teacher=self.request.user)
-
-
-class GroupDetailView (generic.DetailView):
-    model = models.Student_Group
-
-
-class StudentDetailView (generic.DetailView):
-    model = models.Student
+        qs = super().get_queryset()
+        return qs.filter(teacher=self.request.user)
 
 
 class StudentGroupCreate (LoginRequiredMixin, generic.FormView):
@@ -58,10 +58,10 @@ class StudentGroupCreate (LoginRequiredMixin, generic.FormView):
 
 
 def StudentGroupPeriodSelect(request, teacher):
-    obj = get_object_or_404(User, groups__name='teacher', pk=teacher)
     selected = request.POST.getlist('period')
     if not selected:
-        return render(request, 'group_manager/student_group_period_select.html', {
+        return render(request,
+            'group_manager/student_group_period_select.html', {
                 'periods': models.Student_Class.objects
                 .filter(type=models.Student_Class.ENGLISH_TYPE)
                 .filter(teacher__pk=teacher),

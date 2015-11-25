@@ -1,0 +1,7 @@
+<h2>{{ object }}</h2>
+<p>location: {{ object.location }}</p>
+<p>time: {{ object.time }}</p>
+<p>Judges:</p>
+{% for judge in object.judge.all %}
+    <li>{{ judge }}</li>
+{% endfor %}

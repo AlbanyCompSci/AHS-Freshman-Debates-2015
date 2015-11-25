@@ -97,8 +97,12 @@ class Judge (models.Model):
 
 class Debate_Group (models.Model):
     """A debate. Main components are the two groups."""
-    affTeam = models.OneToOneField(Student_Group, related_name='affTeam')
-    negTeam = models.OneToOneField(Student_Group, related_name='negTeam')
+    affTeam = models.OneToOneField(Student_Group, related_name='affTeam',
+                                   limit_choices_to={'negTeam__isnull': True,
+                                   'affTeam__isnull': True})
+    negTeam = models.OneToOneField(Student_Group, related_name='negTeam',
+                                   limit_choices_to={'affTeam__isnull': True,
+                                        'negTeam__isnull': True})
     title = models.CharField(max_length=140)
     time = models.DateTimeField()
     location = models.CharField(max_length=140)
@@ -107,6 +111,9 @@ class Debate_Group (models.Model):
     class Meta:
         verbose_name = "Debate"
         verbose_name_plural = "Debates"
+
+    def get_absolute_url(self):
+        return reverse('groups:debate_detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return "%s against %s. Topic is %s" % (
