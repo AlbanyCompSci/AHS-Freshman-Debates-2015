@@ -65,10 +65,10 @@ class Student (models.Model):
                                       related_name="english_class",
                                       limit_choices_to={
                                         'type': Student_Class.ENGLISH_TYPE
-                                        })
+                                        }, null=True, blank=True)
     ihs_class = models.ForeignKey(Student_Class, limit_choices_to={
         'type': Student_Class.IHS_TYPE
-    })
+    }, null=True, blank=True)
     group = models.ForeignKey(Student_Group, null=True, blank=True)
 
     class Meta:
