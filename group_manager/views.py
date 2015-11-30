@@ -6,9 +6,6 @@ from django.views import generic
 from . import models
 from . import forms
 from django.contrib.auth.models import User
-from django.forms import SplitDateTimeField
-from django.forms.models import modelform_factory
-
 # Create your views here.
 
 
@@ -18,11 +15,6 @@ class LoginRequiredMixin (object):
         view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
         return login_required(view)
 
-
-class ModelFormWidgetMixin(object):
-    def get_form_class(self):
-        return modelform_factory(self.model, fields=self.fields,
-                                 widgets=self.widgets)
 
 
 class IndexView (LoginRequiredMixin, generic.ListView):
