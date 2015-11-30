@@ -11,6364 +11,3998 @@
   "pk": 1,
   "model": "auth.user",
   "fields": {
-    "is_superuser": true,
+    "last_name": "",
+    "first_name": "",
+    "groups": [],
+    "last_login": "2015-11-27T14:12:31.486Z",
+    "user_permissions": [],
     "is_active": true,
     "username": "admin",
-    "is_staff": true,
-    "user_permissions": [],
+    "is_superuser": true,
+    "password": "pbkdf2_sha256$20000$avL8xXhTTA6R$P9pGcH3jsHGrrN5+q4FehTtEmiqREVAWcDWBknJmWF0=",
+    "date_joined": "2015-11-27T14:12:24.869Z",
     "email": "ilay.raz@gmail.com",
-    "first_name": "",
-    "date_joined": "2015-11-10T05:25:55.655Z",
-    "last_name": "",
-    "last_login": "2015-11-10T18:46:32.875Z",
-    "password": "pbkdf2_sha256$20000$efeMXL4JJXvw$yH9N/P0hF4khWf1PdUqLD/p9SFWxul8sHhpTmGVvHps=",
-    "groups": []
+    "is_staff": true
   }
 },
 {
   "pk": 2,
   "model": "auth.user",
   "fields": {
-    "is_superuser": false,
-    "is_active": true,
-    "username": "teacher1",
-    "is_staff": false,
-    "user_permissions": [],
-    "email": "TIm.Secant@teacher.edu",
-    "first_name": "Tim",
-    "date_joined": "2015-11-10T05:27:01Z",
-    "last_name": "Secant",
-    "last_login": "2015-11-12T18:23:25.700Z",
-    "password": "pbkdf2_sha256$20000$1YyZXVr4xOXB$PUYac/SxC7nyUZ3T4Tjaf03qiGL9HoCFINXppl+o4jc=",
+    "last_name": "Surowitz",
+    "first_name": "Emily",
     "groups": [
       1
-    ]
+    ],
+    "last_login": null,
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher1",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$atLjJxYD6kcI$MSNl7zKJJ5/yi84lsft7/CnCWdTN7qQv+sCArO3zjTI=",
+    "date_joined": "2015-11-27T14:13:31Z",
+    "email": "esurowitz@ausdk12.org",
+    "is_staff": false
   }
 },
 {
   "pk": 3,
   "model": "auth.user",
   "fields": {
-    "is_superuser": false,
-    "is_active": true,
-    "username": "teacher2",
-    "is_staff": false,
-    "user_permissions": [],
-    "email": "",
-    "first_name": "Kal",
-    "date_joined": "2015-11-10T05:27:37Z",
-    "last_name": "El",
-    "last_login": null,
-    "password": "pbkdf2_sha256$20000$78lUS9QqstP8$nEW2Aog3VWR/Uz8vWWebVNNcdapAr1b15+eRIslQ1XM=",
+    "last_name": "Fallat",
+    "first_name": "Warren",
     "groups": [
       1
-    ]
+    ],
+    "last_login": null,
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher2",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$qGpXJI59FDD5$PFklFq8tzDfjkcYc/tzvnEq43dl5x3mp8k/iOpoIgRE=",
+    "date_joined": "2015-11-27T14:16:38Z",
+    "email": "wfallat@ausdk12.org",
+    "is_staff": false
+  }
+},
+{
+  "pk": 4,
+  "model": "auth.user",
+  "fields": {
+    "last_name": "Park",
+    "first_name": "Jessica",
+    "groups": [
+      1
+    ],
+    "last_login": "2015-11-30T06:38:44.689Z",
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher3",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$B0Y4oLQJsSZg$xMkA6EHt3Ni9ymsgFTDR7cMbnn3EZfWzc3mScbYq0ag=",
+    "date_joined": "2015-11-27T14:17:05Z",
+    "email": "jpark@ausdk12.org",
+    "is_staff": false
+  }
+},
+{
+  "pk": 5,
+  "model": "auth.user",
+  "fields": {
+    "last_name": "Castle",
+    "first_name": "Jeff",
+    "groups": [
+      1
+    ],
+    "last_login": null,
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher4",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$MmaKUMVgkBzx$ZFcO2X4KbTZV8xANJixO7SysiPqDWuV1gPVxuSzMy5A=",
+    "date_joined": "2015-11-27T14:17:35Z",
+    "email": "jcastle@ausdk12.org",
+    "is_staff": false
+  }
+},
+{
+  "pk": 6,
+  "model": "auth.user",
+  "fields": {
+    "last_name": "Francis",
+    "first_name": "Diane",
+    "groups": [
+      1
+    ],
+    "last_login": null,
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher5",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$59QjcLSwvgt0$cWWhAv652RsHtAgg9Bio1xKyPdvABCildWez5GJi8XM=",
+    "date_joined": "2015-11-27T14:18:22Z",
+    "email": "dfrances@ausdk12.org",
+    "is_staff": false
+  }
+},
+{
+  "pk": 7,
+  "model": "auth.user",
+  "fields": {
+    "last_name": "Lent",
+    "first_name": "Robert",
+    "groups": [
+      1
+    ],
+    "last_login": null,
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher6",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$XDBJXz1CNhxv$Yj05izZeXQr0EUBf1eSIH+EyNAMlktwqIfbJyUM4z14=",
+    "date_joined": "2015-11-27T14:19:17Z",
+    "email": "rlent@ausdk12.org",
+    "is_staff": false
+  }
+},
+{
+  "pk": 8,
+  "model": "auth.user",
+  "fields": {
+    "last_name": "Radford",
+    "first_name": "Juliet",
+    "groups": [
+      1
+    ],
+    "last_login": null,
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher7",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$3skL5UmtYJfK$VbzFf9p/3dNbiVGyNq/QeUKkmCJdef1PHwdBdkt7KmM=",
+    "date_joined": "2015-11-27T14:19:46Z",
+    "email": "jradford@ausdk12.org",
+    "is_staff": false
+  }
+},
+{
+  "pk": 9,
+  "model": "auth.user",
+  "fields": {
+    "last_name": "Edinger",
+    "first_name": "Suzanne",
+    "groups": [
+      1
+    ],
+    "last_login": null,
+    "user_permissions": [],
+    "is_active": true,
+    "username": "teacher8",
+    "is_superuser": false,
+    "password": "pbkdf2_sha256$20000$s7NO64kendy6$4CfHZkwhF3tMdHn+S6PEQsZd/iCL8/9ar0Zv+J7VeWY=",
+    "date_joined": "2015-11-27T14:20:41Z",
+    "email": "sedinger@ausdk12.org",
+    "is_staff": false
   }
 },
 {
   "pk": 1,
   "model": "admin.logentry",
   "fields": {
-    "content_type": 2,
-    "user": 1,
-    "change_message": "",
-    "action_time": "2015-11-10T05:26:52.312Z",
-    "action_flag": 1,
     "object_repr": "teacher",
-    "object_id": "1"
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "1",
+    "action_time": "2015-11-27T14:12:45.880Z",
+    "content_type": 2,
+    "user": 1
   }
 },
 {
   "pk": 2,
   "model": "admin.logentry",
   "fields": {
-    "content_type": 3,
-    "user": 1,
-    "change_message": "",
-    "action_time": "2015-11-10T05:27:01.513Z",
-    "action_flag": 1,
     "object_repr": "teacher1",
-    "object_id": "2"
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "2",
+    "action_time": "2015-11-27T14:13:31.672Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 3,
   "model": "admin.logentry",
   "fields": {
-    "content_type": 3,
-    "user": 1,
-    "change_message": "Changed first_name, last_name, email and groups.",
-    "action_time": "2015-11-10T05:27:25.732Z",
-    "action_flag": 2,
     "object_repr": "teacher1",
-    "object_id": "2"
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "2",
+    "action_time": "2015-11-27T14:14:44.820Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 4,
   "model": "admin.logentry",
   "fields": {
-    "content_type": 3,
-    "user": 1,
+    "object_repr": "teacher2",
     "change_message": "",
-    "action_time": "2015-11-10T05:27:37.621Z",
     "action_flag": 1,
-    "object_repr": "teacher2",
-    "object_id": "3"
-  }
-},
-{
-  "pk": 5,
-  "model": "admin.logentry",
-  "fields": {
+    "object_id": "3",
+    "action_time": "2015-11-27T14:16:38.886Z",
     "content_type": 3,
-    "user": 1,
-    "change_message": "Changed first_name, last_name and groups.",
-    "action_time": "2015-11-10T05:27:54.084Z",
-    "action_flag": 2,
-    "object_repr": "teacher2",
-    "object_id": "3"
-  }
-},
-{
-  "pk": 6,
-  "model": "admin.logentry",
-  "fields": {
-    "content_type": 7,
-    "user": 1,
-    "change_message": "",
-    "action_time": "2015-11-10T05:45:40.384Z",
-    "action_flag": 3,
-    "object_repr": "S1",
-    "object_id": "1"
-  }
-},
-{
-  "pk": 7,
-  "model": "admin.logentry",
-  "fields": {
-    "content_type": 7,
-    "user": 1,
-    "change_message": "",
-    "action_time": "2015-11-10T18:17:10.153Z",
-    "action_flag": 3,
-    "object_repr": "S1",
-    "object_id": "2"
-  }
-},
-{
-  "pk": 8,
-  "model": "admin.logentry",
-  "fields": {
-    "content_type": 7,
-    "user": 1,
-    "change_message": "",
-    "action_time": "2015-11-10T18:45:59.577Z",
-    "action_flag": 3,
-    "object_repr": "S1",
-    "object_id": "3"
-  }
-},
-{
-  "pk": 9,
-  "model": "admin.logentry",
-  "fields": {
-    "content_type": 7,
-    "user": 1,
-    "change_message": "",
-    "action_time": "2015-11-10T18:46:44.684Z",
-    "action_flag": 3,
-    "object_repr": "S1",
-    "object_id": "4"
-  }
-},
-{
-  "pk": "2hqg81aslry2xsdhb6z65ksbjxbtqf53",
-  "model": "sessions.session",
-  "fields": {
-    "session_data": "ODQ2MmY2M2IxNzdmNDAzZTViMjMzOWI1YTQ4MWRhYmRlZDhkNzczOTp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9oYXNoIjoiYmRiZjg1NWViYzY4YmJjOTNhMzYyMzE3ZmQzNzM1NzNkZDllYTUzNyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
-    "expire_date": "2015-11-26T18:23:25.703Z"
-  }
-},
-{
-  "pk": "7j70ixh40u3stvg5qt9mgwzc8to2f4zj",
-  "model": "sessions.session",
-  "fields": {
-    "session_data": "NzJkY2QzYzg4NGEyYWViOWZiMjNjMGYxOGIyOTIyYTQ1YzZjMmE2Njp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxYzhiNzFkNzFmYzA0MDFkYTg2YjVkMGVkMWQzZWQ5OTNiOTAzMDY1In0=",
-    "expire_date": "2015-11-24T18:43:30.019Z"
-  }
-},
-{
-  "pk": "jptqjf1bj0x4fox5bgnwnuzxophxd8wh",
-  "model": "sessions.session",
-  "fields": {
-    "session_data": "NzA2ZGE1YWNlOWYxMDZjY2ZhZWI0ZjJjZThiNWEyNmI0N2FjMGFmNzp7Il9hdXRoX3VzZXJfaGFzaCI6IjFjOGI3MWQ3MWZjMDQwMWRhODZiNWQwZWQxZDNlZDk5M2I5MDMwNjUiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
-    "expire_date": "2015-11-24T18:45:52.249Z"
-  }
-},
-{
-  "pk": "p2j3gs3vup13d09lbtrd4wmsm94rq9lz",
-  "model": "sessions.session",
-  "fields": {
-    "session_data": "OWUyZTg0ZjkzODVlZWRlMGQ3ZDI0MThhNGViNjUzMzA4YzE3N2IyMzp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiZGJmODU1ZWJjNjhiYmM5M2EzNjIzMTdmZDM3MzU3M2RkOWVhNTM3In0=",
-    "expire_date": "2015-11-24T18:44:41.808Z"
-  }
-},
-{
-  "pk": "rs6sc5yaeu5qywk8h7958s7t1us2u4jl",
-  "model": "sessions.session",
-  "fields": {
-    "session_data": "NzJkY2QzYzg4NGEyYWViOWZiMjNjMGYxOGIyOTIyYTQ1YzZjMmE2Njp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxYzhiNzFkNzFmYzA0MDFkYTg2YjVkMGVkMWQzZWQ5OTNiOTAzMDY1In0=",
-    "expire_date": "2015-11-24T18:17:02.371Z"
+    "user": 1
   }
 },
 {
   "pk": 5,
-  "model": "group_manager.student_group",
+  "model": "admin.logentry",
   "fields": {
-    "teacher": 2
+    "object_repr": "teacher2",
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "3",
+    "action_time": "2015-11-27T14:16:57.897Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 6,
-  "model": "group_manager.student_group",
+  "model": "admin.logentry",
   "fields": {
-    "teacher": 2
+    "object_repr": "teacher3",
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "4",
+    "action_time": "2015-11-27T14:17:05.451Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 7,
-  "model": "group_manager.student_group",
+  "model": "admin.logentry",
   "fields": {
-    "teacher": 2
+    "object_repr": "teacher3",
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "4",
+    "action_time": "2015-11-27T14:17:28.041Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 8,
-  "model": "group_manager.student_group",
+  "model": "admin.logentry",
   "fields": {
-    "teacher": 2
+    "object_repr": "teacher4",
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "5",
+    "action_time": "2015-11-27T14:17:35.682Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 9,
-  "model": "group_manager.student_group",
+  "model": "admin.logentry",
   "fields": {
-    "teacher": 2
+    "object_repr": "teacher4",
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "5",
+    "action_time": "2015-11-27T14:18:08.658Z",
+    "content_type": 3,
+    "user": 1
+  }
+},
+{
+  "pk": 10,
+  "model": "admin.logentry",
+  "fields": {
+    "object_repr": "teacher5",
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "6",
+    "action_time": "2015-11-27T14:18:22.229Z",
+    "content_type": 3,
+    "user": 1
+  }
+},
+{
+  "pk": 11,
+  "model": "admin.logentry",
+  "fields": {
+    "object_repr": "teacher5",
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "6",
+    "action_time": "2015-11-27T14:19:09.070Z",
+    "content_type": 3,
+    "user": 1
+  }
+},
+{
+  "pk": 12,
+  "model": "admin.logentry",
+  "fields": {
+    "object_repr": "teacher6",
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "7",
+    "action_time": "2015-11-27T14:19:17.960Z",
+    "content_type": 3,
+    "user": 1
+  }
+},
+{
+  "pk": 13,
+  "model": "admin.logentry",
+  "fields": {
+    "object_repr": "teacher6",
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "7",
+    "action_time": "2015-11-27T14:19:34.771Z",
+    "content_type": 3,
+    "user": 1
+  }
+},
+{
+  "pk": 14,
+  "model": "admin.logentry",
+  "fields": {
+    "object_repr": "teacher7",
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "8",
+    "action_time": "2015-11-27T14:19:46.554Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 15,
-  "model": "group_manager.student_class",
+  "model": "admin.logentry",
   "fields": {
-    "period": 1,
-    "type": 0,
-    "teacher": 2
+    "object_repr": "teacher7",
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "8",
+    "action_time": "2015-11-27T14:20:17.915Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 16,
-  "model": "group_manager.student_class",
+  "model": "admin.logentry",
   "fields": {
-    "period": 2,
-    "type": 0,
-    "teacher": 2
+    "object_repr": "teacher8",
+    "change_message": "",
+    "action_flag": 1,
+    "object_id": "9",
+    "action_time": "2015-11-27T14:20:41.055Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
   "pk": 17,
-  "model": "group_manager.student_class",
+  "model": "admin.logentry",
   "fields": {
-    "period": 3,
-    "type": 0,
-    "teacher": 2
+    "object_repr": "teacher8",
+    "change_message": "Changed first_name, last_name, email and groups.",
+    "action_flag": 2,
+    "object_id": "9",
+    "action_time": "2015-11-27T14:24:10.646Z",
+    "content_type": 3,
+    "user": 1
   }
 },
 {
-  "pk": 18,
-  "model": "group_manager.student_class",
+  "pk": "y6l9sjruh9tjafpy2affyxpk3sv6gprx",
+  "model": "sessions.session",
   "fields": {
-    "period": 4,
-    "type": 0,
-    "teacher": 2
+    "session_data": "YmEyMzI4ZDQ1MTQyNzM4NTcxNDc0ZDhlMzYwMmJlNTgzMGE0YWMxMjp7Il9hdXRoX3VzZXJfaGFzaCI6IjZhMmJhNjlkMjdkZTJhZTAxMzRmMGUwMjczNjAxYmNkMGI0NzRkNTIiLCJfYXV0aF91c2VyX2lkIjoiNCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
+    "expire_date": "2015-12-14T06:38:44.692Z"
   }
 },
 {
   "pk": 19,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 5,
-    "type": 0,
-    "teacher": 2
+    "teacher": 6,
+    "type": 1,
+    "period": 1
   }
 },
 {
   "pk": 20,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 6,
-    "type": 0,
-    "teacher": 2
+    "teacher": 6,
+    "type": 1,
+    "period": 2
   }
 },
 {
   "pk": 21,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 7,
-    "type": 0,
-    "teacher": 2
+    "teacher": 6,
+    "type": 1,
+    "period": 3
   }
 },
 {
   "pk": 22,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 1,
+    "teacher": 6,
     "type": 1,
-    "teacher": 3
+    "period": 4
   }
 },
 {
   "pk": 23,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 2,
+    "teacher": 6,
     "type": 1,
-    "teacher": 3
+    "period": 5
   }
 },
 {
   "pk": 24,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 3,
-    "type": 1,
-    "teacher": 3
+    "teacher": 7,
+    "type": 0,
+    "period": 1
   }
 },
 {
   "pk": 25,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 4,
-    "type": 1,
-    "teacher": 3
+    "teacher": 7,
+    "type": 0,
+    "period": 3
   }
 },
 {
   "pk": 26,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 5,
-    "type": 1,
-    "teacher": 3
+    "teacher": 7,
+    "type": 0,
+    "period": 5
   }
 },
 {
   "pk": 27,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 6,
-    "type": 1,
-    "teacher": 3
+    "teacher": 7,
+    "type": 0,
+    "period": 6
   }
 },
 {
   "pk": 28,
   "model": "group_manager.student_class",
   "fields": {
-    "period": 7,
+    "teacher": 4,
+    "type": 0,
+    "period": 2
+  }
+},
+{
+  "pk": 29,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 4,
+    "type": 0,
+    "period": 4
+  }
+},
+{
+  "pk": 30,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 8,
     "type": 1,
-    "teacher": 3
+    "period": 3
+  }
+},
+{
+  "pk": 31,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 8,
+    "type": 1,
+    "period": 6
+  }
+},
+{
+  "pk": 32,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 2,
+    "type": 1,
+    "period": 6
+  }
+},
+{
+  "pk": 33,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 2,
+    "type": 1,
+    "period": 7
+  }
+},
+{
+  "pk": 34,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 9,
+    "type": 0,
+    "period": 3
+  }
+},
+{
+  "pk": 35,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 9,
+    "type": 0,
+    "period": 4
+  }
+},
+{
+  "pk": 36,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 9,
+    "type": 0,
+    "period": 5
+  }
+},
+{
+  "pk": 37,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 9,
+    "type": 0,
+    "period": 7
+  }
+},
+{
+  "pk": 38,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 3,
+    "type": 1,
+    "period": 1
+  }
+},
+{
+  "pk": 39,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 3,
+    "type": 1,
+    "period": 5
+  }
+},
+{
+  "pk": 40,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 5,
+    "type": 0,
+    "period": 2
+  }
+},
+{
+  "pk": 41,
+  "model": "group_manager.student_class",
+  "fields": {
+    "teacher": 5,
+    "type": 0,
+    "period": 4
   }
 },
 {
   "pk": 203591,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Jones",
     "first_name": "Mario",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 22,
-    "last_name": "Jones",
-    "email": "marioej19@ausdk12.org"
+    "email": "marioej19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 19
   }
 },
 {
   "pk": 203638,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Carolina",
-    "group": 9,
-    "english_class": 15,
-    "ihs_class": 24,
     "last_name": "Gonzalez",
-    "email": "carolinag19@ausdk12.org"
+    "first_name": "Carolina",
+    "group": null,
+    "email": "carolinag19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 203765,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Snyder",
     "first_name": "Jared",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Snyder",
-    "email": "jaredjs19@ausdk12.org"
+    "email": "jaredjs19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 203952,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lor",
     "first_name": "Sreyroth",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Lor",
-    "email": "sreyrothjl19@ausdk12.org"
+    "email": "sreyrothjl19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204345,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Alexa",
-    "group": 5,
-    "english_class": 18,
-    "ihs_class": 28,
     "last_name": "Albert",
-    "email": "alexaca19@ausdk12.org"
+    "first_name": "Alexa",
+    "group": null,
+    "email": "alexaca19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 33
+  }
+},
+{
+  "pk": 204353,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Adair",
+    "first_name": "Ian",
+    "group": null,
+    "email": "ianma19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 32
+  }
+},
+{
+  "pk": 204354,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Albee-Good",
+    "first_name": "Brendan",
+    "group": null,
+    "email": "brendanaa19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
+  }
+},
+{
+  "pk": 204355,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Aamir",
+    "first_name": "Maha",
+    "group": null,
+    "email": "mahaa19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 31
+  }
+},
+{
+  "pk": 204356,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Aguayo",
+    "first_name": "Lizbeth",
+    "group": null,
+    "email": "lizbethca19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204359,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Lewis",
-    "group": 7,
-    "english_class": 17,
-    "ihs_class": 22,
     "last_name": "Bittner",
-    "email": "lewisjb19@ausdk12.org"
+    "first_name": "Lewis",
+    "group": null,
+    "email": "lewisjb19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
   }
 },
 {
   "pk": 204361,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Trenton",
-    "group": 7,
-    "english_class": 15,
-    "ihs_class": 26,
     "last_name": "Black",
-    "email": "trentonwb19@ausdk12.org"
+    "first_name": "Trenton",
+    "group": null,
+    "email": "trentonwb19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204369,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Dixon",
     "first_name": "Stella",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Dixon",
-    "email": "stellaad19@ausdk12.org"
+    "email": "stellaad19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204371,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Isabela",
-    "group": 8,
-    "english_class": 15,
-    "ihs_class": 26,
     "last_name": "Colmenar",
-    "email": "isabelaec19@ausdk12.org"
+    "first_name": "Isabela",
+    "group": null,
+    "email": "isabelaec19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204372,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Cohen",
     "first_name": "Henry",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 23,
-    "last_name": "Cohen",
-    "email": "henryac19@ausdk12.org"
+    "email": "henryac19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204373,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Chow",
     "first_name": "Athena",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Chow",
-    "email": "athenacc19@ausdk12.org"
+    "email": "athenacc19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204375,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Campbell",
     "first_name": "Myla",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Campbell",
-    "email": "mylanc19@ausdk12.org"
+    "email": "mylanc19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204377,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Calafiura-Soleri",
     "first_name": "Matteo",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Calafiura-Soleri",
-    "email": "matteoc19@ausdk12.org"
+    "email": "matteoc19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204389,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hazen",
     "first_name": "Genelise",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Hazen",
-    "email": "geneliseah19@ausdk12.org"
+    "email": "geneliseah19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204390,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Higgins",
     "first_name": "Cara",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Higgins",
-    "email": "caraxh19@ausdk12.org"
+    "email": "caraxh19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204391,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hill",
     "first_name": "Garrett",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Hill",
-    "email": "garrettrh19@ausdk12.org"
+    "email": "garrettrh19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204392,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hori",
     "first_name": "Lucas",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "Hori",
-    "email": "lucaskh19@ausdk12.org"
+    "email": "lucaskh19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204393,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hort",
     "first_name": "James",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Hort",
-    "email": "jamesth19@ausdk12.org"
+    "email": "jamesth19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204397,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ivey",
     "first_name": "Jaylen",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Ivey",
-    "email": "jaylenmi19@ausdk12.org"
+    "email": "jaylenmi19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204400,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Judge",
     "first_name": "John",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Judge",
-    "email": "johnnj19@ausdk12.org"
+    "email": "johnnj19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204401,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kazi",
     "first_name": "Zain",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "Kazi",
-    "email": "zainak19@ausdk12.org"
+    "email": "zainak19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204402,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Khou",
     "first_name": "Julie",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Khou",
-    "email": "juliek19@ausdk12.org"
+    "email": "juliek19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204419,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "King",
     "first_name": "Noah",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "King",
-    "email": "noahrk19@ausdk12.org"
+    "email": "noahrk19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 204420,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kiriruangchai",
     "first_name": "Jirachaya",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 25,
-    "last_name": "Kiriruangchai",
-    "email": "jirachayak19@ausdk12.org"
+    "email": "jirachayak19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 22
   }
 },
 {
   "pk": 204421,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kobelin",
     "first_name": "Camille",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Kobelin",
-    "email": "camillerk19@ausdk12.org"
+    "email": "camillerk19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204423,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Korchin",
     "first_name": "Shauna",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 25,
-    "last_name": "Korchin",
-    "email": "shaunak19@ausdk12.org"
+    "email": "shaunak19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 22
   }
 },
 {
   "pk": 204425,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lawrence",
     "first_name": "Abigail",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 27,
-    "last_name": "Lawrence",
-    "email": "abigailal19@ausdk12.org"
+    "email": "abigailal19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204428,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Leventhal",
     "first_name": "Ethan",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Leventhal",
-    "email": "ethanl19@ausdk12.org"
+    "email": "ethanl19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204429,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Levine",
     "first_name": "Nathan",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Levine",
-    "email": "nathanal19@ausdk12.org"
+    "email": "nathanal19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204430,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Li",
     "first_name": "William",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Li",
-    "email": "williaml19@ausdk12.org"
+    "email": "williaml19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204433,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Liu",
     "first_name": "Daniel",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Liu",
-    "email": "danielbl19@ausdk12.org"
+    "email": "danielbl19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204434,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Loizeaux",
     "first_name": "Peter",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Loizeaux",
-    "email": "peterrl19@ausdk12.org"
+    "email": "peterrl19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204435,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Long",
     "first_name": "Maisie",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Long",
-    "email": "margaretbl19@ausdk12.org"
+    "email": "margaretbl19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204436,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Luo",
     "first_name": "Jonathan",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Luo",
-    "email": "jonathanl19@ausdk12.org"
+    "email": "jonathanl19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204437,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Maass",
     "first_name": "Emma",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Maass",
-    "email": "emmamm19@ausdk12.org"
+    "email": "emmamm19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204438,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Maida",
     "first_name": "Enzo",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Maida",
-    "email": "enzoym19@ausdk12.org"
+    "email": "enzoym19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204439,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Mander",
     "first_name": "Ezra",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 27,
-    "last_name": "Mander",
-    "email": "ezrajm19@ausdk12.org"
+    "email": "ezrajm19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 31
+  }
+},
+{
+  "pk": 204440,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Marquina",
+    "first_name": "Natalie",
+    "group": null,
+    "email": "nataliem19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204442,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "McCroskey",
     "first_name": "Camden",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "McCroskey",
-    "email": "camdenlm19@ausdk12.org"
+    "email": "camdenlm19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 204443,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "McGinley",
     "first_name": "Tess",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "McGinley",
-    "email": "tessem19@ausdk12.org"
+    "email": "tessem19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204446,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Miki",
     "first_name": "John",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Miki",
-    "email": "johnam19@ausdk12.org"
+    "email": "johnam19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204447,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Mink",
     "first_name": "Cole",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Mink",
-    "email": "colem19@ausdk12.org"
+    "email": "colem19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204450,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Noble",
     "first_name": "Porsche",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Noble",
-    "email": "porschen19@ausdk12.org"
+    "email": "porschen19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204453,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "O'Shea",
     "first_name": "Clair",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "O'Shea",
-    "email": "clairso19@ausdk12.org"
+    "email": "clairso19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204456,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Picard",
     "first_name": "Lucas",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Picard",
-    "email": "lucasjp19@ausdk12.org"
+    "email": "lucasjp19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204457,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Porras",
     "first_name": "Natalia",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Porras",
-    "email": "nataliayp19@ausdk12.org"
+    "email": "nataliayp19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204459,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rainey",
     "first_name": "Isabel",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Rainey",
-    "email": "isabelrr19@ausdk12.org"
+    "email": "isabelrr19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204460,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rasband",
     "first_name": "Avery",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 23,
-    "last_name": "Rasband",
-    "email": "averyjr19@ausdk12.org"
+    "email": "averyjr19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204464,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Roberts",
     "first_name": "Cleighton",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 27,
-    "last_name": "Roberts",
-    "email": "cleightonwr19@ausdk12.org"
+    "email": "cleightonwr19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204465,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rosen-Bloom",
     "first_name": "Eliana",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 24,
-    "last_name": "Rosen-Bloom",
-    "email": "elianamr19@ausdk12.org"
+    "email": "elianamr19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204466,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ruberto",
     "first_name": "Milo",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Ruberto",
-    "email": "milodr19@ausdk12.org"
+    "email": "milodr19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204467,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rynhoud",
     "first_name": "Christopher",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Rynhoud",
-    "email": "christopherrr19@ausdk12.org"
+    "email": "christopherrr19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204478,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Saaf",
     "first_name": "Elka",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Saaf",
-    "email": "elkaks19@ausdk12.org"
+    "email": "elkaks19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204480,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Saghafi",
     "first_name": "Arman",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Saghafi",
-    "email": "saghafi.arman@gmail.com"
+    "email": "saghafi.arman@gmail.com",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204485,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Shaikh",
     "first_name": "Heibah",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Shaikh",
-    "email": "heibahws19@ausdk12.org"
+    "email": "heibahws19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204487,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Shipman",
     "first_name": "Neal",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 23,
-    "last_name": "Shipman",
-    "email": "nealbs19@ausdk12.org"
+    "email": "nealbs19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204489,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Silva",
     "first_name": "Margaret",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "Silva",
-    "email": "margaretas19@ausdk12.org"
+    "email": "margaretas19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204490,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Silvestre",
     "first_name": "Wictoria",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 24,
-    "last_name": "Silvestre",
-    "email": "wictoriaks19@ausdk12.org"
+    "email": "wictoriaks19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204491,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sim",
     "first_name": "Matthew",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Sim",
-    "email": "matthewjs19@ausdk12.org"
+    "email": "matthewjs19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204492,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Simon",
     "first_name": "George",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Simon",
-    "email": "georgens19@ausdk12.org"
+    "email": "georgens19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204499,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Szumilo",
     "first_name": "Alexander",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Szumilo",
-    "email": "alexanderps19@ausdk12.org"
+    "email": "alexanderps19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204500,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tamang",
     "first_name": "Shreya",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 23,
-    "last_name": "Tamang",
-    "email": "shreyat19@ausdk12.org"
+    "email": "shreyat19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204502,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tembay",
     "first_name": "Ogyen",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Tembay",
-    "email": "ogyendt19@ausdk12.org"
+    "email": "ogyendt19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204503,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tenzing",
     "first_name": "Dorjee",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 23,
-    "last_name": "Tenzing",
-    "email": "dorjeet19@ausdk12.org"
+    "email": "dorjeet19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204504,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tran",
     "first_name": "Lindsey",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Tran",
-    "email": "lindseyt19@ausdk12.org"
+    "email": "lindseyt19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204505,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tremblay",
     "first_name": "Helena",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Tremblay",
-    "email": "helena.tremblay@gmail.com"
+    "email": "helena.tremblay@gmail.com",
+    "english_class": 28,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204506,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Treseler",
     "first_name": "Dominic",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Treseler",
-    "email": "dominicqt19@ausdk12.org"
+    "email": "dominicqt19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204507,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Trutane",
     "first_name": "Russell",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Trutane",
-    "email": "russellet19@ausdk12.org"
+    "email": "russellet19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204509,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Valenzuela",
     "first_name": "Tamara",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Valenzuela",
-    "email": "tamaradv19@ausdk12.org"
+    "email": "tamaradv19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204510,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Krashna",
     "first_name": "Maria",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Krashna",
-    "email": "mariack19@ausdk12.org"
+    "email": "mariack19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204512,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Waters",
     "first_name": "La Mar",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Waters",
-    "email": "lajw19@ausdk12.org"
+    "email": "lajw19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204514,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Wong",
     "first_name": "Tiffany",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Wong",
-    "email": "tiffanyyw19@ausdk12.org"
+    "email": "tiffanyyw19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204516,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Wright",
     "first_name": "Jessica",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 23,
-    "last_name": "Wright",
-    "email": "jessicamw19@ausdk12.org"
+    "email": "jessicamw19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204518,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Xing",
     "first_name": "Albert",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 25,
-    "last_name": "Xing",
-    "email": "alberthx19@ausdk12.org"
+    "email": "alberthx19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 22
   }
 },
 {
   "pk": 204519,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Yee",
     "first_name": "Kevin",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 26,
-    "last_name": "Yee",
-    "email": "kevinsy19@ausdk12.org"
+    "email": "kevinsy19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204521,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Zhong",
     "first_name": "Evan",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Zhong",
-    "email": "evanz19@ausdk12.org"
+    "email": "evanz19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204522,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Zhou",
     "first_name": "Sunny",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Zhou",
-    "email": "sunnytz19@ausdk12.org"
+    "email": "sunnytz19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
+  }
+},
+{
+  "pk": 204524,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Abbott",
+    "first_name": "Calder",
+    "group": null,
+    "email": "calderla19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204526,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Charp",
     "first_name": "Sage",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 24,
-    "last_name": "Charp",
-    "email": "sageec19@ausdk12.org"
+    "email": "sageec19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204527,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Chen",
     "first_name": "Madeleine",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Chen",
-    "email": "madeleinerc19@ausdk12.org"
+    "email": "madeleinerc19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204529,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Davis",
     "first_name": "Jacqueline",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Davis",
-    "email": "jacquelinehd19@ausdk12.org"
+    "email": "jacquelinehd19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204530,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "DePianto",
     "first_name": "Joseph",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "DePianto",
-    "email": "josephwd19@ausdk12.org"
+    "email": "josephwd19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204531,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Goose",
     "first_name": "Molly",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Goose",
-    "email": "mollyeg19@ausdk12.org"
+    "email": "mollyeg19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204533,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Liu",
     "first_name": "Jason",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Liu",
-    "email": "jasonyl19@ausdk12.org"
+    "email": "jasonyl19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204535,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ng",
     "first_name": "Sarah",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Ng",
-    "email": "sarahmn19@ausdk12.org"
+    "email": "sarahmn19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204537,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rodriguez",
     "first_name": "Mateo",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 25,
-    "last_name": "Rodriguez",
-    "email": "mateogr19@ausdk12.org"
+    "email": "mateogr19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 22
   }
 },
 {
   "pk": 204538,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Shen-Wachter",
     "first_name": "Jessica",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Shen-Wachter",
-    "email": "jessicaes19@ausdk12.org"
+    "email": "jessicaes19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204540,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Stallmeyer",
     "first_name": "Kailey",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Stallmeyer",
-    "email": "kaileygs19@ausdk12.org"
+    "email": "kaileygs19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204541,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Swygert",
     "first_name": "Kory",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "Swygert",
-    "email": "koryss19@ausdk12.org"
+    "email": "koryss19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204559,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Jain",
     "first_name": "Aditi",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Jain",
-    "email": "aditiaj19@ausdk12.org"
+    "email": "aditiaj19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204560,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Green",
     "first_name": "Emma",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Green",
-    "email": "emmaig19@ausdk12.org"
+    "email": "emmaig19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204562,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Stapleton-Gray",
     "first_name": "Chloe",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 26,
-    "last_name": "Stapleton-Gray",
-    "email": "chloets19@ausdk12.org"
+    "email": "chloets19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204564,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Wolf",
     "first_name": "David",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Wolf",
-    "email": "davidaw19@ausdk12.org"
+    "email": "davidaw19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204605,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Leanne",
-    "group": 7,
-    "english_class": 21,
-    "ihs_class": 27,
     "last_name": "Blum",
-    "email": "leannefb19@ausdk12.org"
+    "first_name": "Leanne",
+    "group": null,
+    "email": "leannefb19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204606,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Brusseau",
     "first_name": "Matthew",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Brusseau",
-    "email": "matthewlb19@ausdk12.org"
+    "email": "matthewlb19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204612,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "El-Saied",
     "first_name": "Abdul-Rahman",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "El-Saied",
-    "email": "abdulrahmanue19@ausdk12.org"
+    "email": "abdulrahmanue19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204614,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Goree",
     "first_name": "Jade",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Goree",
-    "email": "jadehg19@ausdk12.org"
+    "email": "jadehg19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204616,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Gulisano",
     "first_name": "Luna",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Gulisano",
-    "email": "lunarg19@ausdk12.org"
+    "email": "lunarg19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204617,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hallinan",
     "first_name": "Jack",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Hallinan",
-    "email": "jackjh19@ausdk12.org"
+    "email": "jackjh19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204618,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Intoci",
     "first_name": "Nikko",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Intoci",
-    "email": "nikkopi19@ausdk12.org"
+    "email": "nikkopi19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204622,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lucky",
     "first_name": "Lucien",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Lucky",
-    "email": "lucienfl19@ausdk12.org"
+    "email": "lucienfl19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 204623,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Man",
     "first_name": "Ryan",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Man",
-    "email": "ryanlm19@ausdk12.org"
+    "email": "ryanlm19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204626,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Naylor",
     "first_name": "Stella",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Naylor",
-    "email": "stellarn19@ausdk12.org"
+    "email": "stellarn19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 32
   }
 },
 {
   "pk": 204627,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Payongayong",
     "first_name": "Andres",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 22,
-    "last_name": "Payongayong",
-    "email": "andresmp19@ausdk12.org"
+    "email": "Andresmp19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 19
   }
 },
 {
   "pk": 204629,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Pimpan",
     "first_name": "Caspian",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Pimpan",
-    "email": "caspianjp19@ausdk12.org"
+    "email": "caspianjp19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204632,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sorensen",
     "first_name": "Nico",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Sorensen",
-    "email": "nicots19@ausdk12.org"
+    "email": "nicots19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 204634,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Suennen",
     "first_name": "Yinlin",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Suennen",
-    "email": "yinlinls19@ausdk12.org"
+    "email": "yinlinls19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 204661,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Angelo",
-    "group": 9,
-    "english_class": 15,
-    "ihs_class": 23,
     "last_name": "Feliciano",
-    "email": "angelocf19@ausdk12.org"
+    "first_name": "Angelo",
+    "group": null,
+    "email": "angelocf19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204665,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Foster",
     "first_name": "Caleb",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Foster",
-    "email": "calebvf19@ausdk12.org"
+    "email": "calebvf19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204666,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Fukumae",
     "first_name": "Jared",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 23,
-    "last_name": "Fukumae",
-    "email": "jaredkf19@ausdk12.org"
+    "email": "jaredkf19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204675,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rockwell",
     "first_name": "Marisa",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Rockwell",
-    "email": "marisafr19@ausdk12.org"
+    "email": "marisafr19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204678,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kermanshahi",
     "first_name": "Tiam",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Kermanshahi",
-    "email": "tiamak19@ausdk12.org"
+    "email": "tiamak19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 204679,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Luoma",
     "first_name": "Michael",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 24,
-    "last_name": "Luoma",
-    "email": "michaelsl19@ausdk12.org"
+    "email": "michaelsl19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 30
   }
 },
 {
   "pk": 204714,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lo",
     "first_name": "Benjamin",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 23,
-    "last_name": "Lo",
-    "email": "benjaminzl19@ausdk12.org"
+    "email": "benjaminzl19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204761,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Paiz",
     "first_name": "Kyle",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 27,
-    "last_name": "Paiz",
-    "email": "kylep19@ausdk12.org"
+    "email": "kylep19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204762,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lee",
     "first_name": "Madison",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Lee",
-    "email": "madisonl19@ausdk12.org"
+    "email": "madisonl19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 38
   }
 },
 {
   "pk": 204823,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Tyler",
-    "group": 9,
-    "english_class": 15,
-    "ihs_class": 24,
     "last_name": "Jackson",
-    "email": "tylerij19@ausdk12.org"
+    "first_name": "Tyler",
+    "group": null,
+    "email": "tylerij19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 204832,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Escoto",
     "first_name": "Nina",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 23,
-    "last_name": "Escoto",
-    "email": "ninace19@ausdk12.org"
+    "email": "ninace19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204864,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Johnson",
     "first_name": "Tiffany",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 27,
-    "last_name": "Johnson",
-    "email": "tiffanyaj19@ausdk12.org"
+    "email": "tiffanyaj19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204874,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Williams",
     "first_name": "Luke",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 23,
-    "last_name": "Williams",
-    "email": "lukemw19@ausdk12.org"
+    "email": "lukemw19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204878,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Pree",
     "first_name": "Henry",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 23,
-    "last_name": "Pree",
-    "email": "henrydp19@ausdk12.org"
+    "email": "henrydp19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204910,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Plamenco",
     "first_name": "Kristyl Anne",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 23,
-    "last_name": "Plamenco",
-    "email": "kristylp19@ausdk12.org"
+    "email": "kristylp19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 20
   }
 },
 {
   "pk": 204936,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Malik",
     "first_name": "Areez",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Malik",
-    "email": "areezam19@ausdk12.org"
+    "email": "areezam19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 204973,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Elizabeth",
-    "group": 5,
-    "english_class": 15,
-    "ihs_class": 23,
     "last_name": "Alvarado",
-    "email": "elizabetha19@ausdk12.org"
+    "first_name": "Elizabeth",
+    "group": null,
+    "email": "elizabetha19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205072,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Chen",
     "first_name": "Derrick",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Chen",
-    "email": "derrickjc19@ausdk12.org"
+    "email": "derrickjc19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 205076,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Wu",
     "first_name": "Jerry",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Wu",
-    "email": "jerryrw19@ausdk12.org"
+    "email": "jerryrw19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 205159,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tang",
     "first_name": "Ruby",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Tang",
-    "email": "rubyt19@ausdk12.org"
+    "email": "rubyt19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 205212,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Loshak",
     "first_name": "Maxim",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "Loshak",
-    "email": "maximl19@ausdk12.org"
+    "email": "maximl19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 205259,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Eliyan",
     "first_name": "Yara",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Eliyan",
-    "email": "yaraie19@ausdk12.org"
+    "email": "yaraie19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 205295,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lu",
     "first_name": "Emily",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 23,
-    "last_name": "Lu",
-    "email": "emilyzl19@ausdk12.org"
+    "email": "emilyzl19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205310,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lim",
     "first_name": "Jett",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Lim",
-    "email": "jettsl19@ausdk12.org"
+    "email": "jettsl19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 205315,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ligon",
     "first_name": "Delian",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 25,
-    "last_name": "Ligon",
-    "email": "delianjl19@ausdk12.org"
+    "email": "delianjl19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 22
   }
 },
 {
   "pk": 205403,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Williams",
     "first_name": "Shauniece",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Williams",
-    "email": "shauniecelw19@ausdk12.org"
+    "email": "shauniecelw19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205433,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Alfred",
-    "group": 8,
-    "english_class": 15,
-    "ihs_class": 23,
     "last_name": "Butiong",
-    "email": "alfredmb19@ausdk12.org"
+    "first_name": "Alfred",
+    "group": null,
+    "email": "alfredmb19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205479,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Megibben",
     "first_name": "Ana",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Megibben",
-    "email": "anam19@ausdk12.org"
+    "email": "anam19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 205492,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Borgfeldt",
     "first_name": "Tamara",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 25,
-    "last_name": "Borgfeldt",
-    "email": "tamaradb19@ausdk12.org"
+    "email": "tamaradb19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 22
   }
 },
 {
   "pk": 205503,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sikand",
     "first_name": "Karman",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Sikand",
-    "email": "karmans19@ausdk12.org"
+    "email": "karmans19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 23
   }
 },
 {
   "pk": 205507,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Urbas",
     "first_name": "Natalia",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 23,
-    "last_name": "Urbas",
-    "email": "nataliau19@ausdk12.org"
+    "email": "nataliau19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205550,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Meyers",
     "first_name": "Maxwell",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Meyers",
-    "email": "maxwelljm19@ausdk12.org"
+    "email": "maxwelljm19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
+  }
+},
+{
+  "pk": 205564,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Acker",
+    "first_name": "Sophia",
+    "group": null,
+    "email": "sophiawa19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 23
   }
 },
 {
   "pk": 205589,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Nihei",
     "first_name": "Anthony",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Nihei",
-    "email": "anthonyjn19@ausdk12.org"
+    "email": "anthonyjn19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
+  }
+},
+{
+  "pk": 205640,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Ahn",
+    "first_name": "Jungah",
+    "group": null,
+    "email": "jungaha19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 },
 {
   "pk": 205643,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Alexander",
-    "group": 8,
-    "english_class": 15,
-    "ihs_class": 23,
     "last_name": "Cortez",
-    "email": "alexandermc19@ausdk12.org"
+    "first_name": "Alexander",
+    "group": null,
+    "email": "alexandermc19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205644,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Deng",
     "first_name": "Shuntong",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Deng",
-    "email": "shuntongd19@ausdk12.org"
+    "email": "shuntongd19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 205645,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ernst",
     "first_name": "Rose",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Ernst",
-    "email": "rosete19@ausdk12.org"
+    "email": "rosete19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 31
   }
 },
 {
   "pk": 205648,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hernandez",
     "first_name": "Nicole",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Hernandez",
-    "email": "nicoleh19@ausdk12.org"
+    "email": "nicoleh19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 33
   }
 },
 {
   "pk": 205651,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sabir",
     "first_name": "Sulaiman",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Sabir",
-    "email": "sulaimanms19@ausdk12.org"
+    "email": "sulaimanms19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205655,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Skinner",
     "first_name": "Nathan",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Skinner",
-    "email": "nathands19@ausdk12.org"
+    "email": "nathands19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 38
   }
 },
 {
   "pk": 205659,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kim",
     "first_name": "Sung Joo",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Kim",
-    "email": "sungk19@ausdk12.org"
-  }
-},
-{
-  "pk": 205736,
-  "model": "group_manager.student",
-  "fields": {
-    "first_name": "Darrien",
-    "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Miller",
-    "email": "DarrienAM19@ausdk12.org"
+    "email": "sungk19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 205754,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Chavez",
     "first_name": "Nicholas",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Chavez",
-    "email": "NicholasGC19@ausdk12.org"
+    "email": "NicholasGC19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 38
   }
 },
 {
   "pk": 205777,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Parafina",
     "first_name": "Anjelou",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Parafina",
-    "email": "anjeloup19@ausdk12.org"
+    "email": "anjeloup19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 205788,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Johnson",
     "first_name": "Caleb",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Johnson",
-    "email": "calebcj19@ausdk12.org"
+    "email": "calebcj19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 205792,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Cardozo",
     "first_name": "Liam",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Cardozo",
-    "email": "liambc19@ausdk12.org"
+    "email": "liambc19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 31
   }
 },
 {
   "pk": 205812,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Zalkin",
     "first_name": "Isaac",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Zalkin",
-    "email": "isaaclz19@ausdk12.org"
-  }
-},
-{
-  "pk": 205933,
-  "model": "group_manager.student",
-  "fields": {
-    "first_name": "Altanchimeg",
-    "group": null,
-    "english_class": 17,
-    "ihs_class": 23,
-    "last_name": "Odbayar",
-    "email": "altanchimego19@ausdk12.org"
+    "email": "isaaclz19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 39
   }
 },
 {
   "pk": 205965,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Voronov",
     "first_name": "Andrey",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 24,
-    "last_name": "Voronov",
-    "email": "andreyv19@ausdk12.org"
-  }
-},
-{
-  "pk": 206305,
-  "model": "group_manager.student",
-  "fields": {
-    "first_name": "Alex",
-    "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Kireeff",
-    "email": "alexk19@ausdk12.org"
+    "email": "andreyv19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 30
   }
 },
 {
   "pk": 206335,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Chen",
     "first_name": "Brandon",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 27,
-    "last_name": "Chen",
-    "email": "brandonwc19@ausdk12.org"
+    "email": "brandonwc19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 31
   }
 },
 {
   "pk": 206411,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Lucas",
-    "group": 6,
-    "english_class": 21,
-    "ihs_class": 26,
     "last_name": "Aurelio",
-    "email": "lucasga19@ausdk12.org"
+    "first_name": "Lucas",
+    "group": null,
+    "email": "lucasga19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 206457,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Falconi",
     "first_name": "Sebastian",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Falconi",
-    "email": "sebastianlf19@ausdk12.org"
+    "email": "sebastianlf19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 38
   }
 },
 {
   "pk": 206487,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Parajuli",
     "first_name": "Apoorva",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 24,
-    "last_name": "Parajuli",
-    "email": "apoorvap19@ausdk12.org"
+    "email": "apoorvap19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 30
   }
 },
 {
   "pk": 206495,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Stewart",
     "first_name": "Cali",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Stewart",
-    "email": "calibs19@ausdk12.org"
+    "email": "calibs19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 38
   }
 },
 {
   "pk": 206555,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sullivan",
     "first_name": "Shaye",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 23,
-    "last_name": "Sullivan",
-    "email": "shayels19@ausdk12.org"
+    "email": "shayels19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 20
   }
 },
 {
   "pk": 206557,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Davidson",
     "first_name": "Grace",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 22,
-    "last_name": "Davidson",
-    "email": "graceed19@ausdk12.org"
+    "email": "graceed19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
   }
 },
 {
   "pk": 206701,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Liu",
     "first_name": "Wendy",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 23,
-    "last_name": "Liu",
-    "email": "wendywl19@ausdk12.org"
+    "email": "wendywl19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 20
   }
 },
 {
   "pk": 206707,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Munoz",
     "first_name": "Amaya",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Munoz",
-    "email": "amayam19@ausdk12.org"
+    "email": "amayam19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 32
   }
 },
 {
   "pk": 207102,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kaduwela",
     "first_name": "Amal",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Kaduwela",
-    "email": "amalpk19@ausdk12.org"
+    "email": "amalpk19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 32
   }
 },
 {
   "pk": 207104,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Villegas",
     "first_name": "Julian Florence",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "Villegas",
-    "email": "julianev19@ausdk12.org"
+    "email": "julianev19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 207329,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Munkhbat",
     "first_name": "Azzaya",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Munkhbat",
-    "email": "azzayam19@ausdk12.org"
+    "email": "azzayam19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 38
   }
 },
 {
   "pk": 207330,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Divie",
     "first_name": "Kunga",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Divie",
-    "email": "kungad19@ausdk12.org"
+    "email": "kungad19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 31
   }
 },
 {
   "pk": 207371,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Federspiel",
     "first_name": "Emily",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Federspiel",
-    "email": "emilyf19@ausdk12.org"
+    "email": "emilyf19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 33
   }
 },
 {
   "pk": 207373,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Palma",
     "first_name": "Carlos",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Palma",
-    "email": "carlosp19@ausdk12.org"
+    "email": "carlosp19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 31
   }
 },
 {
   "pk": 207377,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Zhong",
     "first_name": "Yunfan",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Zhong",
-    "email": "yunfanz19@ausdk12.org"
+    "email": "yunfanz19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 33
   }
 },
 {
   "pk": 207917,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Abel",
-    "group": 6,
-    "english_class": 19,
-    "ihs_class": 24,
     "last_name": "Amare",
-    "email": "abela19@ausdk12.org"
+    "first_name": "Abel",
+    "group": null,
+    "email": "abela19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 21
   }
 },
 {
   "pk": 207918,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "DeRosa",
     "first_name": "Miles",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 27,
-    "last_name": "DeRosa",
-    "email": "milesrd19@ausdk12.org"
+    "email": "milesrd19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 31
   }
 },
 {
   "pk": 207920,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ohshita",
     "first_name": "Irene",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Ohshita",
-    "email": "irenemo19@ausdk12.org"
+    "email": "irenemo19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 32
   }
 },
 {
   "pk": 207955,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sherman-Howell",
     "first_name": "Sage",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Sherman-Howell",
-    "email": "sages19@ausdk12.org"
+    "email": "sages19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 33
   }
 },
 {
   "pk": 1100230,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lussier",
     "first_name": "Camille",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Lussier",
-    "email": "clussier1488@att.net"
+    "email": "clussier1488@att.net",
+    "english_class": 41,
+    "ihs_class": 38
   }
 },
 {
   "pk": 1100231,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "McDonald",
     "first_name": "Shelby",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "McDonald",
-    "email": "shelbywm19@ausdk12.org"
+    "email": "shelbywm19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 33
   }
 },
 {
   "pk": 1100236,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kalika",
     "first_name": "Jamaica",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Kalika",
-    "email": "jamaicakk19@ausdk12.org"
+    "email": "jamaicakk19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 33
   }
 },
 {
   "pk": 1100244,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Owens Fiesel",
     "first_name": "Lena",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 26,
-    "last_name": "Owens Fiesel",
-    "email": "lenaao19@ausdk12.org"
+    "email": "lenaao19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 23
   }
 },
 {
   "pk": 1100247,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Owens Fiesel",
     "first_name": "Uma",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Owens Fiesel",
-    "email": "umajo19@ausdk12.org"
+    "email": "umajo19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 32
   }
 },
 {
   "pk": 1100254,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Holmes-Ung",
     "first_name": "Alvin",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Holmes-Ung",
-    "email": "alvinh19@ausdk12.org"
+    "email": "alvinh19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
+  }
+},
+{
+  "pk": 1100258,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Li",
+    "first_name": "Li",
+    "group": null,
+    "email": "lil19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 30
   }
 },
 {
   "pk": 1100260,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "McGuire",
     "first_name": "Elizabeth",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "McGuire",
-    "email": "elizabethrm19@ausdk12.org"
+    "email": "elizabethrm19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 33
   }
 },
 {
   "pk": 1100265,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Thaden",
     "first_name": "Mabel",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Thaden",
-    "email": "mabelet19@ausdk12.org"
+    "email": "mabelet19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100272,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kasparek",
     "first_name": "Milo",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Kasparek",
-    "email": "milotk19@ausdk12.org"
+    "email": "milotk19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 1100274,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Finch",
     "first_name": "Avri",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 24,
-    "last_name": "Finch",
-    "email": "avrif19@ausdk12.org"
+    "email": "avrif19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 30
   }
 },
 {
   "pk": 1100284,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Finley",
     "first_name": "Dante",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 22,
-    "last_name": "Finley",
-    "email": "dantef19@ausdk12.org"
+    "email": "dantef19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100285,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Wright",
     "first_name": "Guadalupe",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Wright",
-    "email": "guadalupecw19@ausdk12.org"
+    "email": "guadalupecw19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100286,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Bustamante",
     "first_name": "Isabel",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Bustamante",
-    "email": "isabelab19@ausdk12.org"
+    "email": "isabelab19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 33
   }
 },
 {
   "pk": 1100288,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Gonzales",
     "first_name": "Jacqueline",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 24,
-    "last_name": "Gonzales",
-    "email": "jacquelineg19@ausdk12.org"
+    "email": "jacquelineg19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 30
   }
 },
 {
   "pk": 1100289,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Maria",
-    "group": 5,
-    "english_class": 16,
-    "ihs_class": 27,
     "last_name": "Almeida Caballero",
-    "email": "mariasa19@ausdk12.org"
+    "first_name": "Maria",
+    "group": null,
+    "email": "mariasa19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 32
   }
 },
 {
   "pk": 1100290,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Stiehm",
     "first_name": "Nicholas",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Stiehm",
-    "email": "nicholases19@ausdk12.org"
+    "email": "nicholases19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 38
   }
 },
 {
   "pk": 1100292,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Asia",
-    "group": 8,
-    "english_class": 15,
-    "ihs_class": 24,
     "last_name": "Brantley",
-    "email": "asiamb19@ausdk12.org"
+    "first_name": "Asia",
+    "group": null,
+    "email": "asiamb19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 1100293,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Galaviz",
     "first_name": "Gianni",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Galaviz",
-    "email": "giannipg19@ausdk12.org"
+    "email": "giannipg19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100294,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "McRoberts",
     "first_name": "Aidan",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "McRoberts",
-    "email": "aidanjm19@ausdk12.org"
+    "email": "aidanjm19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 38
   }
 },
 {
   "pk": 1100298,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Smithies",
     "first_name": "Samantha",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Smithies",
-    "email": "samanthas19@ausdk12.org"
+    "email": "samanthas19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 32
   }
 },
 {
   "pk": 1100312,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hampton",
     "first_name": "Spencer",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 22,
-    "last_name": "Hampton",
-    "email": "spencerah19@ausdk12.org"
+    "email": "spencerah19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100313,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Li",
     "first_name": "Luanqian",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 26,
-    "last_name": "Li",
-    "email": "luanqianl19@ausdk12.org"
+    "email": "luanqianl19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 23
   }
 },
 {
   "pk": 1100314,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tarano",
     "first_name": "Maya",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 23,
-    "last_name": "Tarano",
-    "email": "mayart19@ausdk12.org"
+    "email": "mayart19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 20
   }
 },
 {
   "pk": 1100316,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Petersen",
     "first_name": "Ryan",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 27,
-    "last_name": "Petersen",
-    "email": "ryansp19@ausdk12.org"
+    "email": "ryansp19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 31
   }
 },
 {
   "pk": 1100317,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "White",
     "first_name": "Jordan",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "White",
-    "email": "jordanaw19@ausdk12.org"
+    "email": "jordanaw19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100318,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Nalle",
     "first_name": "Suzanne",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 25,
-    "last_name": "Nalle",
-    "email": "suzannesn19@ausdk12.org"
+    "email": "suzannesn19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 22
   }
 },
 {
   "pk": 1100320,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Gebremichael",
     "first_name": "Shiden",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 22,
-    "last_name": "Gebremichael",
-    "email": "shidenmg19@ausdk12.org"
+    "email": "shidenmg19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100322,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Murphy",
     "first_name": "Grace",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 25,
-    "last_name": "Murphy",
-    "email": "gracem19@ausdk12.org"
+    "email": "gracem19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 22
   }
 },
 {
   "pk": 1100323,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Murphy",
     "first_name": "Matthew",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Murphy",
-    "email": "matthewm19@ausdk12.org"
+    "email": "matthewm19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100325,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Gyaltsen",
     "first_name": "Tara",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 25,
-    "last_name": "Gyaltsen",
-    "email": "tarakg19@ausdk12.org"
+    "email": "tarakg19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 22
   }
 },
 {
   "pk": 1100331,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Scalice",
     "first_name": "Elizabeth",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "Scalice",
-    "email": "elizabethys19@ausdk12.org"
+    "email": "elizabethys19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 1100332,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Lucas",
     "first_name": "Amaya",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 27,
-    "last_name": "Lucas",
-    "email": "amayaml19@ausdk12.org"
+    "email": "amayaml19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 31
   }
 },
 {
   "pk": 1100340,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Larkins",
     "first_name": "Madelyn",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Larkins",
-    "email": "madelynjl19@ausdk12.org"
+    "email": "madelynjl19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100346,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Shine",
     "first_name": "Shavase",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Shine",
-    "email": "shavasegs19@ausdk12.org"
+    "email": "shavasegs19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 32
+  }
+},
+{
+  "pk": 1100356,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Pinnelli",
+    "first_name": "Daniel",
+    "group": null,
+    "email": "danieljp19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100366,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hoke",
     "first_name": "Sarah",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Hoke",
-    "email": "sarahjh19@ausdk12.org"
+    "email": "sarahjh19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 31
   }
 },
 {
   "pk": 1100367,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Fedyk",
     "first_name": "Maria-Sophia",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Fedyk",
-    "email": "mariasophiaf19@ausdk12.org"
+    "email": "mariasophiaf19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 32
   }
 },
 {
   "pk": 1100372,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Jimenez",
     "first_name": "Richard",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 22,
-    "last_name": "Jimenez",
-    "email": "richardj19@ausdk12.org"
+    "email": "richardj19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100377,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Peralta",
     "first_name": "Brayam",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Peralta",
-    "email": "brayamap19@ausdk12.org"
+    "email": "brayamap19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100384,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Boubion-McKay",
     "first_name": "Sequoia",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Boubion-McKay",
-    "email": "sequoiaob19@ausdk12.org"
+    "email": "sequoiaob19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 33
+  }
+},
+{
+  "pk": 1100394,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Belmont",
+    "first_name": "Eric",
+    "group": null,
+    "email": "ericmb19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 22
   }
 },
 {
   "pk": 1100396,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Coriell",
-    "group": 5,
-    "english_class": 16,
-    "ihs_class": 26,
     "last_name": "Alexander",
-    "email": "coriellla19@ausdk12.org"
+    "first_name": "Coriell",
+    "group": null,
+    "email": "coriellla19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100415,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Jrade",
     "first_name": "Ely",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Jrade",
-    "email": "elybj19@ausdk12.org"
+    "email": "elybj19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 1100430,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kyle",
     "first_name": "Noel",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Kyle",
-    "email": "noelkk19@ausdk12.org"
+    "email": "noelkk19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 32
   }
 },
 {
   "pk": 1100435,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Xia",
     "first_name": "Fan",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 28,
-    "last_name": "Xia",
-    "email": "fanx19@ausdk12.org"
+    "email": "fanx19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 33
   }
 },
 {
   "pk": 1100438,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ingalls",
     "first_name": "Serena",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Ingalls",
-    "email": "serenami19@ausdk12.org"
+    "email": "serenami19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 32
   }
 },
 {
   "pk": 1100441,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Siegmann-Watson",
     "first_name": "Milo",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Siegmann-Watson",
-    "email": "miloss19@ausdk12.org"
+    "email": "miloss19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 1100446,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Gagnon",
     "first_name": "Moka",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Gagnon",
-    "email": "mokaag19@ausdk12.org"
+    "email": "mokaag19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100447,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Jarman",
     "first_name": "Joaquin",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 22,
-    "last_name": "Jarman",
-    "email": "joaquinlj19@ausdk12.org"
+    "email": "joaquinlj19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100453,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Irvine",
     "first_name": "Kolomona Ryan",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Irvine",
-    "email": "kolomonami19@ausdk12.org"
+    "email": "kolomonami19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 23
   }
 },
 {
   "pk": 1100467,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Faine",
     "first_name": "Kirby",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Faine",
-    "email": "kirbypf19@ausdk12.org"
+    "email": "kirbypf19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 1100471,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rogers",
     "first_name": "Aidan",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 22,
-    "last_name": "Rogers",
-    "email": "aidannr19@ausdk12.org"
+    "email": "aidannr19@ausdk12.org",
+    "english_class": 28,
+    "ihs_class": 38
   }
 },
 {
   "pk": 1100476,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Jandali",
     "first_name": "Yusuf",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Jandali",
-    "email": "yusufzj19@ausdk12.org"
+    "email": "yusufzj19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 32
+  }
+},
+{
+  "pk": 1100477,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Jackson-Daley",
+    "first_name": "Lucas",
+    "group": null,
+    "email": "lucasj19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 32
   }
 },
 {
   "pk": 1100483,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Ramirez",
     "first_name": "Raquel",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 23,
-    "last_name": "Ramirez",
-    "email": "raqueler19@ausdk12.org"
+    "email": "raqueler19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 20
   }
 },
 {
   "pk": 1100485,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Nyoni",
     "first_name": "Lungile",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Nyoni",
-    "email": "lungilenn19@ausdk12.org"
+    "email": "lungilenn19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 38
   }
 },
 {
   "pk": 1100486,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Yangdon",
     "first_name": "Tenzin",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Yangdon",
-    "email": "tenziny19@ausdk12.org"
+    "email": "tenziny19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 39
   }
 },
 {
   "pk": 1100487,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Simental",
     "first_name": "Angel",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Simental",
-    "email": "angels19@ausdk12.org"
+    "email": "angels19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 38
   }
 },
 {
   "pk": 1100498,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hufler",
     "first_name": "Quinn",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 25,
-    "last_name": "Hufler",
-    "email": "quinnh19@ausdk12.org"
+    "email": "quinnh19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 22
   }
 },
 {
   "pk": 1100510,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Batchuluun",
-    "group": 7,
-    "english_class": 18,
-    "ihs_class": 22,
     "last_name": "Battulga",
-    "email": "Bojuulaa@gmail.com"
-  }
-},
-{
-  "pk": 3100012,
-  "model": "group_manager.student",
-  "fields": {
-    "first_name": "Veronica",
+    "first_name": "Batchuluun",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 24,
-    "last_name": "Brown",
-    "email": "veronicab19@ausdk12.org"
+    "email": "Bojuulaa@gmail.com",
+    "english_class": 35,
+    "ihs_class": 19
   }
 },
 {
   "pk": 3100014,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Mowdy",
     "first_name": "Christopher",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Mowdy",
-    "email": "christophermm19@ausdk12.org"
+    "email": "christophermm19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 32
   }
 },
 {
   "pk": 3100023,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Taylor",
     "first_name": "Logan",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Taylor",
-    "email": "loganjt19@ausdk12.org"
+    "email": "loganjt19@ausdk12.org",
+    "english_class": 41,
+    "ihs_class": 39
   }
 },
 {
   "pk": 3100077,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kwan-Sy",
     "first_name": "Kailani",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 22,
-    "last_name": "Kwan-Sy",
-    "email": "kailanibk19@ausdk12.org"
+    "email": "kailanibk19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
   }
 },
 {
   "pk": 3100179,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Guerrero",
     "first_name": "Nyah",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Guerrero",
-    "email": "nyahg19@ausdk12.org"
+    "email": "nyahg19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 23
   }
 },
 {
   "pk": 3100180,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Robey",
     "first_name": "Tara",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 25,
-    "last_name": "Robey",
-    "email": "taraer19@ausdk12.org"
+    "email": "taraer19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 22
   }
 },
 {
   "pk": 3100186,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sloan",
     "first_name": "Joshua",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 22,
-    "last_name": "Sloan",
-    "email": "joshuacs19@ausdk12.org"
+    "email": "joshuacs19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 19
   }
 },
 {
   "pk": 4100005,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Henriquez",
     "first_name": "Daniel",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Henriquez",
-    "email": "danieleh19@ausdk12.org"
+    "email": "danieleh19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 4100024,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Hong",
     "first_name": "Angela",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Hong",
-    "email": "angelah19@ausdk12.org"
+    "email": "angelah19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 4100025,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Pandey",
     "first_name": "Roshan",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 27,
-    "last_name": "Pandey",
-    "email": "roshanp19@ausdk12.org"
+    "email": "roshanp19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 31
   }
 },
 {
   "pk": 4100029,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Palega",
     "first_name": "Jalen",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Palega",
-    "email": "jalenp19@ausdk12.org"
+    "email": "jalenp19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 21
   }
 },
 {
   "pk": 4100141,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Monk",
     "first_name": "John",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 27,
-    "last_name": "Monk",
-    "email": "johndm19@ausdk12.org"
+    "email": "johndm19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 4100151,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Thomsen",
     "first_name": "Georgia",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 28,
-    "last_name": "Thomsen",
-    "email": "georgiaet19@ausdk12.org"
+    "email": "georgiaet19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 33
   }
 },
 {
   "pk": 5100117,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kosma",
     "first_name": "Marcus",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 26,
-    "last_name": "Kosma",
-    "email": "marcusok19@ausdk12.org"
+    "email": "marcusok19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 23
   }
 },
 {
   "pk": 5100166,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Devun Norberto",
-    "group": 6,
-    "english_class": 19,
-    "ihs_class": 27,
     "last_name": "Amoranto",
-    "email": "devunja19@ausdk12.org"
+    "first_name": "Devun Norberto",
+    "group": null,
+    "email": "devunja19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 31
   }
 },
 {
   "pk": 5100253,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Park",
     "first_name": "Jun Seo",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Park",
-    "email": "junp19@ausdk12.org"
+    "email": "junp19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 5100258,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Sarikakis",
     "first_name": "Emilia",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Sarikakis",
-    "email": "emiliams19@ausdk12.org"
+    "email": "emiliams19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 5100268,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "O'Connell",
     "first_name": "Henry",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 24,
-    "last_name": "O'Connell",
-    "email": "henryco19@ausdk12.org"
+    "email": "henryco19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 21
   }
 },
 {
   "pk": 5100341,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Jones",
     "first_name": "Netsannet",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Jones",
-    "email": "netsannetsj19@ausdk12.org"
+    "email": "netsannetsj19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 21
   }
 },
 {
   "pk": 5100397,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Kearney",
     "first_name": "Milo",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 23,
-    "last_name": "Kearney",
-    "email": "milok19@ausdk12.org"
+    "email": "milok19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 20
   }
 },
 {
   "pk": 100100430,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rodriguez",
     "first_name": "Barry",
     "group": null,
-    "english_class": 21,
-    "ihs_class": 26,
-    "last_name": "Rodriguez",
-    "email": "barryar19@ausdk12.org"
+    "email": "barryar19@ausdk12.org",
+    "english_class": 37,
+    "ihs_class": 23
   }
 },
 {
   "pk": 100100432,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Torres Gutierrez",
     "first_name": "Jonathan",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 27,
-    "last_name": "Torres Gutierrez",
-    "email": "jonathanbt19@ausdk12.org"
+    "email": "jonathanbt19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 32
   }
 },
 {
   "pk": 100100433,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Torres",
     "first_name": "Arnold",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 27,
-    "last_name": "Torres",
-    "email": "arnoldft19@ausdk12.org"
+    "email": "arnoldft19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 31
   }
 },
 {
   "pk": 100100434,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Park",
     "first_name": "Daniel",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 25,
-    "last_name": "Park",
-    "email": "danielp19@ausdk12.org"
+    "email": "danielp19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 22
   }
 },
 {
   "pk": 100100437,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Harkness",
     "first_name": "Zachary",
     "group": null,
-    "english_class": 20,
-    "ihs_class": 22,
-    "last_name": "Harkness",
-    "email": "zacharywh19@ausdk12.org"
+    "email": "zacharywh19@ausdk12.org",
+    "english_class": 27,
+    "ihs_class": 19
   }
 },
 {
   "pk": 100100438,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Massoudi",
     "first_name": "Leila",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 24,
-    "last_name": "Massoudi",
-    "email": "leilamm19@ausdk12.org"
+    "email": "leilamm19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 30
   }
 },
 {
   "pk": 100100439,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rissmann",
     "first_name": "Tyler",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Rissmann",
-    "email": "tylergr19@ausdk12.org"
+    "email": "tylergr19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 100100444,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Tan",
     "first_name": "Zheng",
     "group": null,
-    "english_class": 17,
-    "ihs_class": 27,
-    "last_name": "Tan",
-    "email": "zhengbt19@ausdk12.org"
+    "email": "zhengbt19@ausdk12.org",
+    "english_class": 34,
+    "ihs_class": 31
   }
 },
 {
   "pk": 100100446,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Gillis",
     "first_name": "Hailie",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 26,
-    "last_name": "Gillis",
-    "email": "hailieg19@ausdk12.org"
+    "email": "hailieg19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 23
   }
 },
 {
   "pk": 100100447,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Siecienski",
     "first_name": "Emma",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 24,
-    "last_name": "Siecienski",
-    "email": "emmams19@ausdk12.org"
+    "email": "emmams19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 21
   }
 },
 {
   "pk": 100100449,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Maaren",
     "first_name": "Sebastian",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 22,
-    "last_name": "Maaren",
-    "email": "sebastianmm19@ausdk12.org"
+    "email": "sebastianmm19@ausdk12.org",
+    "english_class": 29,
+    "ihs_class": 38
   }
 },
 {
   "pk": 100100450,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "Christina",
-    "group": 7,
-    "english_class": 19,
-    "ihs_class": 24,
     "last_name": "Blake",
-    "email": "christinalb18@ausdk12.org"
+    "first_name": "Christina",
+    "group": null,
+    "email": "christinalb18@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 },
 {
   "pk": 100100453,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Stewart",
     "first_name": "Mikaela",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 23,
-    "last_name": "Stewart",
-    "email": "mikaelaas19@ausdk12.org"
+    "email": "mikaelaas19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 20
   }
 },
 {
   "pk": 100100456,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Polidori",
     "first_name": "Richard",
     "group": null,
-    "english_class": 18,
-    "ihs_class": 24,
-    "last_name": "Polidori",
-    "email": "richardp19@ausdk12.org"
+    "email": "richardp19@ausdk12.org",
+    "english_class": 35,
+    "ihs_class": 30
   }
 },
 {
   "pk": 100100460,
   "model": "group_manager.student",
   "fields": {
-    "first_name": "James",
-    "group": 6,
-    "english_class": 17,
-    "ihs_class": 22,
     "last_name": "Attree",
-    "email": "jamesja19@ausdk12.org"
+    "first_name": "James",
+    "group": null,
+    "email": "jamesja19@ausdk12.org",
+    "english_class": 25,
+    "ihs_class": 19
+  }
+},
+{
+  "pk": 100100461,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Aguilar",
+    "first_name": "Jessica",
+    "group": null,
+    "email": "jessicala19@ausdk12.org",
+    "english_class": 26,
+    "ihs_class": 19
   }
 },
 {
   "pk": 100100462,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Rodriguez",
     "first_name": "Adrian",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 25,
-    "last_name": "Rodriguez",
-    "email": "ajr26643@gmail.com"
+    "email": "ajr26643@gmail.com",
+    "english_class": 24,
+    "ihs_class": 22
+  }
+},
+{
+  "pk": 100100469,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Soares",
+    "first_name": "Clara",
+    "group": null,
+    "email": "claras19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 22
   }
 },
 {
   "pk": 100100470,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Mbacke",
     "first_name": "Bassirou",
     "group": null,
-    "english_class": 16,
-    "ihs_class": 26,
-    "last_name": "Mbacke",
-    "email": "bassiroujm19@ausdk12.org"
+    "email": "bassiroujm19@ausdk12.org",
+    "english_class": 40,
+    "ihs_class": 39
   }
 },
 {
   "pk": 100100472,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Olip-Booth",
     "first_name": "Amelia",
     "group": null,
-    "english_class": 15,
-    "ihs_class": 25,
-    "last_name": "Olip-Booth",
-    "email": "ameliaro19@ausdk12.org"
+    "email": "ameliaro19@ausdk12.org",
+    "english_class": 24,
+    "ihs_class": 22
+  }
+},
+{
+  "pk": 100100482,
+  "model": "group_manager.student",
+  "fields": {
+    "last_name": "Gallardo",
+    "first_name": "Alfred",
+    "group": null,
+    "email": "alfredag19@ausdk12.org",
+    "english_class": null,
+    "ihs_class": 22
   }
 },
 {
   "pk": 100100483,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Bryant",
     "first_name": "Julian",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Bryant",
-    "email": "juliancb19@ausdk12.org"
+    "email": "juliancb19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 },
 {
   "pk": 300000002,
   "model": "group_manager.student",
   "fields": {
+    "last_name": "Mighetto",
     "first_name": "Edward",
     "group": null,
-    "english_class": 19,
-    "ihs_class": 24,
-    "last_name": "Mighetto",
-    "email": "edwardlm19@ausdk12.org"
-  }
-},
-{
-  "pk": 201965,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Katherine",
-    "email": "katherinegp17@ausdk12.org",
-    "last_name": "Perdue"
-  }
-},
-{
-  "pk": 201988,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Andrew",
-    "email": "andrewwl17@ausdk12.org",
-    "last_name": "Liu"
-  }
-},
-{
-  "pk": 202742,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Portia",
-    "email": "portiala17@ausdk12.org",
-    "last_name": "Abbott"
-  }
-},
-{
-  "pk": 202743,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jordan",
-    "email": "jordanma17@ausdk12.org",
-    "last_name": "Allen"
-  }
-},
-{
-  "pk": 202823,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Drew",
-    "email": "drewcb17@ausdk12.org",
-    "last_name": "Baldwin"
-  }
-},
-{
-  "pk": 202824,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jonathan",
-    "email": "jonathanwb17@ausdk12.org",
-    "last_name": "Barnes"
-  }
-},
-{
-  "pk": 202828,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Crew",
-    "email": "crewvb17@ausdk12.org",
-    "last_name": "Bittner"
-  }
-},
-{
-  "pk": 202829,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Henry",
-    "email": "henrymb17@ausdk12.org",
-    "last_name": "Brusseau"
-  }
-},
-{
-  "pk": 202831,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Julian",
-    "email": "julianhb17@ausdk12.org",
-    "last_name": "Burke"
-  }
-},
-{
-  "pk": 202836,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Benjamin",
-    "email": "benjaminmc17@ausdk12.org",
-    "last_name": "Church"
-  }
-},
-{
-  "pk": 202837,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Alexander",
-    "email": "alexanderhc17@ausdk12.org",
-    "last_name": "Cohen"
-  }
-},
-{
-  "pk": 202838,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Noah",
-    "email": "noahsc17@ausdk12.org",
-    "last_name": "Cohen"
-  }
-},
-{
-  "pk": 202840,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eva",
-    "email": "evarc17@ausdk12.org",
-    "last_name": "Collins"
-  }
-},
-{
-  "pk": 202841,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jane",
-    "email": "janewc17@ausdk12.org",
-    "last_name": "Collins"
-  }
-},
-{
-  "pk": 202844,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Dexter",
-    "email": "dexterqc17@ausdk12.org",
-    "last_name": "Cotton"
-  }
-},
-{
-  "pk": 202845,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Trey",
-    "email": "treymd17@ausdk12.org",
-    "last_name": "Dao"
-  }
-},
-{
-  "pk": 202846,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lucas",
-    "email": "lucascd17@ausdk12.org",
-    "last_name": "De Hart"
-  }
-},
-{
-  "pk": 202880,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "April",
-    "email": "aprilae17@ausdk12.org",
-    "last_name": "Elder-Ernst"
-  }
-},
-{
-  "pk": 202881,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Angela",
-    "email": "angelaf17@ausdk12.org",
-    "last_name": "Feng"
-  }
-},
-{
-  "pk": 202883,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Daniel",
-    "email": "danieldf17@ausdk12.org",
-    "last_name": "Fone"
-  }
-},
-{
-  "pk": 202884,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gabriel",
-    "email": "gabrieltf17@ausdk12.org",
-    "last_name": "Freed"
-  }
-},
-{
-  "pk": 202886,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Christopher",
-    "email": "christopherag17@ausdk12.org",
-    "last_name": "Garcia"
-  }
-},
-{
-  "pk": 202887,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Julia",
-    "email": "juliaag17@ausdk12.org",
-    "last_name": "Glasser"
-  }
-},
-{
-  "pk": 202889,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Francis",
-    "email": "franciskg17@ausdk12.org",
-    "last_name": "Goess"
-  }
-},
-{
-  "pk": 202892,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Michael",
-    "email": "michaelth17@ausdk12.org",
-    "last_name": "Haight"
-  }
-},
-{
-  "pk": 202895,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Alexander",
-    "email": "alexanderdh17@ausdk12.org",
-    "last_name": "Hempel"
-  }
-},
-{
-  "pk": 202898,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lily",
-    "email": "lilyih17@ausdk12.org",
-    "last_name": "Hopwood"
-  }
-},
-{
-  "pk": 202900,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sophia",
-    "email": "sophiaah17@ausdk12.org",
-    "last_name": "Howard"
-  }
-},
-{
-  "pk": 202902,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Richard",
-    "email": "richardng17@ausdk12.org",
-    "last_name": "Gray"
-  }
-},
-{
-  "pk": 202903,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Wynter",
-    "email": "wynterrh17@ausdk12.org",
-    "last_name": "Huntenburg"
-  }
-},
-{
-  "pk": 202904,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Julia",
-    "email": "juliabg17@ausdk12.org",
-    "last_name": "Greensfelder"
-  }
-},
-{
-  "pk": 202905,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jayson",
-    "email": "jaysonnk17@ausdk12.org",
-    "last_name": "Kamuri"
-  }
-},
-{
-  "pk": 202906,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kyra",
-    "email": "kyraak17@ausdk12.org",
-    "last_name": "Kawamoto"
-  }
-},
-{
-  "pk": 202907,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jessica",
-    "email": "jessicaek17@ausdk12.org",
-    "last_name": "Kelly"
-  }
-},
-{
-  "pk": 202909,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Estine",
-    "email": "estinek17@ausdk12.org",
-    "last_name": "Kim"
-  }
-},
-{
-  "pk": 202913,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Peggy",
-    "email": "peggyky17@ausdk12.org",
-    "last_name": "Yan"
-  }
-},
-{
-  "pk": 202915,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Isabel",
-    "email": "isabelml17@ausdk12.org",
-    "last_name": "Lavrov"
-  }
-},
-{
-  "pk": 202917,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Celia",
-    "email": "celiajl17@ausdk12.org",
-    "last_name": "Lee"
-  }
-},
-{
-  "pk": 202920,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Riley",
-    "email": "rileysl17@ausdk12.org",
-    "last_name": "Lee"
-  }
-},
-{
-  "pk": 202924,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nikolas",
-    "email": "nikolasml17@ausdk12.org",
-    "last_name": "Lopez"
-  }
-},
-{
-  "pk": 202928,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Prynce-Rahyeem",
-    "email": "pryncerahyeemtm17@ausdk12.org",
-    "last_name": "Martin"
-  }
-},
-{
-  "pk": 202932,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Mariah",
-    "email": "mariaham17@ausdk12.org",
-    "last_name": "McKinney-Lerma"
-  }
-},
-{
-  "pk": 202933,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Shaudia",
-    "email": "shaudialm17@ausdk12.org",
-    "last_name": "McKissack"
-  }
-},
-{
-  "pk": 202937,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Conor",
-    "email": "conorpn17@ausdk12.org",
-    "last_name": "Norris"
-  }
-},
-{
-  "pk": 202942,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Maya",
-    "email": "mayamp17@ausdk12.org",
-    "last_name": "Palioca"
-  }
-},
-{
-  "pk": 202946,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Skylee",
-    "email": "skyleeam17@ausdk12.org",
-    "last_name": "Morrison"
-  }
-},
-{
-  "pk": 202947,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Herschel",
-    "email": "herschelmp17@ausdk12.org",
-    "last_name": "Portnoy"
-  }
-},
-{
-  "pk": 202951,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Mia",
-    "email": "miaar17@ausdk12.org",
-    "last_name": "Rabin"
-  }
-},
-{
-  "pk": 202952,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Alison",
-    "email": "alisonmr17@ausdk12.org",
-    "last_name": "Radkey"
-  }
-},
-{
-  "pk": 202956,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nathaniel",
-    "email": "nathanielar17@ausdk12.org",
-    "last_name": "Rhodes"
-  }
-},
-{
-  "pk": 202957,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Clare",
-    "email": "claresr17@ausdk12.org",
-    "last_name": "Ritchie"
-  }
-},
-{
-  "pk": 202958,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Miranda",
-    "email": "mirandalr17@ausdk12.org",
-    "last_name": "Robbeloth"
-  }
-},
-{
-  "pk": 202960,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Stacey",
-    "email": "staceyyr17@ausdk12.org",
-    "last_name": "Rodriguez"
-  }
-},
-{
-  "pk": 202963,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nicholas",
-    "email": "nicholasrr17@ausdk12.org",
-    "last_name": "Rynhoud"
-  }
-},
-{
-  "pk": 202964,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Adina",
-    "email": "adinals17@ausdk12.org",
-    "last_name": "Saaf"
-  }
-},
-{
-  "pk": 202965,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nathaniel",
-    "email": "nathanielrs17@ausdk12.org",
-    "last_name": "Sanders"
-  }
-},
-{
-  "pk": 202966,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jonathan",
-    "email": "jonathans17@ausdk12.org",
-    "last_name": "Shan"
-  }
-},
-{
-  "pk": 202968,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Quentin",
-    "email": "quentinas17@ausdk12.org",
-    "last_name": "Shelton"
-  }
-},
-{
-  "pk": 202969,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Abegail",
-    "email": "abegailos17@ausdk12.org",
-    "last_name": "Shores"
-  }
-},
-{
-  "pk": 202970,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Cody",
-    "email": "codyss17@ausdk12.org",
-    "last_name": "Sim"
-  }
-},
-{
-  "pk": 202971,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lyle",
-    "email": "lyleps17@ausdk12.org",
-    "last_name": "Simmons"
-  }
-},
-{
-  "pk": 202975,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Alan",
-    "email": "alanyl17@ausdk12.org",
-    "last_name": "Liang"
-  }
-},
-{
-  "pk": 202976,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Brian",
-    "email": "brianyl17@ausdk12.org",
-    "last_name": "Liang"
-  }
-},
-{
-  "pk": 202979,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Graeme",
-    "email": "graemepn17@ausdk12.org",
-    "last_name": "Norris"
-  }
-},
-{
-  "pk": 202981,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Icyss",
-    "email": "icyssmo17@ausdk12.org",
-    "last_name": "Olivas"
-  }
-},
-{
-  "pk": 202983,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Alexis",
-    "email": "alexistb17@ausdk12.org",
-    "last_name": "Ballman"
-  }
-},
-{
-  "pk": 202984,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eva",
-    "email": "evajj17@ausdk12.org",
-    "last_name": "Juengling Bean"
-  }
-},
-{
-  "pk": 202985,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Will",
-    "email": "willgb17@ausdk12.org",
-    "last_name": "Burkett"
-  }
-},
-{
-  "pk": 202988,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Cory",
-    "email": "coryds17@ausdk12.org",
-    "last_name": "Sterner"
-  }
-},
-{
-  "pk": 202993,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lucia",
-    "email": "luciamc17@ausdk12.org",
-    "last_name": "Curran"
-  }
-},
-{
-  "pk": 202996,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Isabella",
-    "email": "isabellat17@ausdk12.org",
-    "last_name": "Tangherlini"
-  }
-},
-{
-  "pk": 202997,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lucie",
-    "email": "luciebf17@ausdk12.org",
-    "last_name": "Frauenfelder"
-  }
-},
-{
-  "pk": 202998,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Benedict",
-    "email": "benedictt17@ausdk12.org",
-    "last_name": "Tannady"
-  }
-},
-{
-  "pk": 202999,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Haoyi",
-    "email": "haoyit17@ausdk12.org",
-    "last_name": "Tian"
-  }
-},
-{
-  "pk": 203000,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Henry",
-    "email": "henrynt17@ausdk12.org",
-    "last_name": "Thomas"
-  }
-},
-{
-  "pk": 203001,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Oona",
-    "email": "oonalf17@ausdk12.org",
-    "last_name": "Frauenfelder"
-  }
-},
-{
-  "pk": 203002,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kristie",
-    "email": "kristiec17@ausdk12.org",
-    "last_name": "Chen"
-  }
-},
-{
-  "pk": 203003,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eileen",
-    "email": "eileenht17@ausdk12.org",
-    "last_name": "Tran"
-  }
-},
-{
-  "pk": 203004,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Claire",
-    "email": "clairecc17@ausdk12.org",
-    "last_name": "Chuang"
-  }
-},
-{
-  "pk": 203007,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Raiden",
-    "email": "raidenwv17@ausdk12.org",
-    "last_name": "Van Bronkhorst"
-  }
-},
-{
-  "pk": 203008,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Margaret",
-    "email": "margaretjf17@ausdk12.org",
-    "last_name": "Flanagan"
-  }
-},
-{
-  "pk": 203009,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ryan",
-    "email": "ryannh17@ausdk12.org",
-    "last_name": "Higley"
-  }
-},
-{
-  "pk": 203010,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Samuel",
-    "email": "samueltw17@ausdk12.org",
-    "last_name": "Walden"
-  }
-},
-{
-  "pk": 203011,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sean",
-    "email": "seannh17@ausdk12.org",
-    "last_name": "Higley"
-  }
-},
-{
-  "pk": 203013,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Erik",
-    "email": "eriklh17@ausdk12.org",
-    "last_name": "Hsu-Storaker"
-  }
-},
-{
-  "pk": 203016,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nicholas",
-    "email": "nicholaspw17@ausdk12.org",
-    "last_name": "Wood"
-  }
-},
-{
-  "pk": 203019,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jenny",
-    "email": "jennyl17@ausdk12.org",
-    "last_name": "Li"
-  }
-},
-{
-  "pk": 203020,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Isaac",
-    "email": "isaacjm17@ausdk12.org",
-    "last_name": "Martin-Beer"
-  }
-},
-{
-  "pk": 203021,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nathan",
-    "email": "nathanbx17@ausdk12.org",
-    "last_name": "Xu"
-  }
-},
-{
-  "pk": 203023,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Trishna",
-    "email": "trishnap17@ausdk12.org",
-    "last_name": "Patkar-Banerjee"
-  }
-},
-{
-  "pk": 203029,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Weidi",
-    "email": "weidiz17@ausdk12.org",
-    "last_name": "Zhang"
-  }
-},
-{
-  "pk": 203033,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Andrew",
-    "email": "andrewaz17@ausdk12.org",
-    "last_name": "Zhang"
-  }
-},
-{
-  "pk": 203036,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Talia",
-    "email": "taliamw17@ausdk12.org",
-    "last_name": "Weston"
-  }
-},
-{
-  "pk": 203039,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Giacomo",
-    "email": "giacomomp17@ausdk12.org",
-    "last_name": "Prioreschi"
-  }
-},
-{
-  "pk": 203044,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Luke",
-    "email": "lukeee17@ausdk12.org",
-    "last_name": "Ernst"
-  }
-},
-{
-  "pk": 203050,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Michael",
-    "email": "michaeljj17@ausdk12.org",
-    "last_name": "Javier"
-  }
-},
-{
-  "pk": 203096,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Darren",
-    "email": "darrenl17@ausdk12.org",
-    "last_name": "Leung"
-  }
-},
-{
-  "pk": 203097,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Myles",
-    "email": "mylesah17@ausdk12.org",
-    "last_name": "Halpern"
-  }
-},
-{
-  "pk": 203098,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Cody",
-    "email": "codyjr17@ausdk12.org",
-    "last_name": "Rapella"
-  }
-},
-{
-  "pk": 203099,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Anastazia",
-    "email": "anastaziamp17@ausdk12.org",
-    "last_name": "Paiz"
-  }
-},
-{
-  "pk": 203100,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Willis",
-    "email": "willisfc17@ausdk12.org",
-    "last_name": "Cao"
-  }
-},
-{
-  "pk": 203101,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Briahna",
-    "email": "briahnacj17@ausdk12.org",
-    "last_name": "Jackson"
-  }
-},
-{
-  "pk": 203102,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nikas",
-    "email": "nikasnm17@ausdk12.org",
-    "last_name": "Mermer"
-  }
-},
-{
-  "pk": 203103,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Delilah",
-    "email": "delilahr17@ausdk12.org",
-    "last_name": "Ralston"
-  }
-},
-{
-  "pk": 203104,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Shannon",
-    "email": "shannonjc17@ausdk12.org",
-    "last_name": "Choi"
-  }
-},
-{
-  "pk": 203105,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Michael",
-    "email": "michaelme17@ausdk12.org",
-    "last_name": "Endo"
-  }
-},
-{
-  "pk": 203107,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Brian",
-    "email": "brianvc17@ausdk12.org",
-    "last_name": "Citragno"
-  }
-},
-{
-  "pk": 203108,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Bryan",
-    "email": "bryandm17@ausdk12.org",
-    "last_name": "Mendes"
-  }
-},
-{
-  "pk": 203109,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Micaella",
-    "email": "micaellatm17@ausdk12.org",
-    "last_name": "Mosqueda"
-  }
-},
-{
-  "pk": 203110,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gabriel",
-    "email": "gabrielmd17@ausdk12.org",
-    "last_name": "DaSilva"
-  }
-},
-{
-  "pk": 203111,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lucia",
-    "email": "luciane17@ausdk12.org",
-    "last_name": "Escoto"
-  }
-},
-{
-  "pk": 203115,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Summer",
-    "email": "summerlv17@ausdk12.org",
-    "last_name": "Vodnoy"
-  }
-},
-{
-  "pk": 203116,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Clarissa",
-    "email": "clarissarm17@ausdk12.org",
-    "last_name": "McNally"
-  }
-},
-{
-  "pk": 203117,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Remy",
-    "email": "remyls17@ausdk12.org",
-    "last_name": "Supar"
-  }
-},
-{
-  "pk": 203118,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sophia",
-    "email": "sophiams17@ausdk12.org",
-    "last_name": "Supar"
-  }
-},
-{
-  "pk": 203119,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Elle",
-    "email": "ellehj17@ausdk12.org",
-    "last_name": "Jackson"
-  }
-},
-{
-  "pk": 203120,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kaeden",
-    "email": "kaedenmw17@ausdk12.org",
-    "last_name": "Wemmer"
-  }
-},
-{
-  "pk": 203124,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Brian",
-    "email": "brianp17@ausdk12.org",
-    "last_name": "Pennington-Kent"
-  }
-},
-{
-  "pk": 203125,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kevin",
-    "email": "kevinsz17@ausdk12.org",
-    "last_name": "Zhang"
-  }
-},
-{
-  "pk": 203176,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Bryan",
-    "email": "bryant17@ausdk12.org",
-    "last_name": "Tran"
-  }
-},
-{
-  "pk": 203178,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Manyi",
-    "email": "manyil17@ausdk12.org",
-    "last_name": "Leung"
-  }
-},
-{
-  "pk": 203233,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Michael",
-    "email": "michaelyt17@ausdk12.org",
-    "last_name": "Than"
-  }
-},
-{
-  "pk": 203247,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ivan",
-    "email": "ivanj17@ausdk12.org",
-    "last_name": "Juarez"
-  }
-},
-{
-  "pk": 203337,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jared",
-    "email": "jaredrf17@ausdk12.org",
-    "last_name": "Ferguson"
-  }
-},
-{
-  "pk": 203349,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Grace",
-    "email": "gracecp17@ausdk12.org",
-    "last_name": "Patterson"
-  }
-},
-{
-  "pk": 203351,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Loma",
-    "email": "lomask17@ausdk12.org",
-    "last_name": "Kim-Mann"
-  }
-},
-{
-  "pk": 203378,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Dylan",
-    "email": "dylansr17@ausdk12.org",
-    "last_name": "Ransley"
-  }
-},
-{
-  "pk": 203386,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Emily",
-    "email": "emilyh17@ausdk12.org",
-    "last_name": "Ho"
-  }
-},
-{
-  "pk": 203387,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Stephanie",
-    "email": "stephaniepw17@ausdk12.org",
-    "last_name": "Wu"
-  }
-},
-{
-  "pk": 203392,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Tallulah",
-    "email": "tallulahrl17@ausdk12.org",
-    "last_name": "Lebowitz"
-  }
-},
-{
-  "pk": 203398,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Alexander",
-    "email": "alexandersr17@ausdk12.org",
-    "last_name": "Rahman"
-  }
-},
-{
-  "pk": 203458,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Scott",
-    "email": "scottf17@ausdk12.org",
-    "last_name": "Fong"
-  }
-},
-{
-  "pk": 203539,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Enhsaruul",
-    "email": "enhsaruulsz17@ausdk12.org",
-    "last_name": "Zorigt"
-  }
-},
-{
-  "pk": 203579,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Emita",
-    "email": "emitaa17@ausdk12.org",
-    "last_name": "Amatya"
-  }
-},
-{
-  "pk": 203595,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Joshua",
-    "email": "joshuals17@ausdk12.org",
-    "last_name": "Solomon-Culp"
-  }
-},
-{
-  "pk": 203683,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Michael",
-    "email": "michaeljw17@ausdk12.org",
-    "last_name": "Wang"
-  }
-},
-{
-  "pk": 203796,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Karin",
-    "email": "karinp17@ausdk12.org",
-    "last_name": "Pal"
-  }
-},
-{
-  "pk": 203799,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Alejandra",
-    "email": "alejandraga17@ausdk12.org",
-    "last_name": "Aguilar"
-  }
-},
-{
-  "pk": 203800,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Isabel",
-    "email": "isabelma17@ausdk12.org",
-    "last_name": "Aguilar"
-  }
-},
-{
-  "pk": 203801,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Elizabeth",
-    "email": "elizabethas17@ausdk12.org",
-    "last_name": "Storrs"
-  }
-},
-{
-  "pk": 203802,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lewis",
-    "email": "lewisjp17@ausdk12.org",
-    "last_name": "Pietropaoli"
-  }
-},
-{
-  "pk": 203803,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Julia",
-    "email": "juliaap17@ausdk12.org",
-    "last_name": "Panian"
-  }
-},
-{
-  "pk": 203805,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Mehra",
-    "email": "mehrao17@ausdk12.org",
-    "last_name": "Osterholt"
-  }
-},
-{
-  "pk": 203863,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gabriel",
-    "email": "gabrieldw17@ausdk12.org",
-    "last_name": "Walden"
-  }
-},
-{
-  "pk": 203864,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kenton",
-    "email": "kentonay17@ausdk12.org",
-    "last_name": "Yee"
-  }
-},
-{
-  "pk": 203866,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Herman",
-    "email": "hermanw17@ausdk12.org",
-    "last_name": "Wu"
-  }
-},
-{
-  "pk": 203943,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ratu",
-    "email": "ratumm17@ausdk12.org",
-    "last_name": "Maulana"
-  }
-},
-{
-  "pk": 204054,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nicholas",
-    "email": "nicholasao17@ausdk12.org",
-    "last_name": "Olmos"
-  }
-},
-{
-  "pk": 204128,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Amuunaa",
-    "email": "amuunaaz17@ausdk12.org",
-    "last_name": "Zulkhuu"
-  }
-},
-{
-  "pk": 204132,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Justin",
-    "email": "justins17@ausdk12.org",
-    "last_name": "Shen"
-  }
-},
-{
-  "pk": 204194,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Wajiha",
-    "email": "wajihaz17@ausdk12.org",
-    "last_name": "Zahid"
-  }
-},
-{
-  "pk": 204249,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Maria",
-    "email": "mariadc17@ausdk12.org",
-    "last_name": "Cortes"
-  }
-},
-{
-  "pk": 204316,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Harry",
-    "email": "harrybf17@ausdk12.org",
-    "last_name": "Fricker"
-  }
-},
-{
-  "pk": 204571,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Maria",
-    "email": "mariafa17@ausdk12.org",
-    "last_name": "Aguayo"
-  }
-},
-{
-  "pk": 204573,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nicholas",
-    "email": "nicholasds17@ausdk12.org",
-    "last_name": "Scott"
-  }
-},
-{
-  "pk": 204574,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eliana",
-    "email": "elianaxs17@ausdk12.org",
-    "last_name": "Senturia"
-  }
-},
-{
-  "pk": 204576,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Simon",
-    "email": "simonaz17@ausdk12.org",
-    "last_name": "Zeiger"
-  }
-},
-{
-  "pk": 204644,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Timothy",
-    "email": "timothyql17@ausdk12.org",
-    "last_name": "Li"
-  }
-},
-{
-  "pk": 204717,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Olivia",
-    "email": "oliviab17@ausdk12.org",
-    "last_name": "Bensman"
-  }
-},
-{
-  "pk": 204839,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ellie",
-    "email": "ellier17@ausdk12.org",
-    "last_name": "Roche"
-  }
-},
-{
-  "pk": 204844,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jaime",
-    "email": "jaimeeb17@ausdk12.org",
-    "last_name": "Banegas"
-  }
-},
-{
-  "pk": 204967,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Subeksha",
-    "email": "subekshas17@ausdk12.org",
-    "last_name": "Sharma"
-  }
-},
-{
-  "pk": 205121,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Christopher",
-    "email": "christopherlm17@ausdk12.org",
-    "last_name": "Miller"
-  }
-},
-{
-  "pk": 205305,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Niles",
-    "email": "nileshs17@ausdk12.org",
-    "last_name": "Shyu"
-  }
-},
-{
-  "pk": 205358,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kathryn",
-    "email": "kathrynec17@ausdk12.org",
-    "last_name": "Cassin"
-  }
-},
-{
-  "pk": 205367,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Mirei",
-    "email": "mireim17@ausdk12.org",
-    "last_name": "Machiyama"
-  }
-},
-{
-  "pk": 205444,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Tyler",
-    "email": "tylerrg17@ausdk12.org",
-    "last_name": "Georgeson-Hartman"
-  }
-},
-{
-  "pk": 205571,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jerome",
-    "email": "jeromejw17@ausdk12.org",
-    "last_name": "Wei"
-  }
-},
-{
-  "pk": 205603,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gonpo",
-    "email": "gonpot17@ausdk12.org",
-    "last_name": "Tashi"
-  }
-},
-{
-  "pk": 205666,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Tanan",
-    "email": "tananj17@ausdk12.org",
-    "last_name": "Javkhlantugs"
-  }
-},
-{
-  "pk": 205667,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "William",
-    "email": "williamck17@ausdk12.org",
-    "last_name": "Kim"
-  }
-},
-{
-  "pk": 205670,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Elliot",
-    "email": "elliotds17@ausdk12.org",
-    "last_name": "Skinner"
-  }
-},
-{
-  "pk": 205778,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jay",
-    "email": "jayrp17@ausdk12.org",
-    "last_name": "Parafina"
-  }
-},
-{
-  "pk": 205793,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gabriel",
-    "email": "gabrieljc17@ausdk12.org",
-    "last_name": "Cardozo"
-  }
-},
-{
-  "pk": 205798,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Aaron",
-    "email": "aaronb17@ausdk12.org",
-    "last_name": "Brumels"
-  }
-},
-{
-  "pk": 205853,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Christine",
-    "email": "christinejw17@ausdk12.org",
-    "last_name": "Wang"
-  }
-},
-{
-  "pk": 205864,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Mitchell",
-    "email": "mitchelljb17@ausdk12.org",
-    "last_name": "Buchan"
-  }
-},
-{
-  "pk": 205912,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lin",
-    "email": "linz17@ausdk12.org",
-    "last_name": "Zhu"
-  }
-},
-{
-  "pk": 206216,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Olivia",
-    "email": "oliviapk17@ausdk12.org",
-    "last_name": "Keller"
-  }
-},
-{
-  "pk": 206219,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lauren",
-    "email": "laurengr17@ausdk12.org",
-    "last_name": "Ray"
-  }
-},
-{
-  "pk": 206290,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Aman",
-    "email": "amanrs17@ausdk12.org",
-    "last_name": "Shrestha"
-  }
-},
-{
-  "pk": 206291,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Dasan",
-    "email": "dasanm17@ausdk12.org",
-    "last_name": "Milan"
-  }
-},
-{
-  "pk": 206293,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gwendolyn",
-    "email": "gwendolynmo17@ausdk12.org",
-    "last_name": "Ooghe"
-  }
-},
-{
-  "pk": 206296,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Garrison",
-    "email": "garrisonp17@ausdk12.org",
-    "last_name": "Pennington"
-  }
-},
-{
-  "pk": 206337,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Angel",
-    "email": "angelah17@ausdk12.org",
-    "last_name": "Hancock"
-  }
-},
-{
-  "pk": 206388,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lucas",
-    "email": "lucaskf17@ausdk12.org",
-    "last_name": "Fraga"
-  }
-},
-{
-  "pk": 206446,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Amy",
-    "email": "amyd17@ausdk12.org",
-    "last_name": "Dhakal"
-  }
-},
-{
-  "pk": 206641,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Julian",
-    "email": "julianro17@ausdk12.org",
-    "last_name": "Ou"
-  }
-},
-{
-  "pk": 206653,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Aniv",
-    "email": "anivrk17@ausdk12.org",
-    "last_name": "Khawaunju"
-  }
-},
-{
-  "pk": 207092,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gagandeep",
-    "email": "gagandeepst17@ausdk12.org",
-    "last_name": "Thandi"
-  }
-},
-{
-  "pk": 207093,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Harkaran",
-    "email": "harkaranss17@ausdk12.org",
-    "last_name": "Sidhu"
-  }
-},
-{
-  "pk": 207095,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Peter",
-    "email": "peterlg17@ausdk12.org",
-    "last_name": "Gibbons"
-  }
-},
-{
-  "pk": 207121,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jonah",
-    "email": "jonahpm17@ausdk12.org",
-    "last_name": "McClellan"
-  }
-},
-{
-  "pk": 207196,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Arayah",
-    "email": "arayahtf17@ausdk12.org",
-    "last_name": "Fleming"
-  }
-},
-{
-  "pk": 207295,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Miriam",
-    "email": "miriamrs17@ausdk12.org",
-    "last_name": "Simon"
-  }
-},
-{
-  "pk": 207335,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Emilie",
-    "email": "emiliei17@ausdk12.org",
-    "last_name": "Ivtchenko"
-  }
-},
-{
-  "pk": 207370,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sofia",
-    "email": "sofiacv17@ausdk12.org",
-    "last_name": "Vanderlaan"
-  }
-},
-{
-  "pk": 207382,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Samaya",
-    "email": "samayah17@ausdk12.org",
-    "last_name": "Hornsby"
-  }
-},
-{
-  "pk": 207389,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Timothy",
-    "email": "timothylb17@ausdk12.org",
-    "last_name": "Bernal"
-  }
-},
-{
-  "pk": 207415,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Samuel",
-    "email": "samueln17@ausdk12.org",
-    "last_name": "Noriega"
-  }
-},
-{
-  "pk": 207427,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Rebecca",
-    "email": "rebeccamb17@ausdk12.org",
-    "last_name": "Brown"
-  }
-},
-{
-  "pk": 207457,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ilay",
-    "email": "ilayr17@ausdk12.org",
-    "last_name": "Raz"
-  }
-},
-{
-  "pk": 207530,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sonam",
-    "email": "sonamka17@ausdk12.org",
-    "last_name": "Arya"
-  }
-},
-{
-  "pk": 207549,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Tenzin",
-    "email": "tenzink17@ausdk12.org",
-    "last_name": "Khyentse"
-  }
-},
-{
-  "pk": 207798,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jerri",
-    "email": "jerriab17@ausdk12.org",
-    "last_name": "Bonnel"
-  }
-},
-{
-  "pk": 207799,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nicholas",
-    "email": "nicholasmb17@ausdk12.org",
-    "last_name": "Buoncristiani"
-  }
-},
-{
-  "pk": 207802,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sophia",
-    "email": "sophiacj17@ausdk12.org",
-    "last_name": "Johnson"
-  }
-},
-{
-  "pk": 207804,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jasmine",
-    "email": "jasminek17@ausdk12.org",
-    "last_name": "Khamenian"
-  }
-},
-{
-  "pk": 207806,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Quynh",
-    "email": "quynhnt17@ausdk12.org",
-    "last_name": "Tran"
-  }
-},
-{
-  "pk": 207807,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jyoti",
-    "email": "jyotijt17@ausdk12.org",
-    "last_name": "Tuladhar"
-  }
-},
-{
-  "pk": 1100001,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Oscar",
-    "email": "oscarb17@ausdk12.org",
-    "last_name": "Burke"
-  }
-},
-{
-  "pk": 1100002,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Caleb",
-    "email": "calebdc17@ausdk12.org",
-    "last_name": "Candelaria"
-  }
-},
-{
-  "pk": 1100006,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "John",
-    "email": "johnf17@ausdk12.org",
-    "last_name": "Friedman"
-  }
-},
-{
-  "pk": 1100007,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jerry",
-    "email": "jerryg17@ausdk12.org",
-    "last_name": "Gaitan"
-  }
-},
-{
-  "pk": 1100009,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nestor",
-    "email": "nestordj17@ausdk12.org",
-    "last_name": "Jimenez"
-  }
-},
-{
-  "pk": 1100011,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Margaret",
-    "email": "margaretcm17@ausdk12.org",
-    "last_name": "McGuire"
-  }
-},
-{
-  "pk": 1100012,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Joanne",
-    "email": "joannelp17@ausdk12.org",
-    "last_name": "Pope"
-  }
-},
-{
-  "pk": 1100013,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Georgina",
-    "email": "georginacs17@ausdk12.org",
-    "last_name": "Shirazi"
-  }
-},
-{
-  "pk": 1100014,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sarbjot",
-    "email": "sarbjots17@ausdk12.org",
-    "last_name": "Singh"
-  }
-},
-{
-  "pk": 1100015,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Courtney",
-    "email": "courtneymt17@ausdk12.org",
-    "last_name": "Tamaki"
-  }
-},
-{
-  "pk": 1100016,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kyle",
-    "email": "kylejt17@ausdk12.org",
-    "last_name": "Taylor"
-  }
-},
-{
-  "pk": 1100017,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Emet",
-    "email": "emetaw17@ausdk12.org",
-    "last_name": "Wofford"
-  }
-},
-{
-  "pk": 1100047,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nicholas",
-    "email": "nicholasjw17@ausdk12.org",
-    "last_name": "Wugofski"
-  }
-},
-{
-  "pk": 1100048,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Gianna",
-    "email": "giannaml17@ausdk12.org",
-    "last_name": "Lavin"
-  }
-},
-{
-  "pk": 1100055,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eric",
-    "email": "ericpm17@ausdk12.org",
-    "last_name": "Mireri"
-  }
-},
-{
-  "pk": 1100058,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Daniel",
-    "email": "danielop17@ausdk12.org",
-    "last_name": "Padilla Mendoza"
-  }
-},
-{
-  "pk": 1100061,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lauren",
-    "email": "laurenc17@ausdk12.org",
-    "last_name": "Chu"
-  }
-},
-{
-  "pk": 1100065,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Mona",
-    "email": "monam17@ausdk12.org",
-    "last_name": "Mirzaie"
-  }
-},
-{
-  "pk": 1100066,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Tenzin",
-    "email": "tenzint17@ausdk12.org",
-    "last_name": "Tsering"
-  }
-},
-{
-  "pk": 1100080,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Meliz",
-    "email": "melizcm17@ausdk12.org",
-    "last_name": "McGowen"
-  }
-},
-{
-  "pk": 1100084,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eleonor",
-    "email": "eleonorcp17@ausdk12.org",
-    "last_name": "Palabrica"
-  }
-},
-{
-  "pk": 1100095,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Brendan",
-    "email": "brendanms17@ausdk12.org",
-    "last_name": "Smith"
-  }
-},
-{
-  "pk": 1100096,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Baily",
-    "email": "bailyls17@ausdk12.org",
-    "last_name": "Smith"
-  }
-},
-{
-  "pk": 1100108,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Simone",
-    "email": "simoneel17@ausdk12.org",
-    "last_name": "Lamboy"
-  }
-},
-{
-  "pk": 1100110,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Dylan",
-    "email": "dylanfk17@ausdk12.org",
-    "last_name": "Kurzer-Ogul"
-  }
-},
-{
-  "pk": 1100112,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sarah",
-    "email": "sarahx17@ausdk12.org",
-    "last_name": "Xu"
-  }
-},
-{
-  "pk": 1100117,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "An-ya",
-    "email": "anyac17@ausdk12.org",
-    "last_name": "Cheng"
-  }
-},
-{
-  "pk": 1100123,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eddris",
-    "email": "eddrisag17@ausdk12.org",
-    "last_name": "Gardizi"
-  }
-},
-{
-  "pk": 1100124,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Maria",
-    "email": "mariafc17@ausdk12.org",
-    "last_name": "Collazos"
-  }
-},
-{
-  "pk": 1100130,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kaelib",
-    "email": "kaelibtw17@ausdk12.org",
-    "last_name": "Wilson"
-  }
-},
-{
-  "pk": 1100135,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eden",
-    "email": "edenrr17@ausdk12.org",
-    "last_name": "Rothblatt-Kenney"
-  }
-},
-{
-  "pk": 1100138,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Anina",
-    "email": "aninaag17@ausdk12.org",
-    "last_name": "Guerrero de Escalante"
-  }
-},
-{
-  "pk": 1100144,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jillian",
-    "email": "jillianag17@ausdk12.org",
-    "last_name": "Guffy"
-  }
-},
-{
-  "pk": 1100155,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Matthew",
-    "email": "matthewjs17@ausdk12.org",
-    "last_name": "Silva"
-  }
-},
-{
-  "pk": 1100163,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Tyler",
-    "email": "tylerbl17@ausdk12.org",
-    "last_name": "Larkins"
-  }
-},
-{
-  "pk": 1100167,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ezequiel",
-    "email": "ezequielg17@ausdk12.org",
-    "last_name": "Goldsmith-Morgan"
-  }
-},
-{
-  "pk": 1100173,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Olivia",
-    "email": "oliviacd17@ausdk12.org",
-    "last_name": "D'Adamo"
-  }
-},
-{
-  "pk": 1100175,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lorin",
-    "email": "lorinnb17@ausdk12.org",
-    "last_name": "Bates"
-  }
-},
-{
-  "pk": 1100180,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Daniela",
-    "email": "danielanz17@ausdk12.org",
-    "last_name": "Zepeda"
-  }
-},
-{
-  "pk": 1100194,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Yung",
-    "email": "yunghw17@ausdk12.org",
-    "last_name": "Wu"
-  }
-},
-{
-  "pk": 1100200,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Yuzhen",
-    "email": "yuzhenjc17@ausdk12.org",
-    "last_name": "Che"
-  }
-},
-{
-  "pk": 1100227,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Rigoberto",
-    "email": "rigobertom17@ausdk12.org",
-    "last_name": "Mejia"
-  }
-},
-{
-  "pk": 1100239,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Yuhan",
-    "email": "yuhanl17@ausdk12.org",
-    "last_name": "Liu"
-  }
-},
-{
-  "pk": 1100259,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Samuel",
-    "email": "samuelfs17@ausdk12.org",
-    "last_name": "Schaffer"
-  }
-},
-{
-  "pk": 1100266,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Karla",
-    "email": "karladb17@ausdk12.org",
-    "last_name": "Balderas"
-  }
-},
-{
-  "pk": 1100270,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Negeste Pumehana",
-    "email": "negesteih17@ausdk12.org",
-    "last_name": "Hai Hai"
-  }
-},
-{
-  "pk": 1100275,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kenda",
-    "email": "kendaf17@ausdk12.org",
-    "last_name": "Finch"
-  }
-},
-{
-  "pk": 1100277,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Sophia",
-    "email": "sophiadk17@ausdk12.org",
-    "last_name": "Kamps"
-  }
-},
-{
-  "pk": 1100278,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Xi",
-    "email": "xil17@ausdk12.org",
-    "last_name": "Li (Angela)"
-  }
-},
-{
-  "pk": 1100305,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Diego",
-    "email": "diegos17@ausdk12.org",
-    "last_name": "Silva"
-  }
-},
-{
-  "pk": 100100276,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Auriane",
-    "email": "aurianev17@ausdk12.org",
-    "last_name": "Vacher"
-  }
-},
-{
-  "pk": 100100277,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Claire",
-    "email": "clairemh17@ausdk12.org",
-    "last_name": "Horner"
-  }
-},
-{
-  "pk": 100100279,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Miles",
-    "email": "milesrk17@ausdk12.org",
-    "last_name": "King"
-  }
-},
-{
-  "pk": 100100282,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Troy",
-    "email": "troym17@ausdk12.org",
-    "last_name": "Mestetsky"
-  }
-},
-{
-  "pk": 100100285,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Christopher",
-    "email": "christopherml17@ausdk12.org",
-    "last_name": "Luna-Sparks"
-  }
-},
-{
-  "pk": 100100286,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Camryn",
-    "email": "camryngs17@ausdk12.org",
-    "last_name": "Sanchez"
-  }
-},
-{
-  "pk": 100100287,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Daniel",
-    "email": "danielsd17@ausdk12.org",
-    "last_name": "Dictado"
-  }
-},
-{
-  "pk": 100100288,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Hannah",
-    "email": "hannahgm17@ausdk12.org",
-    "last_name": "Murray"
-  }
-},
-{
-  "pk": 100100289,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lily",
-    "email": "lilysg17@ausdk12.org",
-    "last_name": "Goldman"
-  }
-},
-{
-  "pk": 100100291,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Daniel",
-    "email": "danieljm17@ausdk12.org",
-    "last_name": "Murray"
-  }
-},
-{
-  "pk": 100100294,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Hiwot",
-    "email": "hiwoted17@ausdk12.org",
-    "last_name": "Dereje"
-  }
-},
-{
-  "pk": 100100297,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Lila",
-    "email": "lilatb17@ausdk12.org",
-    "last_name": "Bernardin"
-  }
-},
-{
-  "pk": 100100301,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Siliang",
-    "email": "siliangl17@ausdk12.org",
-    "last_name": "Li"
-  }
-},
-{
-  "pk": 100100304,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "KCee",
-    "email": "kceevn17@ausdk12.org",
-    "last_name": "Nguyen"
-  }
-},
-{
-  "pk": 100100306,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Xiangyu Michael",
-    "email": "xiangyuy17@ausdk12.org",
-    "last_name": "Yang"
-  }
-},
-{
-  "pk": 100100315,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Shira",
-    "email": "shiramb17@ausdk12.org",
-    "last_name": "Benau"
-  }
-},
-{
-  "pk": 100100317,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Giorgia",
-    "email": "giorgiald17@ausdk12.org",
-    "last_name": "DePaolis"
-  }
-},
-{
-  "pk": 100100322,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Isabella",
-    "email": "isabellaf17@ausdk12.org",
-    "last_name": "Forti-Lynch"
-  }
-},
-{
-  "pk": 100100324,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Xinyao",
-    "email": "xinyaol17@ausdk12.org",
-    "last_name": "Liu"
-  }
-},
-{
-  "pk": 100100326,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Emma",
-    "email": "emmacs17@ausdk12.org",
-    "last_name": "Sugarbaker"
-  }
-},
-{
-  "pk": 100100334,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ja'Quan",
-    "email": "jaquand17@ausdk12.org",
-    "last_name": "Davis"
-  }
-},
-{
-  "pk": 100100356,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Cameron",
-    "email": "cameronmp17@ausdk12.org",
-    "last_name": "Parrillo"
-  }
-},
-{
-  "pk": 100100370,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Yatin",
-    "email": "yatins17@ausdk12.org",
-    "last_name": "Sharma"
-  }
-},
-{
-  "pk": 100100380,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kalen",
-    "email": "kalenay17@ausdk12.org",
-    "last_name": "Yamashiro"
-  }
-},
-{
-  "pk": 100100383,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Mia",
-    "email": "miao17@ausdk12.org",
-    "last_name": "O'Brien"
-  }
-},
-{
-  "pk": 100100385,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Yuvia",
-    "email": "yuviaam17@ausdk12.org",
-    "last_name": "Mendoza"
-  }
-},
-{
-  "pk": 100100394,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Manriki",
-    "email": "manrikiag17@ausdk12.org",
-    "last_name": "Gagnon"
-  }
-},
-{
-  "pk": 100100398,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Dorris Kaye",
-    "email": "dorrista17@ausdk12.org",
-    "last_name": "Abalon"
-  }
-},
-{
-  "pk": 100100399,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nicholas",
-    "email": "nicholasgc17@ausdk12.org",
-    "last_name": "Chase"
-  }
-},
-{
-  "pk": 100100405,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Zi Sheng",
-    "email": "ziy17@ausdk12.org",
-    "last_name": "Ye"
-  }
-},
-{
-  "pk": 100100414,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Phoebe",
-    "email": "phoebet17@ausdk12.org",
-    "last_name": "Thokar"
-  }
-},
-{
-  "pk": 100100427,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Laticia",
-    "email": "laticiams17@ausdk12.org",
-    "last_name": "Suazo"
-  }
-},
-{
-  "pk": 100100436,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Eduardo",
-    "email": "eduardolg17@ausdk12.org",
-    "last_name": "Guths"
-  }
-},
-{
-  "pk": 100100448,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Phillip",
-    "email": "phillips17@ausdk12.org",
-    "last_name": "Son"
-  }
-},
-{
-  "pk": 100100451,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Edom",
-    "email": "edomfa17@ausdk12.org",
-    "last_name": "Awetahegn"
-  }
-},
-{
-  "pk": 100100452,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Parash",
-    "email": "parashp17@ausdk12.org",
-    "last_name": "Pandey"
-  }
-},
-{
-  "pk": 100100467,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Nyela",
-    "email": "nylakj17@ausdk12.org",
-    "last_name": "Jones-Dismuke"
-  }
-},
-{
-  "pk": 100100471,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Amicole",
-    "email": "amicoleem17@ausdk12.org",
-    "last_name": "Mbacke"
-  }
-},
-{
-  "pk": 100100474,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Joar",
-    "email": "joars17@ausdk12.org",
-    "last_name": "Stephansson"
-  }
-},
-{
-  "pk": 100100486,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Jasai",
-    "email": "jasaidc17@ausdk12.org",
-    "last_name": "Caldwell"
-  }
-},
-{
-  "pk": 100100488,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Fernando",
-    "email": "fernandos17@ausdk12.org",
-    "last_name": "Sanjurjo"
-  }
-},
-{
-  "pk": 100100491,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Abel",
-    "email": "abelyt17@ausdk12.org",
-    "last_name": "Temesgen"
-  }
-},
-{
-  "pk": 100100493,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Ashley",
-    "email": "ashleeymedrano@gmail.com",
-    "last_name": "Medrano Ramos"
-  }
-},
-{
-  "pk": 100100494,
-  "model": "group_manager.judge",
-  "fields": {
-    "first_name": "Kimberly",
-    "email": "kumorichaan@gmail.com",
-    "last_name": "Medrano Ramos"
+    "email": "edwardlm19@ausdk12.org",
+    "english_class": 36,
+    "ihs_class": 30
   }
 }
 ]
