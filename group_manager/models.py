@@ -13,7 +13,10 @@ class Student_Group (models.Model):
     })
 
     def get_success_url(self):
-        return reverse('GroupDetailView', kwargs={'pk': self.pk})
+        return reverse('groups:GroupDetailView', kwargs={'pk': self.pk})
+
+    def get_absolute_url(self):
+        return reverse('groups:index')
 
     class Meta:
         verbose_name = "Student Group"
@@ -69,7 +72,8 @@ class Student (models.Model):
     ihs_class = models.ForeignKey(Student_Class, limit_choices_to={
         'type': Student_Class.IHS_TYPE
     }, null=True, blank=True)
-    group = models.ForeignKey(Student_Group, null=True, blank=True)
+    group = models.ForeignKey(Student_Group, null=True, blank=True,
+                              on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = "Student"
