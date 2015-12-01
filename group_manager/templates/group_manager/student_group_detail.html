@@ -4,5 +4,6 @@
 {% for student in object.student_set.all %}
     <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
 {% endfor %} <br /><br />
+
 <a href="{% url 'groups:group_update' object.pk %}">Edit</a><br />
 <a href="{% url 'groups:group_delete' object.pk %}">Delete</a>

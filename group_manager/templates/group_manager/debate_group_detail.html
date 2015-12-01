@@ -4,4 +4,6 @@
 <p>Judges:</p>
 {% for judge in object.judge.all %}
     <li>{{ judge }}</li>
-{% endfor %}
+{% endfor %}<br /><br />
+
+<a href="{% url 'groups:debate_delete' object.pk %}">Delete</a>
