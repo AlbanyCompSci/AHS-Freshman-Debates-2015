@@ -2,8 +2,6 @@ from django.conf.urls import url
 from django.views import generic
 from . import views
 from . import models
-from . import forms
-from django.core.urlresolvers import reverse
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
@@ -22,5 +20,7 @@ urlpatterns = [
         name='debate_detail'),
     url(r'^create/debate/$', generic.CreateView.as_view(
             model=models.Debate_Group,
-            fields='__all__'), name='debate_create')
+            fields='__all__'), name='debate_create'),
+    url(r'^debate/$', generic.ListView.as_view(model=models.Debate_Group),
+        name='debate_index')
 ]
