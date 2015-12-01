@@ -1,4 +1,5 @@
-<a href="{% url 'groups:student_group_period_select' user.pk %}">Create new group!</a>
+<a href="{% url 'groups:student_group_period_select' user.pk %}">Create new group!</a><br />
+<a href="{% url 'groups:debate_index' %}">View and create new debate groups!</a>
 {% if object_list %}
     <p>Groups:</p>
     <ul>
