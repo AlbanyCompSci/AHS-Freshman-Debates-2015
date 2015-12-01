@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.views import generic
+from django.shortcuts import render
 from . import models
 from . import forms
 from django.contrib.auth.models import User
@@ -16,10 +16,8 @@ class LoginRequiredMixin (object):
         return login_required(view)
 
 
-
 class IndexView (LoginRequiredMixin, generic.ListView):
     model = models.Student_Group
-    #template_name = 'group_manager/index.html'
 
     def get_queryset(self):
         qs = super().get_queryset()
@@ -53,12 +51,12 @@ def StudentGroupPeriodSelect(request, teacher):
     selected = request.POST.getlist('period')
     if not selected:
         return render(request,
-            'group_manager/student_group_period_select.html', {
-                'periods': models.Student_Class.objects
-                .filter(type=models.Student_Class.ENGLISH_TYPE)
-                .filter(teacher__pk=teacher),
-                'error_message': "You didn't select a choice."
-            })
+                      'group_manager/student_group_period_select.html', {
+                        'periods': models.Student_Class.objects
+                        .filter(type=models.Student_Class.ENGLISH_TYPE)
+                        .filter(teacher__pk=teacher),
+                        'error_message': "You didn't select a choice."
+                        })
     else:
         return HttpResponseRedirect(
             reverse('groups:student_group_form', kwargs={
