@@ -1,0 +1,11 @@
+<a href="{% url 'groups:debate_create' %}">Create a new debate!</a>
+{% if object_list %}
+    <p>Debates:</p>
+    <ul>
+        {% for object in object_list %}
+            <li><a href="{% url 'groups:debate_detail' object.pk %}">{{ object }}</a></li>
+                {% endfor %}
+            </ul>
+{% else %}
+    <p>No debates currently.</p>
+{% endif %}
