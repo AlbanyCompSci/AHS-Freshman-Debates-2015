@@ -1,4 +1,6 @@
-<a href="{% url 'groups:debate_create' %}">Create a new debate!</a>
+{% if user.is_superuser %}
+    <a href="{% url 'groups:debate_create' %}">Create a new debate!</a>
+{% endif %}
 {% if object_list %}
     <p>Debates:</p>
     <ul>
