@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from . import fields
 
 
 # Create your models here.
@@ -43,7 +44,7 @@ class Student_Class (models.Model):
     teacher = models.ForeignKey(User, limit_choices_to={
         'groups__name': 'teacher'
     })
-    period = models.IntegerField()
+    period = fields.IntegerRangeField(min_value=1, max_value=7)
     type = models.IntegerField(choices=TYPE_CHOICES)
 
     class Meta:
@@ -100,7 +101,7 @@ class Judge (models.Model):
 
 
 class Debate_Group (models.Model):
-    """A debate. Main components are the two groups."""
+    #A debate. Main components are the two groups.
     affTeam = models.OneToOneField(Student_Group, related_name='affTeam',
                                    limit_choices_to={'negTeam__isnull': True,
                                         'affTeam__isnull': True})
@@ -124,3 +125,16 @@ class Debate_Group (models.Model):
             self.negTeam, self.affTeam,
             self.title
         )
+
+
+
+
+
+
+
+
+
+
+
+
+
