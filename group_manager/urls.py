@@ -33,5 +33,5 @@ urlpatterns = [
             fields='__all__'), name='debate_create'),
     url(r'^student/(?P<pk>[0-9]+)/$',
         generic.DetailView.as_view(model=models.Student,),
-        name='student_detail'),
+        name='student_detail')
 ]

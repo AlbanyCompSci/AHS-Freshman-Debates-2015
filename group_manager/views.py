@@ -11,8 +11,8 @@ from django.contrib.auth.models import User
 
 class LoginRequiredMixin (object):
     @classmethod
-    def as_view(cls, **initkwargs):
-        view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+    def as_view(self, **initkwargs):
+        view = super().as_view(**initkwargs)
         return login_required(view)
 
 
