@@ -51,6 +51,7 @@ class Student_Class (models.Model):
         verbose_name = "Class"
         verbose_name_plural = "Classes"
         ordering = ['teacher', 'period']
+        unique_together = ('teacher', 'period')
 
     def __str__(self):
         return "%s's %d period %s class" % (
@@ -61,7 +62,7 @@ class Student_Class (models.Model):
 
 class Student (models.Model):
 
-    student_id = models.BigIntegerField(primary_key=True)
+    student_id = models.BigIntegerField(primary_key=True, unique=True)
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
@@ -86,7 +87,7 @@ class Student (models.Model):
 
 
 class Judge (models.Model):
-    student_id = models.BigIntegerField(primary_key=True)
+    student_id = models.BigIntegerField(primary_key=True, unique=True)
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
@@ -100,8 +101,19 @@ class Judge (models.Model):
         return "%s %s" % (self.first_name, self.last_name)
 
 
+class Location (models.Model):
+    location = models.CharField(max_length=140, unique=True)
+
+    class Meta:
+        verbose_name = "Location "
+        verbose_name_plural = "Locations"
+
+    def __str__(self):
+        return self.location
+
+
 class Debate_Group (models.Model):
-    #A debate. Main components are the two groups.
+    """A debate. Main components are the two groups."""
     affTeam = models.OneToOneField(Student_Group, related_name='affTeam',
                                    limit_choices_to={'negTeam__isnull': True,
                                         'affTeam__isnull': True})
@@ -109,13 +121,11 @@ class Debate_Group (models.Model):
                                    limit_choices_to={'affTeam__isnull': True,
                                         'negTeam__isnull': True})
     title = models.CharField(max_length=140)
-    time = models.DateTimeField()
-    location = models.CharField(max_length=140)
     judge = models.ManyToManyField(Judge)
 
     class Meta:
-        verbose_name = "Debate"
-        verbose_name_plural = "Debates"
+        verbose_name = "Debate Group"
+        verbose_name_plural = "Debate Groups"
 
     def get_absolute_url(self):
         return reverse('groups:debate_detail', kwargs={'pk': self.pk})
@@ -127,7 +137,40 @@ class Debate_Group (models.Model):
         )
 
 
+class Schedule (models.Model):
+    period = fields.IntegerRangeField(min_value=1, max_value=7)
+    location = models.ForeignKey(Location)
+    date = models.DateField()
 
+    class Meta:
+        verbose_name = "Schedule"
+        verbose_name_plural = "Schedules"
+        unique_together = ('period', 'location', 'date')
+
+    def __str__(self):
+        return "Debate at %s, period %s in %s" % (self.date, self.period,
+                                                  self.location)
+
+
+class Debate (models.Model):
+    schedule = models.ForeignKey(Schedule)
+    debate_group = models.ForeignKey(Debate_Group)
+    isPresenting = models.BooleanField(verbose_name='group presenting')
+
+    class Meta:
+        verbose_name = "Debate"
+        verbose_name_plural = "Debates"
+        unique_together = (('schedule', 'isPresenting'),
+                           ('debate_group', 'schedule'))
+
+    def __str__(self):
+        return "%s and %s in %s at %s period %s and %s presenting" % (
+                self.debate_group.affTeam,
+                self.debate_group.negTeam,
+                self. schedule.location,
+                self.schedule.date,
+                self.schedule.period,
+                "are" if self.isPresenting else "are not")
 
 
 
