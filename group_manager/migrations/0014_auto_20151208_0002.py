@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import group_manager.fields
 
 
 class Migration(migrations.Migration):
@@ -38,7 +37,7 @@ class Migration(migrations.Migration):
             name='Schedule',
             fields=[
                 ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
-                ('period', group_manager.fields.IntegerRangeField()),
+                ('period', models.IntegerField(choices=tuple(zip(range(1, 8), (str(i) for i in range(1, 8)))))),
                 ('date', models.DateField()),
                 ('location', models.ForeignKey(to='group_manager.Location')),
             ],

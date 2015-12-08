@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from . import fields
 
 
 # Create your models here.
@@ -44,7 +43,9 @@ class Student_Class (models.Model):
     teacher = models.ForeignKey(User, limit_choices_to={
         'groups__name': 'teacher'
     })
-    period = fields.IntegerRangeField()
+    period = models.IntegerField(choices=tuple(zip(
+                                 range(1, 8),
+                                 (str(i) for i in range(1, 8)))))
     type = models.IntegerField(choices=TYPE_CHOICES)
 
     class Meta:
@@ -138,7 +139,9 @@ class Debate_Group (models.Model):
 
 
 class Schedule (models.Model):
-    period = fields.IntegerRangeField()
+    period = models.IntegerField(choices=tuple(zip(
+                                 range(1, 8),
+                                 (str(i) for i in range(1, 8)))))
     location = models.ForeignKey(Location)
     date = models.DateField()
 

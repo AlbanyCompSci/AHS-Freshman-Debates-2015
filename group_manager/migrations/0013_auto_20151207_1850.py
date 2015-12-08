@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import group_manager.fields
 
 
 class Migration(migrations.Migration):
@@ -15,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='student_class',
             name='period',
-            field=group_manager.fields.IntegerRangeField(),
+            field=models.IntegerField(choices=tuple(zip(range(1, 8), (str(i) for i in range(1, 8))))),
         ),
     ]
