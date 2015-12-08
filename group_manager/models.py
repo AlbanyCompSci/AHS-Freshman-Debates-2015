@@ -171,13 +171,3 @@ class Debate (models.Model):
                 self.schedule.date,
                 self.schedule.period,
                 "are" if self.isPresenting else "are not")
-
-
-
-
-
-
-
-
-
-

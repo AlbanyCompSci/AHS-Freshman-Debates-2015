@@ -47,6 +47,23 @@ class StudentGroupCreate (LoginRequiredMixin, generic.FormView):
         return super().form_valid(form_uncommited)
 
 
+class StudentGroupDetailView (generic.DetailView):
+    model = models.Student_Group
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            context['location'] = self.object.affTeam.debate_set.get(
+                    isPresenting=True).schedule.location
+        except models.Debate_Group.DoesNotExist:
+            try:
+                context['location'] = self.object.negTeam.debate_set.get(
+                    isPresenting=True).schedule.location
+            except models.Debate_Group.DoesNotExist:
+                context['location'] = 'No location currently picked'
+        return context
+
+
 def StudentGroupPeriodSelect(request, teacher):
     selected = request.POST.getlist('period')
     if not selected:

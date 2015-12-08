@@ -3,7 +3,27 @@
 <p>Students:</p>
 {% for student in object.student_set.all %}
     <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
-{% endfor %} <br /><br />
+{% endfor %}
+<p>Position:
+    {% if object.affTeam %}
+        affirmative
+    {% elif object.negTeam %}
+        negative
+    {% else %}
+        None
+    {% endif %}
+</p>
+<p>Matchup:
+    {% if object.affTeam %}
+        <a href="{% url 'groups:debate_detail' object.affTeam.pk %}">{{ object.affTeam }}</a>
+    {% elif object.negTeam %}
+        <a href="{% url 'groups:debate_detail' object.negTeam.pk %}">{{ object.negTeam}}</a>
+    {% else %}
+        No matchup for this group
+    {% endif %}
+</p>
+<p>Location: {{ location }}</p>
 
+<br /><br />
 <a href="{% url 'groups:group_update' object.pk %}">Edit</a><br />
 <a href="{% url 'groups:group_delete' object.pk %}">Delete</a>

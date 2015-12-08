@@ -7,8 +7,7 @@ from . import models
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^group/(?P<pk>[0-9]+)/$',
-        generic.DetailView.as_view(model=models.Student_Group),
-        name='group_detail'),
+        views.StudentGroupDetailView.as_view(), name='group_detail'),
     url(r'^group/(?P<pk>[0-9]+)/update/$', generic.UpdateView.as_view(
         model=models.Student_Group,
         fields='__all__'), name='group_update'),
