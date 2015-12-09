@@ -1,9 +1,11 @@
+<a href=""></a>
 <a href="{% url 'groups:student_group_period_select' user.pk %}">Create new group!</a><br />
 {% if user.is_superuser %}
     <a href="{% url 'groups:debate_index' %}">View and create new debate groups!</a>
 {% else %}
     <a href="{% url 'groups:debate_index' %}">View debate groups!</a>
 {% endif %}
+<br /><a href="{% url 'logout' %}">Logout</a>
 {% if object_list %}
     <p>Groups:</p>
     <ul>
