@@ -17,13 +17,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic.base import RedirectView
 from django.core.urlresolvers import reverse_lazy
+import django.contrib.auth.views
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url=reverse_lazy('groups:index'),
         permanent=True)),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout',
+    url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
+    url(r'^logout/$', django.contrib.auth.views.logout,
         {'next_page': reverse_lazy('groups:index')}, name='logout'),
     url(r'^groups/', include('group_manager.urls', namespace="groups"))
 ]
