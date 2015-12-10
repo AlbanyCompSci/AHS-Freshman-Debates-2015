@@ -60,6 +60,15 @@ class Student_Class (models.Model):
         )
 
 
+class Judge_Group (models.Model):
+    class Meta:
+        verbose_name = "Judge Group"
+        verbose_name_plural = "Judge Groups"
+
+    def __str__(self):
+        return "Judge Group #%d" % self.pk
+
+
 class Student (models.Model):
 
     student_id = models.BigIntegerField(primary_key=True, unique=True)
@@ -91,6 +100,8 @@ class Judge (models.Model):
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
+    group = models.ForeignKey(Judge_Group, null=True, blank=True,
+                              on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = "Judge"
@@ -121,7 +132,6 @@ class Debate_Group (models.Model):
                                    limit_choices_to={'affTeam__isnull': True,
                                         'negTeam__isnull': True})
     title = models.CharField(max_length=140)
-    judge = models.ManyToManyField(Judge)
 
     class Meta:
         verbose_name = "Debate Group"
@@ -157,13 +167,15 @@ class Schedule (models.Model):
 class Debate (models.Model):
     schedule = models.ForeignKey(Schedule)
     debate_group = models.ForeignKey(Debate_Group)
+    judge_group = models.ForeignKey(Judge_Group)
     isPresenting = models.BooleanField(verbose_name='group presenting')
 
     class Meta:
         verbose_name = "Debate"
         verbose_name_plural = "Debates"
         unique_together = (('schedule', 'isPresenting'),
-                           ('debate_group', 'schedule'))
+                           ('debate_group', 'schedule'),
+                           ('judge_group', 'schedule'))
 
     def __str__(self):
         return "%s and %s in %s at %s period %s and %s presenting" % (
