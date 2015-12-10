@@ -64,19 +64,37 @@ class StudentGroupDetailView (generic.DetailView):
         return context
 
 
-def StudentGroupPeriodSelect(request, teacher):
-    selected = request.POST.getlist('period')
-    if not selected:
+class StudentGroupPeriodSelect(generic.View):
+    def get(self, request, teacher):
+        periods = models.Student_Class.objects.filter(
+                            type=models.Student_Class.ENGLISH_TYPE,
+                            teacher__pk=teacher)
         return render(request,
                       'group_manager/student_group_period_select.html', {
-                        'periods': models.Student_Class.objects
-                        .filter(type=models.Student_Class.ENGLISH_TYPE)
-                        .filter(teacher__pk=teacher),
-                        'error_message': "You didn't select a choice."
-                        })
-    else:
+                            'periods': periods
+                      })
+
+    def post(self, request, teacher):
+        selected = request.POST.getlist('period')
+        if not selected:
+            periods = models.Student_Class.objects.filter(
+                            type=models.Student_Class.ENGLISH_TYPE,
+                            teacher__pk=teacher)
+            return render(request,
+                        'group_manager/student_group_period_select.html', {
+                            'periods': periods,
+                            'error_message': "You didn't select a choice."
+                                })
         return HttpResponseRedirect(
-            reverse('groups:student_group_form', kwargs={
-                        'teacher': teacher,
-                        'periods': ''.join(selected),
-                    }))
+                        reverse('groups:student_group_form', kwargs={
+                                'teacher': teacher,
+                                'periods': ''.join(selected),
+                                }))
+
+
+
+
+
+
+
+

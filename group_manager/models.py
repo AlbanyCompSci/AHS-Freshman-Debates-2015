@@ -9,8 +9,7 @@ class Student_Group (models.Model):
     """A single group of students.
     Stduents use foreign keys to refer to group"""
     teacher = models.ForeignKey(User, limit_choices_to={
-        'groups__name': 'teacher'
-    })
+                'groups__name': 'teacher'})
 
     def get_success_url(self):
         return reverse('groups:GroupDetailView', kwargs={'pk': self.pk})
