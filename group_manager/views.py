@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse, reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.shortcuts import render
 from . import models
@@ -9,11 +9,9 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 
-class LoginRequiredMixin (object):
-    @classmethod
-    def as_view(self, **initkwargs):
-        view = super().as_view(**initkwargs)
-        return login_required(view)
+class IsSuperuserMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_superuser
 
 
 class IndexView (LoginRequiredMixin, generic.ListView):
@@ -86,15 +84,22 @@ class StudentGroupPeriodSelect(generic.View):
                             'error_message': "You didn't select a choice."
                                 })
         return HttpResponseRedirect(
-                        reverse('groups:student_group_form', kwargs={
+                        reverse_lazy('groups:student_group_form', kwargs={
                                 'teacher': teacher,
                                 'periods': ''.join(selected),
                                 }))
 
 
+class StudentGroupDelete (LoginRequiredMixin, generic.DeleteView):
+    model = models.Student_Group
+    success_url = reverse_lazy('groups:index')
 
 
+class DebateGroupDelete (IsSuperuserMixin, generic.DeleteView):
+    model = models.Debate_Group
+    success_url = reverse_lazy('groups:debate_index')
 
 
-
-
+class DebateGroupCreate (IsSuperuserMixin, generic.CreateView):
+    model = models.Debate_Group
+    fields = '__all__'
