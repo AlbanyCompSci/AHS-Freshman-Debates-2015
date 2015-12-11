@@ -1,6 +1,5 @@
 from django.conf.urls import url
 from django.views import generic
-from django.core.urlresolvers import reverse_lazy
 from . import views
 from . import models
 
