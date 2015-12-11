@@ -5,7 +5,7 @@ from . import models
 # Register your models here.
 
 
-@admin.register(models.Student)
+@admin.register(models.Student_Group)
 class StudentGroupAdmin (admin.ModelAdmin):
     form = forms.StudentGroupForm
 
