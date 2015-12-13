@@ -22,11 +22,13 @@ class Student_Group (models.Model):
         verbose_name_plural = "Student Groups"
 
     def __str__(self):
-        return "%s%i" % (self.teacher.last_name[0],
-                         list(Student_Group.objects
-                              .filter(teacher=self.teacher).order_by('pk'))
-                         .index(self) + 1
-                         )
+        try:
+            query = list(Student_Group.objects.filter(
+                         teacher=self.teacher).order_by('pk')).index(self) + 1
+        except ValueError:
+            return "%s's group" % self.teacher.last_name
+
+        return "%s%i" % (self.teacher.last_name[0], query)
 
 
 class Student_Class (models.Model):
@@ -116,7 +118,7 @@ class Location (models.Model):
     location = models.CharField(max_length=140, unique=True)
 
     class Meta:
-        verbose_name = "Location "
+        verbose_name = "Location"
         verbose_name_plural = "Locations"
 
     def __str__(self):
@@ -153,11 +155,13 @@ class Schedule (models.Model):
                                  (str(i) for i in range(1, 8)))))
     location = models.ForeignKey(Location)
     date = models.DateField()
+    judge_group = models.ForeignKey(Judge_Group)
 
     class Meta:
         verbose_name = "Schedule"
         verbose_name_plural = "Schedules"
-        unique_together = ('period', 'location', 'date')
+        unique_together = (('period', 'location', 'date'),
+                           ('period', 'date', 'judge_group'))
 
     def __str__(self):
         return "Debate at %s, period %s in %s" % (self.date, self.period,
@@ -167,15 +171,13 @@ class Schedule (models.Model):
 class Debate (models.Model):
     schedule = models.ForeignKey(Schedule)
     debate_group = models.ForeignKey(Debate_Group)
-    judge_group = models.ForeignKey(Judge_Group)
     isPresenting = models.BooleanField(verbose_name='group presenting')
 
     class Meta:
         verbose_name = "Debate"
         verbose_name_plural = "Debates"
         unique_together = (('schedule', 'isPresenting'),
-                           ('debate_group', 'schedule'),
-                           ('judge_group', 'schedule'))
+                           ('debate_group', 'schedule'))
 
     def __str__(self):
         return "%s and %s in %s at %s period %s and %s presenting" % (

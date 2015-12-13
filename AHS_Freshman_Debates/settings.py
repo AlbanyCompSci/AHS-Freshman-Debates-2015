@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import glob
 
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -42,14 +42,13 @@ DEFAULT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-
 )
 
 LOCAL_APPS = (
     'group_manager',
 )
 
-INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = THIRD_PARTY_APPS + DEFAULT_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -67,7 +66,8 @@ ROOT_URLCONF = 'AHS_Freshman_Debates.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.abspath(os.path.join(BASE_DIR, '..', 'templates'))],
+        'DIRS': glob.glob(os.path.abspath(os.path.join(
+                          BASE_DIR, '..', '**', 'templates'))),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
