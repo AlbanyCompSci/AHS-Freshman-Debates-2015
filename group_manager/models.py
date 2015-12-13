@@ -129,10 +129,12 @@ class Debate_Group (models.Model):
     """A debate. Main components are the two groups."""
     affTeam = models.OneToOneField(Student_Group, related_name='affTeam',
                                    limit_choices_to={'negTeam__isnull': True,
-                                        'affTeam__isnull': True})
+                                        'affTeam__isnull': True},
+                                    verbose_name="Affirmative Team")
     negTeam = models.OneToOneField(Student_Group, related_name='negTeam',
                                    limit_choices_to={'affTeam__isnull': True,
-                                        'negTeam__isnull': True})
+                                        'negTeam__isnull': True},
+                                    verbose_name="Negative Team")
     title = models.CharField(max_length=140)
 
     class Meta:
