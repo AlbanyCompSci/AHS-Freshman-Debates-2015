@@ -67,3 +67,20 @@ class JudgeGroupForm (forms.ModelForm):
                     widget=FilteredSelectMultiple(
                             verbose_name="Judges",
                             is_stacked=False))
+
+
+class DebateGroupForm (forms.ModelForm):
+    class Meta:
+        model = models.Debate_Group
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if self.instance:
+            self.fields['affTeam'].queryset = models.Student_Group.objects.filter(
+                    (Q(affTeam__isnull=True) & Q(negTeam__isnull=True)) |
+                    Q(affTeam=self.instance))
+            self.fields['negTeam'].queryset = models.Student_Group.objects.filter(
+                    (Q(affTeam__isnull=True) & Q(negTeam__isnull=True)) |
+                    Q(negTeam=self.instance))

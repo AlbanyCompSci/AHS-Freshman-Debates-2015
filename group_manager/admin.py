@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . import forms
+from . import forms as forms
 from . import models
 # Register your models here.
 
@@ -43,11 +43,9 @@ class JudgeGroupAdmin (GroupMixin, admin.ModelAdmin):
         super().__init__('judges', *args, **kwargs)
 
 
-
 admin.site.register(models.Student_Class)
 admin.site.register(models.Student)
 admin.site.register(models.Judge)
-admin.site.register(models.Debate_Group)
 admin.site.register(models.Location)
 admin.site.register(models.Schedule)
 admin.site.register(models.Debate)
