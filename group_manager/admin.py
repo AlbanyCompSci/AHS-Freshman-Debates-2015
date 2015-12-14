@@ -43,6 +43,10 @@ class JudgeGroupAdmin (GroupMixin, admin.ModelAdmin):
         super().__init__('judges', *args, **kwargs)
 
 
+@admin.register(models.Debate_Group)
+class DebateGroupAdmin (admin.ModelAdmin):
+    form = forms.DebateGroupForm
+
 admin.site.register(models.Student_Class)
 admin.site.register(models.Student)
 admin.site.register(models.Judge)
