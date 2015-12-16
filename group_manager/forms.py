@@ -104,6 +104,14 @@ class DebateForm (forms.ModelForm):
                 error.append(ValidationError(_(
                         "This group is already presenting"),
                         code="already_presenting"))
+        if models.Debate.objects.filter(
+                schedule__period=schedule.period,
+                schedule__date=schedule.date,
+                debate_group=debate_group):
+            error.append(ValidationError(_(
+                    "This group is already assigned to attend a \
+                    debate at this time"),
+                    code="already_attending"))
 
         if error:
             raise ValidationError(error)
