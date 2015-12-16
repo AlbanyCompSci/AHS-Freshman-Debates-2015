@@ -14,6 +14,7 @@
 {% endif %}
 {% if user.is_superuser %}
     <br />
-    <a href="{% url 'admin:group_manager_schedule_add' %}">Create new schedule</a><br />
-    <a href="{% url 'admin:group_manager_debate_add' %}">Create new debate</a>
+    <a href="{% url 'admin:group_manager_debate_add' %}">Create new debate</a><br />
+    <a href="{% url 'admin:group_manager_schedule_add' %}">Create new schedule</a>
+
 {% endif %}
