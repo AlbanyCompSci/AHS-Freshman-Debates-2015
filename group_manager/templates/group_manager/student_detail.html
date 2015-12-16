@@ -1,5 +1,6 @@
+<a href="{% url 'groups:index' %}">Main page</a>
 <h1>{{ object }}</h1>
-<p>email: {{ object.email }}</p>
+<p>Email: {{ object.email }}</p>
 <p>English class: {{ object.english_class }}</p>
 <p>IHS class: {{ object.ihs_class }}</p>
-<p>part of: {{ object.group }}</p>
+<p>part of: <a href="{% url 'groups:group_detail' object.group.pk %}">{{ object.group }}</a></p>

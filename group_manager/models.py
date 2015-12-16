@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from datetime import datetime
 
 
 # Create your models here.
@@ -68,7 +69,7 @@ class Judge_Group (models.Model):
         verbose_name_plural = "Judge Groups"
 
     def __str__(self):
-        return "Judge Group #%d" % self.pk
+        return "%s" % ', '.join([str(i) for i in self.judge_set.all()])
 
 
 class Student (models.Model):
@@ -160,10 +161,13 @@ class Schedule (models.Model):
         verbose_name_plural = "Schedules"
         unique_together = (('period', 'location', 'date'),
                            ('period', 'date', 'judge_group'))
+        ordering = ['date', 'period']
 
     def __str__(self):
-        return "Debate at %s, period %s in %s" % (self.date, self.period,
-                                                  self.location)
+        return "%s, period %s, %s" % (
+                datetime.strftime(self.date, '%A'),
+                self.period,
+                self.location)
 
 
 class Debate (models.Model):
@@ -175,7 +179,8 @@ class Debate (models.Model):
         verbose_name = "Debate"
         verbose_name_plural = "Debates"
         unique_together = (('schedule', 'isPresenting'),
-                           ('debate_group', 'schedule'))
+                           ('debate_group', 'schedule'),
+                           ('debate_group', 'isPresenting'))
 
     def __str__(self):
         return "%s and %s in %s at %s period %s and %s presenting" % (

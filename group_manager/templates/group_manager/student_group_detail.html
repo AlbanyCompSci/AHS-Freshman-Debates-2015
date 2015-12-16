@@ -1,28 +1,34 @@
+<a href="{% url 'groups:index' %}">Main page</a>
 <h1>{{ object }}</h1>
-<h2>Teacher: {{ object.teacher.first_name }} {{ object.teacher.last_name }}</h2>
+<p>Teacher: {{ object.teacher.first_name }} {{ object.teacher.last_name }}</p>
+<p>Position: {{ position }}</p>
+
+{% if schedule and matchup %}
+    <p>Matchup: <a href="{% url 'groups:schedule_detail' schedule.pk %}">{{ matchup.affTeam }} Vs. {{ matchup.negTeam }}</a></p>
+    <p>Topic: {{ matchup.title }}</p>
+{% else %}
+    <p>No matchup</p>
+{% endif %}
+
+{% if schedule %}
+    <p>Day: {{schedule.date|date:"l" }}</p>
+    <p>Period: {{ schedule.period }}</p>
+    <p>Debate Location: {{ schedule.location }}</p>
+{% endif %}
+
 <p>Students:</p>
 {% for student in object.student_set.all %}
     <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
 {% endfor %}
-<p>Position:
-    {% if object.affTeam %}
-        affirmative
-    {% elif object.negTeam %}
-        negative
-    {% else %}
-        None
-    {% endif %}
-</p>
-<p>Matchup:
-    {% if object.affTeam %}
-        <a href="{% url 'groups:debate_detail' object.affTeam.pk %}">{{ object.affTeam }}</a>
-    {% elif object.negTeam %}
-        <a href="{% url 'groups:debate_detail' object.negTeam.pk %}">{{ object.negTeam}}</a>
-    {% else %}
-        No matchup for this group
-    {% endif %}
-</p>
-<p>Location: {{ location }}</p>
 
 <br /><br />
-<a href="{% url 'groups:group_delete' object.pk %}">Delete</a>
+{% if not user.is_superuser %}
+    <a href="{% url 'admin:group_manager_student_group_change' object.pk %}">Change</a><br />
+{% endif %}
+<a href="{% url 'admin:group_manager_student_group_delete' object.pk %}">Delete</a>
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<a href="{% url 'groups:index' %}">Main page</a><br />
+<p>Location: {{ object.location }}</p>
+<p>Date: {{ object.date }}</p>
+<p>Period: {{ object.period }}</p>
+<p>Judged by: {{ object.judge_group }}</p>
+{% if topic %}
+    <p>topic: {{ topic }}</p>
+{% endif %}
+<p></p>
+{% if presenting %}
+    <p>Affirmative: <a href="{% url 'groups:group_detail' presenting.debate_group.affTeam.pk %}">{{ presenting.debate_group.affTeam }}</a></p>
+    <p>Negative: <a href="{% url 'groups:group_detail' presenting.debate_group.negTeam.pk %}">{{ presenting.debate_group.negTeam }}</a></p>
+{% endif %}
+{% if debates %}
+    <p>Attending:</p>
+    <ul>
+        {% for debate in debates %}
+            <li><a href="{% url 'groups:group_detail' debate.debate_group.affTeam.pk %}">{{ debate.debate_group.affTeam }}</a>,
+            <a href="{% url 'groups:group_detail' debate.debate_group.negTeam.pk %}">{{ debate.debate_group.negTeam }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if user.is_superuser %}
+    <br />
+    <a href="{% url 'admin:group_manager_schedule_delete' object.pk %}">Delete</a><br />
+    <a href="{% url 'admin:group_manager_schedule_change' object.pk %}">Change</a>
+{% endif %}

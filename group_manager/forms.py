@@ -75,12 +75,3 @@ class DebateGroupForm (forms.ModelForm):
             self.fields['negTeam'].queryset = models.Student_Group.objects.filter(
                     (Q(affTeam__isnull=True) & Q(negTeam__isnull=True)) |
                     Q(negTeam=self.instance))
-
-
-
-
-
-
-
-
-

@@ -59,6 +59,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'AHS_Freshman_Debates.Middleware.LoginRequiredMiddleware'
 )
 
 ROOT_URLCONF = 'AHS_Freshman_Debates.urls'
@@ -67,7 +68,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': glob.glob(os.path.abspath(os.path.join(
-                          BASE_DIR, '..', '**', 'templates'))),
+                          BASE_DIR, '..', '**', 'templates')), recursive=True),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

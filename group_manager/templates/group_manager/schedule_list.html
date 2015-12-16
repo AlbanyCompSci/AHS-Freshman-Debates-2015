@@ -1,0 +1,19 @@
+{% if user.is_superuser %}
+    <a href="{% url 'admin:index' %}">Admin site</a><br />
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <a href="{% url 'groups:index' %}">Main page</a>
+{% endif %}
+{% if object_list %}
+    <p>Debate schedule:</p>
+    <ul>
+        {% for schedule in object_list %}
+            <li><a href="{% url 'groups:schedule_detail' schedule.pk %}">{{ schedule }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% if user.is_superuser %}
+    <br />
+    <a href="{% url 'admin:group_manager_schedule_add' %}">Create new schedule</a><br />
+    <a href="{% url 'admin:group_manager_debate_add' %}">Create new debate</a>
+{% endif %}
