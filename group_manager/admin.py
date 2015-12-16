@@ -47,9 +47,13 @@ class JudgeGroupAdmin (GroupMixin, admin.ModelAdmin):
 class DebateGroupAdmin (admin.ModelAdmin):
     form = forms.DebateGroupForm
 
+
+@admin.register(models.Debate)
+class DebateAdmin(admin.ModelAdmin):
+    form = forms.DebateForm
+
 admin.site.register(models.Student_Class)
 admin.site.register(models.Student)
 admin.site.register(models.Judge)
 admin.site.register(models.Location)
 admin.site.register(models.Schedule)
-admin.site.register(models.Debate)

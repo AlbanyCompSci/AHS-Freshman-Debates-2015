@@ -1,7 +1,9 @@
 from django import forms
-from . import models
 from django.db.models import Q
 from django.contrib.admin.widgets import FilteredSelectMultiple
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext as _
+from . import models
 
 
 class StudentGroupForm (forms.ModelForm):
@@ -75,3 +77,49 @@ class DebateGroupForm (forms.ModelForm):
             self.fields['negTeam'].queryset = models.Student_Group.objects.filter(
                     (Q(affTeam__isnull=True) & Q(negTeam__isnull=True)) |
                     Q(negTeam=self.instance))
+
+
+class DebateForm (forms.ModelForm):
+    class Meta:
+        model = models.Debate
+        fields = '__all__'
+
+    def clean(self):
+        cleaned_data = super().clean()
+        schedule = cleaned_data.get("schedule")
+        debate_group = cleaned_data.get("debate_group")
+        presenting = cleaned_data.get("isPresenting")
+        error = []
+
+        if presenting:
+            if models.Debate.objects.filter(
+                schedule=schedule,
+                    isPresenting=True).exists():
+                error.append(ValidationError(_(
+                        "A group is already presenting for this schedule"),
+                        code="schedule_presenting_not_unique"))
+            if models.Debate.objects.filter(
+                debate_group=debate_group,
+                    isPresenting=True).exists():
+                error.append(ValidationError(_(
+                        "This group is already presenting"),
+                        code="already_presenting"))
+
+        if error:
+            raise ValidationError(error)
+        return cleaned_data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

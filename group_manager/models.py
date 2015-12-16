@@ -178,9 +178,7 @@ class Debate (models.Model):
     class Meta:
         verbose_name = "Debate"
         verbose_name_plural = "Debates"
-        unique_together = (('schedule', 'isPresenting'),
-                           ('debate_group', 'schedule'),
-                           ('debate_group', 'isPresenting'))
+        unique_together = ('debate_group', 'schedule')
 
     def __str__(self):
         return "%s and %s in %s at %s period %s and %s presenting" % (
