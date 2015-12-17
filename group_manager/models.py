@@ -95,7 +95,7 @@ class Student (models.Model):
         ordering = ['english_class', 'last_name', 'first_name']
 
     def __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
+        return "%s, %s" % (self.last_name, self.first_name)
 
 
 class Judge (models.Model):
