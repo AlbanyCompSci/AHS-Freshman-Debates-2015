@@ -24,6 +24,12 @@ class StudentGroupForm (forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        self.fields['number'].initial = (models.Student_Group
+                                             .objects.filter(
+                                                teacher=self.current_user)
+                                             .order_by(
+                                                '-number')[0]).number + 1
+
         # For change. Includes already selected students
         if self.instance:
             self.fields['students'].queryset = models.Student.objects.filter(
@@ -38,12 +44,25 @@ class StudentGroupForm (forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        if models.Student_Group.objects.filter(
-            teacher=self.current_user,
-                number=cleaned_data['number']).exists():
-            raise ValidationError(_(
-                "A group already has this number"),
-                code="teacher_number")
+        number = cleaned_data.get('number')
+
+        if not number:
+            return cleaned_data
+        if self.instance:
+            if models.Student_Group.objects.filter(
+                teacher=self.current_user, number=number).exclude(
+                    pk=self.instance.pk):
+                    raise ValidationError(_(
+                        "A group already exists with this number"),
+                        code="unique_together")
+        else:
+            if (models.Student_Group.objects.filter(
+                    teacher=self.current_user, number=number)):
+                raise ValidationError(_(
+                        "A group already exists with this number"),
+                        code="unique_together")
+        return cleaned_data
+
 
 
 class JudgeGroupForm (forms.ModelForm):
