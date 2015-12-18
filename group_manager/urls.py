@@ -13,5 +13,7 @@ urlpatterns = [
     url(r'schedule/$', generic.ListView.as_view(
         model=models.Schedule), name='schedule'),
     url(r'schedule/(?P<pk>[0-9]+)/$', views.ScheduleDetailView.as_view(),
-        name='schedule_detail')
+        name='schedule_detail'),
+    url(r'azlist/$', views.AZList.as_view(),
+        name='azlist')
 ]

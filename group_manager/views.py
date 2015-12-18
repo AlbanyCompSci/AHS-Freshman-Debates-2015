@@ -94,3 +94,13 @@ class StudentDetailView (generic.DetailView):
                     context['schedule'] = None
             context['matchup'] = debateG
         return context
+
+
+class AZList (generic.ListView):
+    model = models.Student
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dates'] = sorted(list(set([
+                i.date for i in models.Schedule.objects.all()])))
+        return context
