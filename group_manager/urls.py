@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^group/(?P<pk>[0-9]+)/$',
         views.StudentGroupDetailView.as_view(), name='group_detail'),
     url(r'^student/(?P<pk>[0-9]+)/$',
-        generic.DetailView.as_view(model=models.Student,),
+        views.StudentDetailView.as_view(),
         name='student_detail'),
     url(r'schedule/$', generic.ListView.as_view(
         model=models.Schedule), name='schedule'),

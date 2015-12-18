@@ -9,14 +9,38 @@
 <p></p>
 {% if presenting %}
     <p>Affirmative: <a href="{% url 'groups:group_detail' presenting.debate_group.affTeam.pk %}">{{ presenting.debate_group.affTeam }}</a></p>
+        <ul>
+            {% for student in presenting.debate_group.affTeam.student_set.all %}
+                <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+            {% endfor %}
+        </ul>
     <p>Negative: <a href="{% url 'groups:group_detail' presenting.debate_group.negTeam.pk %}">{{ presenting.debate_group.negTeam }}</a></p>
+        <ul>
+            {% for student in presenting.debate_group.negTeam.student_set.all %}
+                <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+            {% endfor %}
+        </ul>
 {% endif %}
 {% if debates %}
     <p>Attending:</p>
     <ul>
         {% for debate in debates %}
-            <li><a href="{% url 'groups:group_detail' debate.debate_group.affTeam.pk %}">{{ debate.debate_group.affTeam }}</a>,
-            <a href="{% url 'groups:group_detail' debate.debate_group.negTeam.pk %}">{{ debate.debate_group.negTeam }}</a></li>
+            <li>
+                <a href="{% url 'groups:group_detail' debate.debate_group.affTeam.pk %}">{{ debate.debate_group.affTeam }}</a>
+                <ul>
+                    {% for student in debate.debate_group.affTeam.student_set.all %}
+                        <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'groups:group_detail' debate.debate_group.negTeam.pk %}">{{ debate.debate_group.negTeam }}</a>
+                <ul>
+                    {% for student in debate.debate_group.negTeam.student_set.all %}
+                        <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
         {% endfor %}
     </ul>
 {% endif %}

@@ -11,6 +11,7 @@ class Student_Group (models.Model):
     Stduents use foreign keys to refer to group"""
     teacher = models.ForeignKey(User, limit_choices_to={
                 'groups__name': 'teacher'})
+    number = models.IntegerField()
 
     def get_success_url(self):
         return reverse('groups:GroupDetailView', kwargs={'pk': self.pk})
@@ -21,15 +22,10 @@ class Student_Group (models.Model):
     class Meta:
         verbose_name = "Student Group"
         verbose_name_plural = "Student Groups"
+        unique_together = ('teacher', 'number')
 
     def __str__(self):
-        try:
-            query = list(Student_Group.objects.filter(
-                         teacher=self.teacher).order_by('pk')).index(self) + 1
-        except ValueError:
-            return "%s's group" % self.teacher.last_name
-
-        return "%s%i" % (self.teacher.last_name[0], query)
+        return "%s%i" % (self.teacher.last_name[0], self.number)
 
 
 class Student_Class (models.Model):
@@ -112,7 +108,7 @@ class Judge (models.Model):
         ordering = ['last_name', 'first_name']
 
     def __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
+        return "%s, %s" % (self.last_name, self.first_name)
 
 
 class Location (models.Model):
@@ -132,7 +128,7 @@ class Debate_Group (models.Model):
                                    verbose_name="Affirmative Team")
     negTeam = models.OneToOneField(Student_Group, related_name='negTeam',
                                    verbose_name="Negative Team")
-    title = models.CharField(max_length=140)
+    title = models.CharField(max_length=140, verbose_name="topic")
 
     class Meta:
         verbose_name = "Debate Group"

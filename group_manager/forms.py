@@ -36,6 +36,15 @@ class StudentGroupForm (forms.ModelForm):
                         group__isnull=True,
                         english_class__teacher=self.current_user)
 
+    def clean(self):
+        cleaned_data = super().clean()
+        if models.Student_Group.objects.filter(
+            teacher=self.current_user,
+                number=cleaned_data['number']).exists():
+            raise ValidationError(_(
+                "A group already has this number"),
+                code="teacher_number")
+
 
 class JudgeGroupForm (forms.ModelForm):
     class Meta:
@@ -116,18 +125,3 @@ class DebateForm (forms.ModelForm):
         if error:
             raise ValidationError(error)
         return cleaned_data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

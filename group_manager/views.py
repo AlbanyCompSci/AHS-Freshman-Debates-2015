@@ -64,3 +64,33 @@ class ScheduleDetailView (generic.DetailView):
         except models.Debate.DoesNotExist:
             context['debates'] = None
         return context
+
+
+class StudentDetailView (generic.DetailView):
+    model = models.Student
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            group = self.object.group
+        except models.Student_Group.DoesNotExist:
+            group = None
+        if group:
+            try:
+                debateG = group.affTeam
+                context['position'] = 'Affirmative'
+            except models.Debate_Group.DoesNotExist:
+                try:
+                    debateG = group.negTeam
+                    context['position'] = 'Negative'
+                except models.Debate_Group.DoesNotExist:
+                    debateG = None
+                    context['position'] = 'None'
+            if debateG:
+                try:
+                    context['schedule'] = debateG.debate_set.get(
+                            isPresenting=True).schedule
+                except models.Debate.DoesNotExist:
+                    context['schedule'] = None
+            context['matchup'] = debateG
+        return context

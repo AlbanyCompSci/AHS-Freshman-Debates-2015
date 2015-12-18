@@ -4,3 +4,16 @@
 <p>English class: {{ object.english_class }}</p>
 <p>IHS class: {{ object.ihs_class }}</p>
 <p>part of: <a href="{% url 'groups:group_detail' object.group.pk %}">{{ object.group }}</a></p>
+<p>Position: {{ position }}</p>
+<p>Topic: {{ matchup.title }}</p>
+{% if schedule and matchup %}
+    <p>Matchup: <a href="{% url 'groups:schedule_detail' schedule.pk %}">{{ matchup.affTeam }} Vs. {{ matchup.negTeam }}</a></p>
+{% else %}
+    <p>No matchup</p>
+{% endif %}
+
+{% if schedule %}
+    <p>Day: {{ schedule.date|date:"l" }}</p>
+    <p>Period: {{ schedule.period }}</p>
+    <p>Debate Location: {{ schedule.location }}</p>
+{% endif %}
