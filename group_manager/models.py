@@ -150,7 +150,7 @@ class Schedule (models.Model):
                                  (str(i) for i in range(1, 8)))))
     location = models.ForeignKey(Location)
     date = models.DateField()
-    judge_group = models.ForeignKey(Judge_Group)
+    judge_group = models.ForeignKey(Judge_Group, null=True, blank=True)
 
     class Meta:
         verbose_name = "Schedule"
