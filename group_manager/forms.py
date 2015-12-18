@@ -24,11 +24,14 @@ class StudentGroupForm (forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['number'].initial = (models.Student_Group
+        try:
+            self.fields['number'].initial = (models.Student_Group
                                              .objects.filter(
                                                 teacher=self.current_user)
                                              .order_by(
                                                 '-number')[0]).number + 1
+        except IndexError:
+            self.fields['number'].initial = 0
 
         # For change. Includes already selected students
         if self.instance:
