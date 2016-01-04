@@ -1,7 +1,7 @@
 {% load azfilter %}
 <a href="{% url 'groups:index' %}">Main page</a><br /><br />
 {% for myDate in dates %}
-    <a href="{% url 'groups:azlist' myDate|date:'m-d-y' %}">AZList for {{ myDate|date:"m-d-y" }}</a><br />
+    <a href="{% url 'groups:azlist' myDate|date:'Y-m-d' %}">AZList for {{ myDate|date:"Y-m-d" }}</a><br />
 {% endfor %}
 <br />
 <table border="1">

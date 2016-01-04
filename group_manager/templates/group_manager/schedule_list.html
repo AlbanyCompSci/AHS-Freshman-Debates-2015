@@ -14,7 +14,7 @@
 {% endif %}
 
 {% for dat in dates %}
-    <br /><a href="{% url 'groups:azlist' dat|date:'m-d-y' %}">AZList for {{ dat|date:"m-d-y" }}</a>
+    <br /><a href="{% url 'groups:azlist' dat|date:'Y-m-d' %}">AZList for {{ dat|date:"m-d-y" }}</a>
 {% endfor %}
 
 {% if user.is_superuser %}
