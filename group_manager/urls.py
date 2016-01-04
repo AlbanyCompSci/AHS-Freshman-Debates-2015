@@ -1,7 +1,5 @@
 from django.conf.urls import url
-from django.views import generic
 from . import views
-from . import models
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),

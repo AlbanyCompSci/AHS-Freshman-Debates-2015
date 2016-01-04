@@ -112,6 +112,7 @@ class AZList (generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['dates'] = sorted(list(set([
-                i.date for i in models.Schedule.objects.all()])))
+                i.date for i in models.Schedule.objects.all()
+                if str(i.date) != self.kwargs['date']])))
         context['dat'] = self.kwargs['date']
         return context
