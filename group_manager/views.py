@@ -21,6 +21,16 @@ class IndexView (generic.View):
         return StaffIndexView.as_view()(request)
 
 
+class ScheduleListView (generic.ListView):
+    model = models.Schedule
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dates'] = sorted(list(set([
+                i.date for i in models.Schedule.objects.all()])))
+        return context
+
+
 class StudentGroupDetailView (generic.DetailView):
     model = models.Student_Group
 
@@ -103,4 +113,5 @@ class AZList (generic.ListView):
         context = super().get_context_data(**kwargs)
         context['dates'] = sorted(list(set([
                 i.date for i in models.Schedule.objects.all()])))
+        context['dat'] = self.kwargs['date']
         return context

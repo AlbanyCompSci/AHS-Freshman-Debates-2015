@@ -12,10 +12,13 @@
         {% endfor %}
     </ul>
 {% endif %}
-<br />
-<a href="{% url 'groups:azlist' %}">A-Z list</a>
+
+{% for dat in dates %}
+    <br /><a href="{% url 'groups:azlist' dat|date:'m-d-y' %}">AZList for {{ dat|date:"m-d-y" }}</a>
+{% endfor %}
+
 {% if user.is_superuser %}
-    <br />
+    <br /><br />
     <a href="{% url 'admin:group_manager_debate_add' %}">Create new debate</a><br />
     <a href="{% url 'admin:group_manager_schedule_add' %}">Create new schedule</a>
 {% endif %}

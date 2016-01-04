@@ -1,5 +1,9 @@
 {% load azfilter %}
 <a href="{% url 'groups:index' %}">Main page</a><br /><br />
+{% for myDate in dates %}
+    <a href="{% url 'groups:azlist' myDate|date:'m-d-y' %}">AZList for {{ myDate|date:"m-d-y" }}</a><br />
+{% endfor %}
+<br />
 <table border="1">
     <tr>
         <td>name</td>
@@ -13,23 +17,18 @@
         <td>period 6</td>
         <td>period 7</td>
     </tr>
-    {% comment %}
-
-    {% endcomment %}
-    {% for dat in dates %}
-        {% for student in object_list %}
-            <tr>
-                <td>{{ student }}</td>
-                <td>{{ student.group }}</td>
-                <td>{{ dat|date:"l" }}</td>
-                <td>{% azfilter student 1 dat %}</td>
-                <td>{% azfilter student 2 dat %}</td>
-                <td>{% azfilter student 3 dat %}</td>
-                <td>{% azfilter student 4 dat %}</td>
-                <td>{% azfilter student 5 dat %}</td>
-                <td>{% azfilter student 6 dat %}</td>
-                <td>{% azfilter student 7 dat %}</td>
-            </tr>
-        {% endfor %}
+    {% for student in object_list %}
+        <tr>
+            <td>{{ student }}</td>
+            <td>{{ student.group }}</td>
+            <td>{{ dat|date:"l" }}</td>
+            <td>{% azfilter student 1 dat %}</td>
+            <td>{% azfilter student 2 dat %}</td>
+            <td>{% azfilter student 3 dat %}</td>
+            <td>{% azfilter student 4 dat %}</td>
+            <td>{% azfilter student 5 dat %}</td>
+            <td>{% azfilter student 6 dat %}</td>
+            <td>{% azfilter student 7 dat %}</td>
+        </tr>
     {% endfor %}
 </table>
