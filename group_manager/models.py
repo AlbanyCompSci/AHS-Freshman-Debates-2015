@@ -88,7 +88,7 @@ class Student (models.Model):
     class Meta:
         verbose_name = "Student"
         verbose_name_plural = "Students"
-        ordering = ['english_class', 'last_name', 'first_name']
+        ordering = ['last_name', 'first_name']
 
     def __str__(self):
         return "%s, %s" % (self.last_name, self.first_name)
