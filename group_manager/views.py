@@ -13,6 +13,12 @@ class StaffIndexView (generic.ListView):
         qs = super().get_queryset()
         return qs.filter(teacher=self.request.user)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dates'] = sorted(list(set([
+                i.date for i in models.Schedule.objects.all()])))
+        return context
+
 
 class IndexView (generic.View):
     def get(self, request, *args, **kwargs):

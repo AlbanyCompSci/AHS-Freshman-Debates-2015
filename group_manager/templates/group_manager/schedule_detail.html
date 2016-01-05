@@ -1,52 +1,58 @@
-<a href="{% url 'groups:index' %}">Main page</a><br />
-<p>Location: {{ object.location }}</p>
-<p>Date: {{ object.date }}</p>
-<p>Period: {{ object.period }}</p>
-<p>Judged by: {{ object.judge_group }}</p>
-{% if topic %}
-    <p>topic: {{ topic }}</p>
-{% endif %}
-<p></p>
-{% if presenting %}
-    <p>Affirmative: <a href="{% url 'groups:group_detail' presenting.debate_group.affTeam.pk %}">{{ presenting.debate_group.affTeam }}</a></p>
-        <ul>
-            {% for student in presenting.debate_group.affTeam.student_set.all %}
-                <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
-            {% endfor %}
-        </ul>
-    <p>Negative: <a href="{% url 'groups:group_detail' presenting.debate_group.negTeam.pk %}">{{ presenting.debate_group.negTeam }}</a></p>
-        <ul>
-            {% for student in presenting.debate_group.negTeam.student_set.all %}
-                <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
-            {% endfor %}
-        </ul>
-{% endif %}
-{% if debates %}
-    <p>Attending:</p>
-    <ul>
-        {% for debate in debates %}
-            <li>
-                <a href="{% url 'groups:group_detail' debate.debate_group.affTeam.pk %}">{{ debate.debate_group.affTeam }}</a>
-                <ul>
-                    {% for student in debate.debate_group.affTeam.student_set.all %}
-                        <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
-                    {% endfor %}
-                </ul>
-            </li>
-            <li>
-                <a href="{% url 'groups:group_detail' debate.debate_group.negTeam.pk %}">{{ debate.debate_group.negTeam }}</a>
-                <ul>
-                    {% for student in debate.debate_group.negTeam.student_set.all %}
-                        <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
-                    {% endfor %}
-                </ul>
-            </li>
-        {% endfor %}
-    </ul>
-{% endif %}
+{% extends "group_manager/base.html" %}
 
-{% if user.is_superuser %}
-    <br />
-    <a href="{% url 'admin:group_manager_schedule_delete' object.pk %}">Delete</a><br />
-    <a href="{% url 'admin:group_manager_schedule_change' object.pk %}">Change</a>
-{% endif %}
+{% block title %}{{ presenting }}{% endblock title %}
+
+{% block content %}
+    <p>Location: {{ object.location }}</p>
+    <p>Date: {{ object.date }}</p>
+    <p>Period: {{ object.period }}</p>
+    <p>Judged by: {{ object.judge_group }}</p>
+    {% if topic %}
+        <p>topic: {{ topic }}</p>
+    {% endif %}
+    <p></p>
+    {% if presenting %}
+        <p>Affirmative: <a href="{% url 'groups:group_detail' presenting.debate_group.affTeam.pk %}">{{ presenting.debate_group.affTeam }}</a></p>
+            <ul>
+                {% for student in presenting.debate_group.affTeam.student_set.all %}
+                    <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                {% endfor %}
+            </ul>
+        <p>Negative: <a href="{% url 'groups:group_detail' presenting.debate_group.negTeam.pk %}">{{ presenting.debate_group.negTeam }}</a></p>
+            <ul>
+                {% for student in presenting.debate_group.negTeam.student_set.all %}
+                    <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                {% endfor %}
+            </ul>
+    {% endif %}
+    {% if debates %}
+        <p>Attending:</p>
+        <ul>
+            {% for debate in debates %}
+                <li>
+                    <a href="{% url 'groups:group_detail' debate.debate_group.affTeam.pk %}">{{ debate.debate_group.affTeam }}</a>
+                    <ul>
+                        {% for student in debate.debate_group.affTeam.student_set.all %}
+                            <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'groups:group_detail' debate.debate_group.negTeam.pk %}">{{ debate.debate_group.negTeam }}</a>
+                    <ul>
+                        {% for student in debate.debate_group.negTeam.student_set.all %}
+                            <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock content %}
+
+{% block footer %}
+    {% if user.is_superuser %}
+        <a href="{% url 'admin:group_manager_schedule_delete' object.pk %}">Delete</a><br />
+        <a href="{% url 'admin:group_manager_schedule_change' object.pk %}">Change</a>
+    {% endif %}
+{% endblock footer %}

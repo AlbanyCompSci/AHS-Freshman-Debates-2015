@@ -1,13 +1,28 @@
-<a href="{% url 'admin:group_manager_student_group_add' %}">Create new group!</a><br />
-<a href="{% url 'groups:schedule' %}">View schedule</a>
-<br /><a href="{% url 'logout' %}">Logout</a>
-{% if object_list %}
-    <p>Groups:</p>
-    <ul>
-        {% for group in object_list %}
-            <li><a href="{% url 'groups:group_detail' group.pk %}">{{ group }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No groups currently. Create one!</p>
-{% endif %}
+{% extends "group_manager/base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block header %}
+    <a href="{% url 'admin:group_manager_student_group_add' %}">Create new group!</a><br />
+    <a href="{% url 'groups:schedule' %}">View schedule</a>
+    <br /><a href="{% url 'logout' %}">Logout</a>
+{% endblock header %}
+
+{% block content %}
+    {% if object_list %}
+        <p>Groups:</p>
+        <ul>
+            {% for group in object_list %}
+                <li><a href="{% url 'groups:group_detail' group.pk %}">{{ group }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No groups currently. Create one!</p>
+    {% endif %}
+{% endblock content %}
+
+{% block footer %}
+    {% for dat in dates %}
+        <br /><a href="{% url 'groups:azlist' dat|date:'Y-m-d' %}">AZList for {{ dat|date:"m-d-y" }}</a>
+    {% endfor %}
+{% endblock footer %}

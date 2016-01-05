@@ -1,34 +1,34 @@
-<a href="{% url 'groups:index' %}">Main page</a>
-<h1>{{ object }}</h1>
-<p>Teacher: {{ object.teacher.first_name }} {{ object.teacher.last_name }}</p>
-<p>Position: {{ position }}</p>
-<p>Topic: {{ matchup.title }}</p>
+{% extends "group_manager/base.html" %}
 
-{% if schedule and matchup %}
-    <p>Matchup: <a href="{% url 'groups:schedule_detail' schedule.pk %}">{{ matchup.affTeam }} Vs. {{ matchup.negTeam }}</a></p>
-{% else %}
-    <p>No matchup</p>
-{% endif %}
+{% block title %}{{ object }}{% endblock title %}
 
-{% if schedule %}
-    <p>Day: {{schedule.date|date:"l" }}</p>
-    <p>Period: {{ schedule.period }}</p>
-    <p>Debate Location: {{ schedule.location }}</p>
-{% endif %}
+{% block content %}
+    <h1>{{ object }}</h1>
+    <p>Teacher: {{ object.teacher.first_name }} {{ object.teacher.last_name }}</p>
+    <p>Position: {{ position }}</p>
+    <p>Topic: {{ matchup.title }}</p>
 
-<p>Students:</p>
-{% for student in object.student_set.all %}
-    <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
-{% endfor %}
+    {% if schedule and matchup %}
+        <p>Matchup: <a href="{% url 'groups:schedule_detail' schedule.pk %}">{{ matchup.affTeam }} Vs. {{ matchup.negTeam }}</a></p>
+    {% else %}
+        <p>No matchup</p>
+    {% endif %}
 
-<br /><br />
-{% if not user.is_superuser %}
-    <a href="{% url 'admin:group_manager_student_group_change' object.pk %}">Change</a><br />
-{% endif %}
-<a href="{% url 'admin:group_manager_student_group_delete' object.pk %}">Delete</a>
+    {% if schedule %}
+        <p>Day: {{schedule.date|date:"l" }}</p>
+        <p>Period: {{ schedule.period }}</p>
+        <p>Debate Location: {{ schedule.location }}</p>
+    {% endif %}
 
+    <p>Students:</p>
+    {% for student in object.student_set.all %}
+        <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+    {% endfor %}
+{% endblock content %}
 
-
-
-
-
+{% block footer %}
+    {% if not user.is_superuser %}
+        <a href="{% url 'admin:group_manager_student_group_change' object.pk %}">Change</a><br />
+    {% endif %}
+    <a href="{% url 'admin:group_manager_student_group_delete' object.pk %}">Delete</a>
+{% endblock footer %}
