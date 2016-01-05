@@ -42,6 +42,7 @@ DEFAULT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'debug_toolbar',
 )
 
 LOCAL_APPS = (
@@ -51,6 +52,7 @@ LOCAL_APPS = (
 INSTALLED_APPS = THIRD_PARTY_APPS + DEFAULT_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,11 +75,11 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
-                'django.core.context_processors.debug',
-                'django.core.context_processors.i18n',
-                'django.core.context_processors.media',
-                'django.core.context_processors.static',
-                'django.core.context_processors.tz',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -117,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-                    BASE_DIR + '/static/',
-)
+
+# DEBUG TOOLBAR
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+INTERNAL_IPS = ('127.0.0.1', 'localhost')
