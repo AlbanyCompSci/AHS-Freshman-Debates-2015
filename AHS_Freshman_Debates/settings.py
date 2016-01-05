@@ -121,5 +121,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # DEBUG TOOLBAR
+# Modify SHOW_TOOLBAR_CALLBACK at production
+
+
+def show_toolbar_overwrite(request):
+    if request.is_ajax():
+        return False
+
+    return bool(DEBUG)
+
+DEBUG_TOOLBAR_CONFIG = {
+    'DEBUG_TOOLBAR_PATCH_SETTINGS': False,
+    'SHOW_TOOLBAR_CALLBACK': show_toolbar_overwrite
+}
+
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
-INTERNAL_IPS = ('127.0.0.1', 'localhost')
+SHOW_TOOLBAR_CALLBACK = show_toolbar_overwrite
