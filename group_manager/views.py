@@ -1,6 +1,7 @@
 from django.views import generic
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
+from itertools import groupby
 from . import models
 
 # Create your views here.
@@ -44,39 +45,45 @@ class StudentGroupDetailView (generic.DetailView):
         context = super().get_context_data(**kwargs)
 
         try:
-            debateG = self.object.affTeam
-            context['position'] = 'Affirmative'
-        except models.Debate_Group.DoesNotExist:
-            try:
-                debateG = self.object.negTeam
-                context['position'] = 'Negative'
-            except models.Debate_Group.DoesNotExist:
-                debateG = None
-                context['position'] = 'None'
-
+            context['debate'] = self.object.debate_set.get(
+                isPresenting=True)
+        except (models.Debate.DoesNotExist):
+            context['debate'] = None
         try:
-            context['schedule'] = debateG.debate_set.get(
-                    isPresenting=True).schedule
+            context['opposition'] = models.Debate.filter(
+                schedule=context['debate'].schedule,
+                isPresenting=True).exclude(pk=self.object.pk)
         except (models.Debate.DoesNotExist, AttributeError):
-            context['schedule'] = None
-        context['matchup'] = debateG
+            context['opposition'] = None
 
         return context
 
 
 class ScheduleDetailView (generic.DetailView):
+    # GET GROUPS WATCHING TO WORK
     model = models.Schedule
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         try:
-            context['presenting'] = self.object.debate_set.get(isPresenting=True)
-            context['topic'] = self.object.debate_set.get(isPresenting=True).debate_group.title
+            context['aff'] = self.object.debate_set.get(
+                isPresenting=True, group__position=True)
         except models.Debate.DoesNotExist:
-            context['presenting'] = None
-            context['topic'] = None
+            context['aff'] = None
         try:
-            context['debates'] = self.object.debate_set.filter(isPresenting=False)
+            context['neg'] = self.object.debate_set.get(
+                isPresenting=True, group__position=False)
+        except models.Debate.DoesNotExist:
+            context['neg'] = None
+        try:
+            groupsWatching = [i.group for i in self.object.debate_set.filter(
+                isPresenting=False)]
+            presents = models.Debate.objects.filter(
+                isPresenting=True,
+                group__in=groupsWatching).order_by(
+                'schedule.pk')
+            presents = groupby(presents,
+                               lambda x: x.schedule.pk)
         except models.Debate.DoesNotExist:
             context['debates'] = None
         return context
@@ -88,32 +95,27 @@ class StudentDetailView (generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         try:
-            group = self.object.group
-        except models.Student_Group.DoesNotExist:
-            group = None
-        if group:
-            try:
-                debateG = group.affTeam
-                context['position'] = 'Affirmative'
-            except models.Debate_Group.DoesNotExist:
-                try:
-                    debateG = group.negTeam
-                    context['position'] = 'Negative'
-                except models.Debate_Group.DoesNotExist:
-                    debateG = None
-                    context['position'] = 'None'
-            if debateG:
-                try:
-                    context['schedule'] = debateG.debate_set.get(
-                            isPresenting=True).schedule
-                except models.Debate.DoesNotExist:
-                    context['schedule'] = None
-            context['matchup'] = debateG
+            context['debate'] = self.object.group.debate_set.get(
+                isPresenting=True)
+        except (models.Student_Group.DoesNotExist,
+                models.Debate.DoesNotExist):
+            context['debate'] = None
+
+        try:
+            context['opposition'] = models.Debate.objects.filter(
+                schedule=context['debate'].schedule,
+                isPresenting=True).exclude(pk=self.objects.pk)
+        except (models.Debate.DoesNotExist, AttributeError):
+            context['opposition'] = None
         return context
 
 
 class AZList (generic.ListView):
+    # OPTIMIZE QUERY
     model = models.Student
+
+    def get_queryset(self):
+        return self.model.objects.select_related('group__teacher').all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

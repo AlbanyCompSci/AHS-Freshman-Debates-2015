@@ -5,19 +5,19 @@
 {% block content %}
     <h1>{{ object }}</h1>
     <p>Teacher: {{ object.teacher.first_name }} {{ object.teacher.last_name }}</p>
-    <p>Position: {{ position }}</p>
-    <p>Topic: {{ matchup.title }}</p>
+    <p>Position: {{ object.position }}</p>
+    <p>Topic: {{ debate.schedule.topic }}</p>
 
-    {% if schedule and matchup %}
-        <p>Matchup: <a href="{% url 'groups:schedule_detail' schedule.pk %}">{{ matchup.affTeam }} Vs. {{ matchup.negTeam }}</a></p>
+    {% if debate and opposition %}
+        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
     {% else %}
         <p>No matchup</p>
     {% endif %}
 
-    {% if schedule %}
-        <p>Day: {{schedule.date|date:"l" }}</p>
-        <p>Period: {{ schedule.period }}</p>
-        <p>Debate Location: {{ schedule.location }}</p>
+    {% if debate %}
+        <p>Day: {{ debate.schedule.date|date:"l" }}</p>
+        <p>Period: {{ debate.schedule.period }}</p>
+        <p>Debate Location: {{ debate.schedule.location }}</p>
     {% endif %}
 
     <p>Students:</p>

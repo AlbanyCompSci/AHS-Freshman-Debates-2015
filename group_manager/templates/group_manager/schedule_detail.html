@@ -7,20 +7,20 @@
     <p>Date: {{ object.date }}</p>
     <p>Period: {{ object.period }}</p>
     <p>Judged by: {{ object.judge_group }}</p>
-    {% if topic %}
-        <p>topic: {{ topic }}</p>
-    {% endif %}
-    <p></p>
-    {% if presenting %}
-        <p>Affirmative: <a href="{% url 'groups:group_detail' presenting.debate_group.affTeam.pk %}">{{ presenting.debate_group.affTeam }}</a></p>
+    <p>topic: {{ object.topic }}</p>
+
+    {% if aff %}
+        <p>Affirmative: <a href="{% url 'groups:group_detail' aff.pk %}">{{ aff }}</a></p>
             <ul>
-                {% for student in presenting.debate_group.affTeam.student_set.all %}
+                {% for student in aff.student_set.all %}
                     <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
                 {% endfor %}
             </ul>
-        <p>Negative: <a href="{% url 'groups:group_detail' presenting.debate_group.negTeam.pk %}">{{ presenting.debate_group.negTeam }}</a></p>
+    {% endif %}
+    {% if neg %}
+        <p>Negative: <a href="{% url 'groups:group_detail' neg.pk %}">{{ neg }}</a></p>
             <ul>
-                {% for student in presenting.debate_group.negTeam.student_set.all %}
+                {% for student in neg.student_set.all %}
                     <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
                 {% endfor %}
             </ul>

@@ -9,9 +9,16 @@ from datetime import datetime
 class Student_Group (models.Model):
     """A single group of students.
     Stduents use foreign keys to refer to group"""
+    CHOICES = (
+        (None, "---"),
+        (True, "Affirmative"),
+        (False, "Negative")
+    )
+
     teacher = models.ForeignKey(User, limit_choices_to={
                 'groups__name': 'teacher'})
     number = models.IntegerField()
+    position = models.NullBooleanField(choices=CHOICES)
 
     def get_success_url(self):
         return reverse('groups:GroupDetailView', kwargs={'pk': self.pk})
@@ -123,7 +130,7 @@ class Location (models.Model):
 
 
 class Debate_Group (models.Model):
-    """A debate. Main components are the two groups."""
+    # A debate. Main components are the two groups.
     affTeam = models.OneToOneField(Student_Group, related_name='affTeam',
                                    verbose_name="Affirmative Team")
     negTeam = models.OneToOneField(Student_Group, related_name='negTeam',
@@ -144,6 +151,18 @@ class Debate_Group (models.Model):
         )
 
 
+class Topic (models.Model):
+    topic = models.CharField(max_length=500, unique=True)
+    detail = models.TextField()
+
+    class Meta:
+        verbose_name = "Topic"
+        verbose_name_plural = "Topics"
+
+    def __str__(self):
+        return self.topic
+
+
 class Schedule (models.Model):
     period = models.IntegerField(choices=tuple(zip(
                                  range(1, 8),
@@ -151,6 +170,7 @@ class Schedule (models.Model):
     location = models.ForeignKey(Location)
     date = models.DateField()
     judge_group = models.ForeignKey(Judge_Group, null=True, blank=True)
+    topic = models.ForeignKey(Topic, null=True, blank=True)
 
     class Meta:
         verbose_name = "Schedule"
@@ -168,18 +188,16 @@ class Schedule (models.Model):
 
 class Debate (models.Model):
     schedule = models.ForeignKey(Schedule)
-    debate_group = models.ForeignKey(Debate_Group)
+    group = models.ForeignKey(Student_Group)
     isPresenting = models.BooleanField(verbose_name='group presenting')
 
     class Meta:
         verbose_name = "Debate"
         verbose_name_plural = "Debates"
-        # unique_together = ('debate_group', 'schedule'),
 
     def __str__(self):
-        return "%s and %s in %s at %s period %s and %s presenting" % (
-                self.debate_group.affTeam,
-                self.debate_group.negTeam,
+        return "%s in %s at %s period %s and %s presenting" % (
+                self.group,
                 self. schedule.location,
                 self.schedule.date,
                 self.schedule.period,
