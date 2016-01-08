@@ -7,10 +7,6 @@ from . import models
 class GroupMixin (object):
     fieldName = None
 
-    """def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fieldName = name"""
-
     def get_form(self, request, obj=None, **kwargs):
         """ Returns form with current user passed in """
         form = super().get_form(request, obj, **kwargs)
@@ -28,9 +24,6 @@ class StudentGroupAdmin (GroupMixin, admin.ModelAdmin):
     form = forms.StudentGroupForm
     fieldName = 'students'
 
-    """def __init__(self, *args, **kwargs):
-        super().__init__('students', *args, **kwargs)"""
-
     def save_form(self, request, form, change):
         """ Set teacher to current user """
         form_uncommited = super().save_form(request, form, change)
@@ -38,17 +31,10 @@ class StudentGroupAdmin (GroupMixin, admin.ModelAdmin):
         return form_uncommited
 
 
-"""@admin.register(models.Judge_Group)
+@admin.register(models.Judge_Group)
 class JudgeGroupAdmin (GroupMixin, admin.ModelAdmin):
     form = forms.JudgeGroupForm
-
-    def __init__(self, *args, **kwargs):
-        super().__init__('judges', *args, **kwargs)"""
-
-
-"""@admin.register(models.Debate_Group)
-class DebateGroupAdmin (admin.ModelAdmin):
-    form = forms.DebateGroupForm"""
+    fieldName = 'judges'
 
 
 @admin.register(models.Debate)
@@ -57,6 +43,7 @@ class DebateAdmin(admin.ModelAdmin):
 
     def save_related(self, request, form, formsets, change):
         form.cleaned_data['group'].position = form.cleaned_data['position']
+        form.cleaned_data['group'].save()
 
 admin.site.register(models.Student_Class)
 admin.site.register(models.Student)

@@ -30,6 +30,7 @@ class Student_Group (models.Model):
         verbose_name = "Student Group"
         verbose_name_plural = "Student Groups"
         unique_together = ('teacher', 'number')
+        ordering = ['teacher__last_name', 'number']
 
     def __str__(self):
         return "%s%i" % (self.teacher.last_name[0], self.number)
