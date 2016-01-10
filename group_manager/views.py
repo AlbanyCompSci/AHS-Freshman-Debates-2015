@@ -2,6 +2,7 @@ from django.views import generic
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from itertools import groupby
+from django.db.models import Prefetch
 from . import models
 
 # Create your views here.
@@ -47,12 +48,12 @@ class StudentGroupDetailView (generic.DetailView):
         try:
             context['debate'] = self.object.debate_set.get(
                 isPresenting=True)
-        except (models.Debate.DoesNotExist):
+        except models.Debate.DoesNotExist:
             context['debate'] = None
         try:
-            context['opposition'] = models.Debate.filter(
+            context['opposition'] = models.Debate.objects.filter(
                 schedule=context['debate'].schedule,
-                isPresenting=True).exclude(pk=self.object.pk)
+                isPresenting=True).exclude(group=self.object)[0]
         except (models.Debate.DoesNotExist, AttributeError):
             context['opposition'] = None
 
@@ -60,32 +61,36 @@ class StudentGroupDetailView (generic.DetailView):
 
 
 class ScheduleDetailView (generic.DetailView):
-    # GET GROUPS WATCHING TO WORK
     model = models.Schedule
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         try:
             context['aff'] = self.object.debate_set.get(
-                isPresenting=True, group__position=True)
+                isPresenting=True, group__position=True).group
         except models.Debate.DoesNotExist:
             context['aff'] = None
         try:
             context['neg'] = self.object.debate_set.get(
-                isPresenting=True, group__position=False)
+                isPresenting=True, group__position=False).group
         except models.Debate.DoesNotExist:
             context['neg'] = None
-        try:
-            groupsWatching = [i.group for i in self.object.debate_set.filter(
-                isPresenting=False)]
-            presents = models.Debate.objects.filter(
-                isPresenting=True,
-                group__in=groupsWatching).order_by(
-                'schedule.pk')
-            presents = groupby(presents,
-                               lambda x: x.schedule.pk)
-        except models.Debate.DoesNotExist:
-            context['debates'] = None
+
+        groupsWatching = list()
+        for debate in self.object.debate_set.filter(isPresenting=False):
+            try:
+                groupsWatching.append([debate.group,
+                                      models.Debate.objects.get(
+                                        group=debate.group,
+                                        isPresenting=True).schedule.pk])
+            except models.Debate.DoesNotExist:
+                groupsWatching.append([debate.group, float('nan')])
+
+        groupsWatching.sort(key=lambda x: x[1])
+        context['watching'] = list()
+        for k, g in groupby(groupsWatching, lambda x: x[1]):
+            context['watching'].append([i[0] for i in g])
+
         return context
 
 
@@ -111,11 +116,21 @@ class StudentDetailView (generic.DetailView):
 
 
 class AZList (generic.ListView):
-    # OPTIMIZE QUERY
     model = models.Student
 
     def get_queryset(self):
-        return self.model.objects.select_related('group__teacher').all()
+        # 24
+        qs = self.model.objects.select_related('group__teacher')
+
+        for i in range(1, 8):
+            qs = qs.prefetch_related(Prefetch(
+                'group__debate_set',
+                queryset=models.Debate.objects.filter(
+                    schedule__period=i,
+                    schedule__date=self.kwargs['date']),
+                to_attr='p%d' % i),
+                    'group__p%d__schedule__location' % i)
+        return qs
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -25,29 +25,22 @@
                 {% endfor %}
             </ul>
     {% endif %}
-    {% if debates %}
-        <p>Attending:</p>
-        <ul>
-            {% for debate in debates %}
-                <li>
-                    <a href="{% url 'groups:group_detail' debate.debate_group.affTeam.pk %}">{{ debate.debate_group.affTeam }}</a>
+    <p>Attending:</p>
+    <ul>
+        {% for groups in watching %}
+            <li>{{ forloop.counter0 }}</li>
+            <ul>
+                {% for group in groups %}
+                    <li><a href="{% url 'groups:group_detail' group.pk %}">{{ group }}</a></li>
                     <ul>
-                        {% for student in debate.debate_group.affTeam.student_set.all %}
+                        {% for student in group.student_set.all %}
                             <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
                         {% endfor %}
                     </ul>
-                </li>
-                <li>
-                    <a href="{% url 'groups:group_detail' debate.debate_group.negTeam.pk %}">{{ debate.debate_group.negTeam }}</a>
-                    <ul>
-                        {% for student in debate.debate_group.negTeam.student_set.all %}
-                            <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
 {% endblock content %}
 
 {% block footer %}

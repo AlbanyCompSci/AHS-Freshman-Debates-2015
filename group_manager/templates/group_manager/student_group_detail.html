@@ -9,9 +9,14 @@
     <p>Topic: {{ debate.schedule.topic }}</p>
 
     {% if debate and opposition %}
-        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
+        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
+    {% elif debate %}
+        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.schedule }}</a></p>
     {% else %}
-        <p>No matchup</p>
+        <p>No match</p>
+    {% endif %}
+    {% if opposition %}
+        <p>Opposition: <a href="{% url 'groups:group_detail' opposition.group.pk %}">{{ opposition.group }}</a></p>
     {% endif %}
 
     {% if debate %}

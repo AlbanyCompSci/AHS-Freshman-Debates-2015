@@ -133,6 +133,13 @@ class DebateForm (forms.ModelForm):
                     error.append(ValidationError(_(
                         "This group is already presenting"),
                         code="already_presenting"))
+                if models.Debate.objects.filter(
+                        schedule=schedule,
+                        group__position=position).exclude(pk=pk).exists():
+                    error.append(ValidationError(_(
+                            "There is already a group with this position \
+                            presenting for this time slot."),
+                            code="position_used"))
             if models.Debate.objects.filter(
                     schedule__period=schedule.period,
                     schedule__date=schedule.date,
@@ -141,13 +148,6 @@ class DebateForm (forms.ModelForm):
                         "This group is already assigned to attend a \
                         debate at this time"),
                         code="already_attending"))
-            if models.Debate.objects.filter(
-                    schedule=schedule,
-                    group__position=position).exclude(pk=pk).exists():
-                error.append(ValidationError(_(
-                        "There is already a group with this position \
-                        presenting for this time slot."),
-                        code="position_used"))
         else:
             if presenting:
                 if models.Debate.objects.filter(
@@ -178,6 +178,14 @@ class DebateForm (forms.ModelForm):
                         "There is already a group with this position \
                         presenting for this time slot."),
                         code="position_used"))
+            if models.Debate.objects.filter(
+                    schedule__period=schedule.period,
+                    schedule__date=schedule.date,
+                    group=group).exists():
+                error.append(ValidationError(_(
+                        "This group is already assigned to attend a \
+                        debate at this time"),
+                        code="already_attending"))
         if presenting:
             if cleaned_data['position'] is None:
                 error.append(ValidationError(_(
