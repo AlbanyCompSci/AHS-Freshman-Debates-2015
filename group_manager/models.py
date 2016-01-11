@@ -132,7 +132,7 @@ class Location (models.Model):
 
 class Topic (models.Model):
     topic = models.CharField(max_length=500, unique=True)
-    detail = models.TextField()
+    detail = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = "Topic"
