@@ -130,28 +130,6 @@ class Location (models.Model):
         return self.location
 
 
-class Debate_Group (models.Model):
-    # A debate. Main components are the two groups.
-    affTeam = models.OneToOneField(Student_Group, related_name='affTeam',
-                                   verbose_name="Affirmative Team")
-    negTeam = models.OneToOneField(Student_Group, related_name='negTeam',
-                                   verbose_name="Negative Team")
-    title = models.CharField(max_length=140, verbose_name="topic")
-
-    class Meta:
-        verbose_name = "Debate Group"
-        verbose_name_plural = "Debate Groups"
-
-    def get_absolute_url(self):
-        return reverse('groups:debate_detail', kwargs={'pk': self.pk})
-
-    def __str__(self):
-        return "%s against %s. Topic is %s" % (
-            self.negTeam, self.affTeam,
-            self.title
-        )
-
-
 class Topic (models.Model):
     topic = models.CharField(max_length=500, unique=True)
     detail = models.TextField()
