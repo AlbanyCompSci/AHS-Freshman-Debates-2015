@@ -11,11 +11,11 @@
 {% endblock header %}
 
 {% block content %}
+    <h3>{{ dat }}</h3>
     <table border="1">
         <tr>
             <td>name</td>
             <td>team</td>
-            <td>day</td>
             <td>period 1</td>
             <td>period 2</td>
             <td>period 3</td>
@@ -28,7 +28,6 @@
             <tr>
                 <td>{{ student }}</td>
                 <td>{{ student.group }}</td>
-                <td>{{ dat|date:"l" }}</td>
                 <td>{{ student.group.p1.0.schedule.location }}</td>
                 <td>{{ student.group.p2.0.schedule.location }}</td>
                 <td>{{ student.group.p3.0.schedule.location }}</td>

@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from itertools import groupby
 from django.db.models import Prefetch
+from datetime import datetime
 from . import models
 
 # Create your views here.
@@ -137,5 +138,5 @@ class AZList (generic.ListView):
         context['dates'] = sorted(list(set([
                 i.date for i in models.Schedule.objects.all()
                 if str(i.date) != self.kwargs['date']])))
-        context['dat'] = self.kwargs['date']
+        context['dat'] = datetime.strptime(self.kwargs['date'], "%Y-%m-%d").strftime("%A")
         return context
