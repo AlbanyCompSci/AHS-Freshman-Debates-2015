@@ -12,42 +12,47 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import glob
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import dj_database_url
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'a7kbo^fv7x66pjnw9zow=al(_5d+qlh5b)!wriz0htp9(vt^ru'
+SECRET_KEY = 'pf^j$#@6*h0z)a-=sx8=%%pqnsf*7c$!_dh9c*_wdmz@#mvhem'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 DEFAULT_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
 
-THIRD_PARTY_APPS = ()
+THIRD_PARTY_APPS = (
+    'debug_toolbar',
+)
 
 LOCAL_APPS = (
     'group_manager',
 )
 
-INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = THIRD_PARTY_APPS + DEFAULT_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -56,6 +61,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'AHS_Freshman_Debates.Middleware.LoginRequiredMiddleware'
 )
 
 ROOT_URLCONF = 'AHS_Freshman_Debates.urls'
@@ -63,13 +69,17 @@ ROOT_URLCONF = 'AHS_Freshman_Debates.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': glob.glob(os.path.abspath(os.path.join(
+                          BASE_DIR, '..', '**', 'templates')), recursive=True),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -82,16 +92,13 @@ WSGI_APPLICATION = 'AHS_Freshman_Debates.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'debates',
-        'USER': 'root',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
-}
+# Parse database configuration from $DATABASE_URL
+DATABASES = {'default': dj_database_url.config()}
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+STATIC_ROOT = 'staticfiles'
 
 
 # Internationalization
@@ -112,3 +119,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# DEBUG TOOLBAR
+# Modify SHOW_TOOLBAR_CALLBACK at production
+
+
+def show_toolbar_overwrite(request):
+    if request.is_ajax():
+        return False
+
+    return bool(DEBUG)
+
+DEBUG_TOOLBAR_CONFIG = {
+    'DEBUG_TOOLBAR_PATCH_SETTINGS': False,
+    'SHOW_TOOLBAR_CALLBACK': show_toolbar_overwrite
+}
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+SHOW_TOOLBAR_CALLBACK = show_toolbar_overwrite

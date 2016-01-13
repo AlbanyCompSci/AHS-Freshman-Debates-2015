@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}BASE{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+            <a href="{% url 'groups:index' %}">Main page</a>
+        {% endblock header %}
+    </header>
+    <br />
+    <div id="content">
+        {% block content %}{% endblock content %}
+    </div>
+    <br /><br />
+    <footer>
+        {% block footer %}{% endblock footer %}
+    </footer>
+</body>
+</html>

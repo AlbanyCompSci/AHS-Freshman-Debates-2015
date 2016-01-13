@@ -1,0 +1,41 @@
+{% extends "group_manager/base.html" %}
+
+{% block title %}AZList for {{ dat }}{% endblock title %}
+
+{% block header %}
+    {{ block.super }}
+
+    {% for myDate in dates %}
+        <br /><a href="{% url 'groups:azlist' myDate|date:'Y-m-d' %}">AZList for {{ myDate|date:"Y-m-d" }}</a>
+    {% endfor %}
+{% endblock header %}
+
+{% block content %}
+    <h3>{{ dat }}</h3>
+    <table border="1">
+        <tr>
+            <td>name</td>
+            <td>team</td>
+            <td>period 1</td>
+            <td>period 2</td>
+            <td>period 3</td>
+            <td>period 4</td>
+            <td>period 5</td>
+            <td>period 6</td>
+            <td>period 7</td>
+        </tr>
+        {% for student in object_list %}
+            <tr>
+                <td>{{ student }}</td>
+                <td>{{ student.group }}</td>
+                <td>{{ student.group.p1.0.schedule.location }}</td>
+                <td>{{ student.group.p2.0.schedule.location }}</td>
+                <td>{{ student.group.p3.0.schedule.location }}</td>
+                <td>{{ student.group.p4.0.schedule.location }}</td>
+                <td>{{ student.group.p5.0.schedule.location }}</td>
+                <td>{{ student.group.p6.0.schedule.location }}</td>
+                <td>{{ student.group.p7.0.schedule.location }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

@@ -1,0 +1,16 @@
+defusedxml==0.4.1
+dj-database-url==0.3.0
+dj-static==0.0.6
+Django==1.9
+django-debug-toolbar==1.4
+django-toolbelt==0.0.1
+gunicorn==19.4.1
+httplib2==0.9.2
+psycopg2==2.6.1
+PyJWT==1.4.0
+python3-openid==3.0.9
+requests==2.9.0
+six==1.10.0
+sqlparse==0.1.18
+static3==0.6.1
+wheel==0.26.0

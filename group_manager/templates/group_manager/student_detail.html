@@ -1,0 +1,24 @@
+{% extends "group_manager/base.html" %}
+
+{% block title %}{{ object }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ object }}</h1>
+    <p>Email: {{ object.email }}</p>
+    <p>English class: {{ object.english_class }}</p>
+    <p>IHS class: {{ object.ihs_class }}</p>
+    <p>part of: <a href="{% url 'groups:group_detail' object.group.pk %}">{{ object.group }}</a></p>
+    <p>Position: {{ object.group.position }}</p>
+    <p>Topic: {{ debate.schedule.topic }}</p>
+    {% if debate and opposition %}
+        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
+    {% else if debate.schedule %}
+        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.schedule }}</a></p>
+    {% endif %}
+
+    {% if debate.schedule %}
+        <p>Day: {{ debate.schedule.date|date:"l" }}</p>
+        <p>Period: {{ debate.schedule.period }}</p>
+        <p>Debate Location: {{ debate.schedule.location }}</p>
+    {% endif %}
+{% endblock content %}

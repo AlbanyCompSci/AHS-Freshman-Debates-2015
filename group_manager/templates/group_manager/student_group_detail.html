@@ -1,0 +1,39 @@
+{% extends "group_manager/base.html" %}
+
+{% block title %}{{ object }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ object }}</h1>
+    <p>Teacher: {{ object.teacher.first_name }} {{ object.teacher.last_name }}</p>
+    <p>Position: {{ object.position }}</p>
+    <p>Topic: {{ debate.schedule.topic }}</p>
+
+    {% if debate and opposition %}
+        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
+    {% elif debate %}
+        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.schedule }}</a></p>
+    {% else %}
+        <p>No match</p>
+    {% endif %}
+    {% if opposition %}
+        <p>Opposition: <a href="{% url 'groups:group_detail' opposition.group.pk %}">{{ opposition.group }}</a></p>
+    {% endif %}
+
+    {% if debate %}
+        <p>Day: {{ debate.schedule.date|date:"l" }}</p>
+        <p>Period: {{ debate.schedule.period }}</p>
+        <p>Debate Location: {{ debate.schedule.location }}</p>
+    {% endif %}
+
+    <p>Students:</p>
+    {% for student in object.student_set.all %}
+        <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+    {% endfor %}
+{% endblock content %}
+
+{% block footer %}
+    {% if not user.is_superuser %}
+        <a href="{% url 'admin:group_manager_student_group_change' object.pk %}">Change</a><br />
+    {% endif %}
+    <a href="{% url 'admin:group_manager_student_group_delete' object.pk %}">Delete</a>
+{% endblock footer %}

@@ -1,0 +1,51 @@
+{% extends "group_manager/base.html" %}
+
+{% block title %}{{ presenting }}{% endblock title %}
+
+{% block content %}
+    <p>Location: {{ object.location }}</p>
+    <p>Date: {{ object.date }}</p>
+    <p>Period: {{ object.period }}</p>
+    <p>Judged by: {{ object.judge_group }}</p>
+    <p>topic: {{ object.topic }}</p>
+
+    {% if aff %}
+        <p>Affirmative: <a href="{% url 'groups:group_detail' aff.pk %}">{{ aff }}</a></p>
+            <ul>
+                {% for student in aff.student_set.all %}
+                    <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                {% endfor %}
+            </ul>
+    {% endif %}
+    {% if neg %}
+        <p>Negative: <a href="{% url 'groups:group_detail' neg.pk %}">{{ neg }}</a></p>
+            <ul>
+                {% for student in neg.student_set.all %}
+                    <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                {% endfor %}
+            </ul>
+    {% endif %}
+    <p>Attending:</p>
+    <ul>
+        {% for groups in watching %}
+            <li>{{ forloop.counter0 }}</li>
+            <ul>
+                {% for group in groups %}
+                    <li><a href="{% url 'groups:group_detail' group.pk %}">{{ group }}</a></li>
+                    <ul>
+                        {% for student in group.student_set.all %}
+                            <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+
+{% block footer %}
+    {% if user.is_superuser %}
+        <a href="{% url 'admin:group_manager_schedule_delete' object.pk %}">Delete</a><br />
+        <a href="{% url 'admin:group_manager_schedule_change' object.pk %}">Change</a>
+    {% endif %}
+{% endblock footer %}
