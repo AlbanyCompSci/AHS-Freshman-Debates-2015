@@ -19,10 +19,12 @@
     {% else %}
         <p>No groups currently. Create one!</p>
     {% endif %}
-{% endblock content %}
 
-{% block footer %}
     {% for dat in dates %}
         <br /><a href="{% url 'groups:azlist' dat|date:'Y-m-d' %}">AZList for {{ dat|date:"m-d-y" }}</a>
     {% endfor %}
+{% endblock content %}
+
+{% block footer %}
+    <a href="{% url 'admin:group_manager_student_changelist' %}">Manage students</a>
 {% endblock footer %}
