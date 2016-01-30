@@ -20,6 +20,11 @@ from django.views.generic.base import RedirectView
 from django.conf import settings
 import django.contrib.auth.views
 
+
+admin.site.site_header = "AHS Freshman Debates Administration"
+admin.site.site_title = "AHS Freshman Debates admin site"
+
+
 urlpatterns = [
     url(r'^$', RedirectView.as_view(
         url=reverse_lazy('groups:index'),

@@ -54,7 +54,7 @@ class StudentGroupDetailView (generic.DetailView):
         try:
             context['opposition'] = models.Debate.objects.filter(
                 schedule=context['debate'].schedule,
-                isPresenting=True).exclude(group=self.object)[0]
+                isPresenting=True).exclude(group=self.object).first()
         except (models.Debate.DoesNotExist, AttributeError):
             context['opposition'] = None
 
@@ -110,7 +110,7 @@ class StudentDetailView (generic.DetailView):
         try:
             context['opposition'] = models.Debate.objects.filter(
                 schedule=context['debate'].schedule,
-                isPresenting=True).exclude(pk=self.objects.pk)
+                isPresenting=True).exclude(pk=context['debate'].pk).first()
         except (models.Debate.DoesNotExist, AttributeError):
             context['opposition'] = None
         return context

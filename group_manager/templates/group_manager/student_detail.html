@@ -12,7 +12,7 @@
     <p>Topic: {{ debate.schedule.topic }}</p>
     {% if debate and opposition %}
         <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
-    {% else if debate.schedule %}
+    {% elif debate.schedule %}
         <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.schedule }}</a></p>
     {% endif %}
 
@@ -22,3 +22,7 @@
         <p>Debate Location: {{ debate.schedule.location }}</p>
     {% endif %}
 {% endblock content %}
+
+{% block footer %}
+    <a href="{% url 'admin:group_manager_student_change' object.pk %}">Change</a>
+{% endblock footer %}
