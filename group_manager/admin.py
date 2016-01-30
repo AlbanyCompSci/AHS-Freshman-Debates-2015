@@ -23,6 +23,8 @@ class GroupMixin (object):
 class StudentGroupAdmin (GroupMixin, admin.ModelAdmin):
     form = forms.StudentGroupForm
     fieldName = 'students'
+    list_display = ('teacher', 'number', 'position')
+    list_filter = ('teacher',)
 
     def save_form(self, request, form, change):
         """ Set teacher to current user """
@@ -38,16 +40,40 @@ class JudgeGroupAdmin (GroupMixin, admin.ModelAdmin):
 
 
 @admin.register(models.Debate)
-class DebateAdmin(admin.ModelAdmin):
+class DebateAdmin (admin.ModelAdmin):
     form = forms.DebateForm
+    list_display = ('group', 'isPresenting', 'schedule')
+    list_filter = ('isPresenting', 'group__position', 'schedule__topic', 'group')
 
     def save_related(self, request, form, formsets, change):
         form.cleaned_data['group'].position = form.cleaned_data['position']
         form.cleaned_data['group'].save()
 
-admin.site.register(models.Student_Class)
-admin.site.register(models.Student)
-admin.site.register(models.Judge)
+
+@admin.register(models.Student)
+class StudentAdmin (admin.ModelAdmin):
+    search_fields = ['^first_name', '^last_name']
+    list_display = ('last_name', 'first_name', 'english_class', 'group')
+    list_filter = ('english_class__teacher',)
+
+
+@admin.register(models.Student_Class)
+class StudentClassAdmin (admin.ModelAdmin):
+    list_display = ('teacher', 'period', 'type')
+    list_filter = ('teacher', 'type')
+
+
+@admin.register(models.Judge)
+class JudgeAdmin (admin.ModelAdmin):
+    search_fields = ['^first_name', '^last_name']
+    list_display = ('last_name', 'first_name')
+
+
+@admin.register(models.Schedule)
+class ScheduleAdmin (admin.ModelAdmin):
+    list_display = ('date', 'period', 'location', 'topic')
+    list_filter = ('period', 'location', 'topic')
+
+
 admin.site.register(models.Location)
-admin.site.register(models.Schedule)
 admin.site.register(models.Topic)
