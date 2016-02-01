@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = (
 
 LOCAL_APPS = (
     'group_manager',
+    'grading'
 )
 
 INSTALLED_APPS = THIRD_PARTY_APPS + DEFAULT_APPS + LOCAL_APPS
