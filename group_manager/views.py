@@ -27,7 +27,11 @@ class IndexView (generic.View):
     def get(self, request, *args, **kwargs):
         if request.user.is_superuser:
             return HttpResponseRedirect(reverse('groups:schedule'))
-        return StaffIndexView.as_view()(request)
+        if request.user.groups.filter(name='teacher').exists():
+            return StaffIndexView.as_view()(request)
+        if request.user.groups.filter(name='teacher assistant').exists():
+            return HttpResponseRedirect(
+                reverse('admin:grading_scoring_sheet_add'))
 
 
 class ScheduleListView (generic.ListView):
