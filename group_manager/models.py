@@ -168,7 +168,7 @@ class Schedule (models.Model):
 class Debate (models.Model):
     schedule = models.ForeignKey(Schedule)
     group = models.ForeignKey(Student_Group)
-    isPresenting = models.BooleanField(verbose_name='group presenting')
+    isPresenting = models.BooleanField(verbose_name='group presenting?')
 
     class Meta:
         verbose_name = "Debate"
