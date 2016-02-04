@@ -19,21 +19,20 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic.base import RedirectView
 from django.conf import settings
 import django.contrib.auth.views
-
-
-admin.site.site_header = "AHS Freshman Debates Administration"
-admin.site.site_title = "AHS Freshman Debates admin site"
+import group_manager.urls
+import grappelli.urls
 
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(
         url=reverse_lazy('groups:index'),
         permanent=True)),
+    url(r'^grappelli/', include(grappelli.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
     url(r'^account/logout/$', django.contrib.auth.views.logout,
         {'next_page': reverse_lazy('groups:index')}, name='logout'),
-    url(r'^groups/', include('group_manager.urls', namespace="groups"))
+    url(r'^groups/', include(group_manager.urls, namespace="groups"))
 ]
 
 if settings.DEBUG:
