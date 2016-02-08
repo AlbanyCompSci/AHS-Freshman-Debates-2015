@@ -43,7 +43,8 @@ class JudgeGroupAdmin (GroupMixin, admin.ModelAdmin):
 class DebateAdmin (admin.ModelAdmin):
     form = forms.DebateForm
     list_display = ('group', 'isPresenting', 'schedule')
-    list_filter = ('isPresenting', 'group__position', 'schedule__topic', 'group')
+    list_filter = ('isPresenting', 'group__position',
+                   'schedule__topic', 'group')
 
     def save_related(self, request, form, formsets, change):
         form.cleaned_data['group'].position = form.cleaned_data['position']

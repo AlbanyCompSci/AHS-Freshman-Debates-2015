@@ -43,10 +43,12 @@ DEFAULT_APPS = (
 
 THIRD_PARTY_APPS = (
     'debug_toolbar',
+    'grappelli'
 )
 
 LOCAL_APPS = (
     'group_manager',
+    'grading'
 )
 
 INSTALLED_APPS = THIRD_PARTY_APPS + DEFAULT_APPS + LOCAL_APPS
@@ -80,7 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
@@ -137,3 +139,7 @@ DEBUG_TOOLBAR_CONFIG = {
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 SHOW_TOOLBAR_CALLBACK = show_toolbar_overwrite
+
+# GRAPPELLI
+
+GRAPPELLI_ADMIN_TITLE = 'AHS Freshman Debates Admin'
