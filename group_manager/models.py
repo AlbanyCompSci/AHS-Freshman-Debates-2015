@@ -101,6 +101,10 @@ class Student (models.Model):
     def __str__(self):
         return "%s, %s" % (self.last_name, self.first_name)
 
+    @staticmethod
+    def autocomplete_search_fields():
+        return ('first_name__startswith', 'last_name__startswith')
+
 
 class Judge (models.Model):
     student_id = models.BigIntegerField(primary_key=True, unique=True)
@@ -117,6 +121,10 @@ class Judge (models.Model):
 
     def __str__(self):
         return "%s, %s" % (self.last_name, self.first_name)
+
+    @staticmethod
+    def autocomplete_search_fields():
+        return ('first_name__startswith', 'last_name__startswith')
 
 
 class Location (models.Model):
@@ -168,7 +176,7 @@ class Schedule (models.Model):
 class Debate (models.Model):
     schedule = models.ForeignKey(Schedule)
     group = models.ForeignKey(Student_Group)
-    isPresenting = models.BooleanField(verbose_name='group presenting')
+    isPresenting = models.BooleanField(verbose_name='group presenting?')
 
     class Meta:
         verbose_name = "Debate"
