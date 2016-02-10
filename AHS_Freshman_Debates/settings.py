@@ -42,7 +42,6 @@ DEFAULT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    'debug_toolbar',
     'grappelli'
 )
 
@@ -121,24 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# DEBUG TOOLBAR
-# Modify SHOW_TOOLBAR_CALLBACK at production
-
-
-def show_toolbar_overwrite(request):
-    if request.is_ajax():
-        return False
-
-    return bool(DEBUG)
-
-DEBUG_TOOLBAR_CONFIG = {
-    'DEBUG_TOOLBAR_PATCH_SETTINGS': False,
-    'SHOW_TOOLBAR_CALLBACK': show_toolbar_overwrite
-}
-
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
-SHOW_TOOLBAR_CALLBACK = show_toolbar_overwrite
 
 # GRAPPELLI
 
