@@ -6,6 +6,25 @@ from datetime import datetime
 
 # Create your models here.
 
+
+class Teacher (models.Model):
+    """ A teacher """
+    user = models.OneToOneField(User, limit_choices_to={
+                'groups__name': 'teacher'})
+    initial = models.CharField(max_length=140, unique=True)
+
+    class Meta:
+        verbose_name = "Teacher"
+        verbose_name_plural = "Teachers"
+
+    def __str__(self):
+        return str(self.user)
+
+    @staticmethod
+    def autocomplete_search_fields():
+        return ('initial__startswith',)
+
+
 class Student_Group (models.Model):
     """A single group of students.
     Stduents use foreign keys to refer to group"""
@@ -15,8 +34,7 @@ class Student_Group (models.Model):
         (False, "Negative")
     )
 
-    teacher = models.ForeignKey(User, limit_choices_to={
-                'groups__name': 'teacher'})
+    teacher = models.ForeignKey(Teacher)
     number = models.IntegerField()
     position = models.NullBooleanField(choices=CHOICES)
 
@@ -30,14 +48,19 @@ class Student_Group (models.Model):
         verbose_name = "Student Group"
         verbose_name_plural = "Student Groups"
         unique_together = ('teacher', 'number')
-        ordering = ['teacher__last_name', 'number']
+        ordering = ['teacher__user__last_name', 'number']
 
     def __str__(self):
-        return "%s%i" % (self.teacher.last_name[0], self.number)
+        return "%s%i" % (self.teacher.initial, self.number)
+
+    @staticmethod
+    def autocomplete_search_fields():
+        return ('teacher__initial__startswith')
+
 
 
 class Student_Class (models.Model):
-    """A single English class period"""
+    """ A single English class period """
     ENGLISH_TYPE = 0
     IHS_TYPE = 1
 
@@ -47,8 +70,7 @@ class Student_Class (models.Model):
     )
 
     teacher = models.ForeignKey(User, limit_choices_to={
-        'groups__name': 'teacher'
-    })
+                'groups__name': 'teacher'})
     period = models.IntegerField(choices=tuple(zip(
                                  range(1, 8),
                                  (str(i) for i in range(1, 8)))))

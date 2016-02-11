@@ -23,13 +23,13 @@ class GroupMixin (object):
 class StudentGroupAdmin (GroupMixin, admin.ModelAdmin):
     form = forms.StudentGroupForm
     fieldName = 'students'
-    list_display = ('teacher', 'number', 'position')
+    list_display = ('__str__', 'teacher', 'number', 'position')
     list_filter = ('teacher',)
 
     def save_form(self, request, form, change):
         """ Set teacher to current user """
         form_uncommited = super().save_form(request, form, change)
-        form_uncommited.teacher = request.user
+        form_uncommited.teacher = models.Teacher.objects.get(user=request.user)
         return form_uncommited
 
 
@@ -78,3 +78,4 @@ class ScheduleAdmin (admin.ModelAdmin):
 
 admin.site.register(models.Location)
 admin.site.register(models.Topic)
+admin.site.register(models.Teacher)

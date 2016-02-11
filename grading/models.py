@@ -48,9 +48,13 @@ class Scoring_Sheet(models.Model):
     def __str__(self):
         return "%s's judgement of %s" % (self.judge.first_name, self.group)
 
+    @staticmethod
+    def autocomplete_search_fields():
+        return ('group__teacher__initial__startswith',)
+
 
 class Student_Argument(models.Model):
-    student = models.ForeignKey(groupModels.Student)
+    student = models.CharField(max_length=140)
     scoring = models.ForeignKey(Scoring_Sheet)
 
     totalTime = models.CharField(max_length=140)
@@ -68,7 +72,7 @@ class Student_Argument(models.Model):
         verbose_name_plural = "Student Arguments"
 
     def __str__(self):
-        return "%s's individual score by %s" % (self.student.first_name,
+        return "%s's individual score by %s" % (self.student,
                                                 self.scoring.judge.first_name)
 
 
