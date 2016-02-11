@@ -23,13 +23,14 @@ class StudentGroupForm (forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.teacher = models.Teacher.objects.get(user=self.current_user)
 
         try:
             self.fields['number'].initial = (models.Student_Group
                                              .objects.filter(
-                                                teacher=self.current_user)
+                                                teacher=self.teacher)
                                              .order_by(
-                                                '-number')[0]).number + 1
+                                                '-number'))[0].number + 1
         except IndexError:
             self.fields['number'].initial = 1
 
@@ -53,14 +54,14 @@ class StudentGroupForm (forms.ModelForm):
             return cleaned_data
         if self.instance:
             if models.Student_Group.objects.filter(
-                teacher=self.current_user, number=number).exclude(
+                teacher=self.teacher, number=number).exclude(
                     pk=self.instance.pk):
                     raise ValidationError(_(
                         "A group already exists with this number"),
                         code="unique_together")
         else:
             if (models.Student_Group.objects.filter(
-                    teacher=self.current_user, number=number)):
+                    teacher=self.teacher, number=number)):
                 raise ValidationError(_(
                         "A group already exists with this number"),
                         code="unique_together")
