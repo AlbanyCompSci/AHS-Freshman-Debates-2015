@@ -14,7 +14,7 @@ class StaffIndexView (generic.ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        return qs.filter(teacher=self.request.user)
+        return qs.filter(teacher=models.Teacher.objects.get(user=self.request.user))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
