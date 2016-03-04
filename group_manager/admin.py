@@ -14,8 +14,9 @@ class GroupMixin (object):
         return form
 
     def save_related(self, request, form, formsets, change):
-        super()
-        form.fields[self.fieldName].initial.update(group=None)
+        super().save_related(request, form, formsets, change)
+        if form.fields[self.fieldName].initial:
+            form.fields[self.fieldName].initial.update(group=None)
         form.cleaned_data[self.fieldName].update(group=form.instance)
 
 
@@ -29,7 +30,10 @@ class StudentGroupAdmin (GroupMixin, admin.ModelAdmin):
     def save_form(self, request, form, change):
         """ Set teacher to current user """
         form_uncommited = super().save_form(request, form, change)
-        form_uncommited.teacher = models.Teacher.objects.get(user=request.user)
+        if request.user.is_superuser:
+            form_uncommited.teacher = form.instance.teacher
+        else:
+            form_uncommited.teacher = models.Teacher.objects.get(user=request.user)
         return form_uncommited
 
 
