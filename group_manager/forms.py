@@ -23,19 +23,10 @@ class StudentGroupForm (forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.teacher = models.Teacher.objects.get(user=self.current_user)
-
-        try:
-            self.fields['number'].initial = (models.Student_Group
-                                             .objects.filter(
-                                                teacher=self.teacher)
-                                             .order_by(
-                                                '-number'))[0].number + 1
-        except IndexError:
-            self.fields['number'].initial = 1
 
         # For change. Includes already selected students
-        if self.instance:
+        if self.instance.pk:
+            self.teacher = self.instance.teacher
             self.fields['students'].queryset = models.Student.objects.filter(
                             (Q(group__isnull=True) &
                                 Q(english_class__teacher=self.current_user)) |
@@ -45,6 +36,16 @@ class StudentGroupForm (forms.ModelForm):
             self.fields['students'].queryset = models.Student.objects.filter(
                         group__isnull=True,
                         english_class__teacher=self.current_user)
+            self.teacher = models.Teacher.objects.get(user=self.current_user)
+
+            try:
+                self.fields['number'].initial = (models.Student_Group
+                                                 .objects.filter(
+                                                    teacher=self.teacher)
+                                                 .order_by(
+                                                    '-number'))[0].number + 1
+            except IndexError:
+                self.fields['number'].initial = 1
 
     def clean(self):
         cleaned_data = super().clean()
