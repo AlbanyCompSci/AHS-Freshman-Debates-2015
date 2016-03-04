@@ -124,7 +124,6 @@ class AZList (generic.ListView):
     model = models.Student
 
     def get_queryset(self):
-        # 24
         qs = self.model.objects.select_related('group__teacher')
 
         for i in range(1, 8):
