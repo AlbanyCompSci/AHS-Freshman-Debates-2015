@@ -106,10 +106,13 @@ class DebateForm (forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        try:
+        if self.instance.pk:
             self.fields['position'].initial = self.instance.group.position
+
+        """try:
+
         except models.Student_Group.DoesNotExist:
-            pass
+            pass"""
 
     def clean(self):
         cleaned_data = super().clean()
@@ -119,7 +122,7 @@ class DebateForm (forms.ModelForm):
         position = cleaned_data.get("position")
         error = []
 
-        if self.instance:
+        if self.instance.pk:
             pk = self.instance.pk
 
             if presenting:
@@ -127,7 +130,7 @@ class DebateForm (forms.ModelForm):
                     schedule=schedule,
                         isPresenting=True).count() > 2:
                     error.append(ValidationError(_(
-                        "Two group is already presenting for this schedule"),
+                        "Two group are already presenting for this schedule"),
                         code="schedule_presenting_not_unique"))
                 if models.Debate.objects.filter(
                     group=group,
@@ -156,7 +159,7 @@ class DebateForm (forms.ModelForm):
                     schedule=schedule,
                         isPresenting=True).count() > 1:
                     error.append(ValidationError(_(
-                            "Two group is already presenting for \
+                            "Two group are already presenting for \
                             this schedule"),
                             code="schedule_presenting_not_unique"))
                 if models.Debate.objects.filter(
@@ -165,14 +168,6 @@ class DebateForm (forms.ModelForm):
                     error.append(ValidationError(_(
                         "This group is already presenting"),
                         code="already_presenting"))
-                if models.Debate.objects.filter(
-                    schedule__period=schedule.period,
-                    schedule__date=schedule.date,
-                        group=group).exists():
-                    error.append(ValidationError(_(
-                            "This group is already assigned to attend a \
-                            debate at this time"),
-                            code="already_attending"))
                 if models.Debate.objects.filter(
                     schedule=schedule,
                         group__position=position).exists():

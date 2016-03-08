@@ -51,6 +51,7 @@ class DebateAdmin (admin.ModelAdmin):
                    'schedule__topic', 'group')
 
     def save_related(self, request, form, formsets, change):
+        super().save_related(request, form, formsets, change)
         form.cleaned_data['group'].position = form.cleaned_data['position']
         form.cleaned_data['group'].save()
 
