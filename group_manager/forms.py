@@ -84,7 +84,7 @@ class JudgeGroupForm (forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         # For change, includes already selected judges
-        if self.instance:
+        if self.instance.pk:
             self.fields['judges'].queryset = models.Judge.objects.filter(
                             Q(group__isnull=True) | Q(group=self.instance))
             self.fields['judges'].initial = self.instance.judge_set.all()
@@ -108,11 +108,6 @@ class DebateForm (forms.ModelForm):
 
         if self.instance.pk:
             self.fields['position'].initial = self.instance.group.position
-
-        """try:
-
-        except models.Student_Group.DoesNotExist:
-            pass"""
 
     def clean(self):
         cleaned_data = super().clean()
