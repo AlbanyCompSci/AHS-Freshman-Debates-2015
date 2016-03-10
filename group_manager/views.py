@@ -120,20 +120,49 @@ class StudentDetailView (generic.DetailView):
         return context
 
 
-class AZList (generic.ListView):
+class AZListDate (generic.ListView):
     model = models.Student
+    template_name = 'group_manager/AZList_date.html'
 
     def get_queryset(self):
         qs = self.model.objects.select_related('group__teacher')
 
-        for i in range(1, 8):
+        for period in range(1, 8):
             qs = qs.prefetch_related(Prefetch(
                 'group__debate_set',
                 queryset=models.Debate.objects.filter(
-                    schedule__period=i,
+                    schedule__period=period).order_by('schedule__date'),
+                to_attr='p%d' % period),
+                    'group__p%d__schedule__location' % period)
+
+        return qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dates'] = context['dates'] = sorted(list(set([
+                i.date for i in models.Schedule.objects.all()])))
+        context['numdates'] = range(len((context['dates'])))
+
+        return context
+
+
+class AZListGroup (generic.ListView):
+    model = models.Student
+    template_name = 'group_manager/AZList_group.html'
+
+    def get_queryset(self):
+        qs = self.model.objects.select_related('group__teacher').order_by(
+            'group__teacher', 'group__number')
+
+        for period in range(1, 8):
+            qs = qs.prefetch_related(Prefetch(
+                'group__debate_set',
+                queryset=models.Debate.objects.filter(
+                    schedule__period=period,
                     schedule__date=self.kwargs['date']),
-                to_attr='p%d' % i),
-                    'group__p%d__schedule__location' % i)
+                to_attr='p%d' % period),
+                    'group__p%d__schedule__location' % period)
+
         return qs
 
     def get_context_data(self, **kwargs):
@@ -143,3 +172,4 @@ class AZList (generic.ListView):
                 if str(i.date) != self.kwargs['date']])))
         context['dat'] = datetime.strptime(self.kwargs['date'], "%Y-%m-%d").strftime("%A")
         return context
+
