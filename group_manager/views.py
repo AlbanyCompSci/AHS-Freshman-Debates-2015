@@ -120,10 +120,52 @@ class StudentDetailView (generic.DetailView):
         return context
 
 
-class AZList (generic.ListView):
+class AZListDate (generic.ListView):
     model = models.Student
+    template_name = 'group_manager/AZList_date.html'
 
     def get_queryset(self):
+        qs = self.model.objects.select_related('group__teacher')
+
+        for period in range(1, 8):
+            qs = qs.prefetch_related(Prefetch(
+                'group__debate_set',
+                queryset=models.Debate.objects.filter(
+                    schedule__period=period).order_by('schedule__date'),
+                to_attr='p%d' % period),
+                    'group__p%d__schedule__location' % period)
+
+
+
+
+        """for numDate, date in enumerate(sorted(list(set([
+            i.date for i in models.Schedule.objects.all()])))):
+                qs = qs.prefetch_related(Prefetch(
+                    'group__debate_set',
+                    queryset=models.Debate.objects.filter(
+                        schedule__date=date).order_by('schedule__period'),
+                    to_attr='d%d' % numDate),
+                        'group__d%d__schedule__location' % numDate)"""
+
+        return qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dates'] = context['dates'] = sorted(list(set([
+                i.date for i in models.Schedule.objects.all()])))
+        context['numdates'] = range(len((context['dates'])))
+
+        return context
+
+
+
+
+
+
+
+
+
+    """def get_queryset(self):
         qs = self.model.objects.select_related('group__teacher')
 
         for i in range(1, 8):
@@ -134,12 +176,12 @@ class AZList (generic.ListView):
                     schedule__date=self.kwargs['date']),
                 to_attr='p%d' % i),
                     'group__p%d__schedule__location' % i)
-        return qs
+        return qs"""
 
-    def get_context_data(self, **kwargs):
+    """def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['dates'] = sorted(list(set([
                 i.date for i in models.Schedule.objects.all()
                 if str(i.date) != self.kwargs['date']])))
         context['dat'] = datetime.strptime(self.kwargs['date'], "%Y-%m-%d").strftime("%A")
-        return context
+        return context"""

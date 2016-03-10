@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'schedule/$', views.ScheduleListView.as_view(), name='schedule'),
     url(r'schedule/(?P<pk>[0-9]+)/$', views.ScheduleDetailView.as_view(),
         name='schedule_detail'),
-    url(r'azlist/(?P<date>[0-9-]+)/$', views.AZList.as_view(),
+    url(r'azlistdate/$', views.AZListDate.as_view(),
         name='azlist')
 ]
