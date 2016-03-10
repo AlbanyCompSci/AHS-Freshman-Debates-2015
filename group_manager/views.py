@@ -144,3 +144,32 @@ class AZListDate (generic.ListView):
         context['numdates'] = range(len((context['dates'])))
 
         return context
+
+
+class AZListGroup (generic.ListView):
+    model = models.Student
+    template_name = 'group_manager/AZList_group.html'
+
+    def get_queryset(self):
+        qs = self.model.objects.select_related('group__teacher').order_by(
+            'group__teacher', 'group__number')
+
+        for period in range(1, 8):
+            qs = qs.prefetch_related(Prefetch(
+                'group__debate_set',
+                queryset=models.Debate.objects.filter(
+                    schedule__period=period,
+                    schedule__date=self.kwargs['date']),
+                to_attr='p%d' % period),
+                    'group__p%d__schedule__location' % period)
+
+        return qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dates'] = sorted(list(set([
+                i.date for i in models.Schedule.objects.all()
+                if str(i.date) != self.kwargs['date']])))
+        context['dat'] = datetime.strptime(self.kwargs['date'], "%Y-%m-%d").strftime("%A")
+        return context
+
