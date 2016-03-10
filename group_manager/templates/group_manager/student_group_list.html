@@ -20,9 +20,7 @@
         <p>No groups currently. Create one!</p>
     {% endif %}
 
-    {% for dat in dates %}
-        <br /><a href="{% url 'groups:azlist' dat|date:'Y-m-d' %}">AZList for {{ dat|date:"m-d-y" }}</a>
-    {% endfor %}
+    <br /><a href="{% url 'groups:azlist' %}">AZList by date</a>
 {% endblock content %}
 
 {% block footer %}
