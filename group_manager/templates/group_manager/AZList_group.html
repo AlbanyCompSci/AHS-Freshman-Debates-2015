@@ -6,23 +6,23 @@
     {{ block.super }}
 
     {% for myDate in dates %}
-        <br /><a href="{% url 'groups:azlist' myDate|date:'Y-m-d' %}">AZList for {{ myDate|date:"Y-m-d" }}</a>
+        <br /><a href="{% url 'groups:azlist_group' myDate|date:'Y-m-d' %}">AZList for {{ myDate|date:"Y-m-d" }}</a>
     {% endfor %}
 {% endblock header %}
 
 {% block content %}
-    <h3>{{ dat }}</h3>
+    <h3>AZList by group for {{ dat }}</h3>
     <table border="1">
         <tr>
-            <td>name</td>
-            <td>team</td>
-            <td>period 1</td>
-            <td>period 2</td>
-            <td>period 3</td>
-            <td>period 4</td>
-            <td>period 5</td>
-            <td>period 6</td>
-            <td>period 7</td>
+            <th>name</th>
+            <th>team</th>
+            <th>period 1</th>
+            <th>period 2</th>
+            <th>period 3</th>
+            <th>period 4</th>
+            <th>period 5</th>
+            <th>period 6</th>
+            <th>period 7</th>
         </tr>
         {% for student in object_list %}
             <tr>

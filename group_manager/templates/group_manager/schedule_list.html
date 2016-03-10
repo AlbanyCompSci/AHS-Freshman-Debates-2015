@@ -20,9 +20,10 @@
             {% endfor %}
         </ul>
     {% endif %}
+        <br /><a href="{% url 'groups:azlist' %}">AZList by date</a><br />
 
-    {% for dat in dates %}
-        <br /><a href="{% url 'groups:azlist' dat|date:'Y-m-d' %}">AZList for {{ dat|date:"m-d-y" }}</a>
+        {% for dat in dates %}
+        <br /><a href="{% url 'groups:azlist_group' dat|date:'Y-m-d' %}">AZList by group for {{ dat|date:"m-d-y" }}</a>
     {% endfor %}
 {% endblock content %}
 
