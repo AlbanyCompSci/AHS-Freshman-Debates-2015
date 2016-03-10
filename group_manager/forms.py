@@ -107,7 +107,8 @@ class DebateForm (forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         if self.instance.pk:
-            self.fields['position'].initial = self.instance.group.position
+            if self.instance.isPresenting:
+                self.fields['position'].initial = self.instance.group.position
 
         """try:
 
@@ -140,7 +141,8 @@ class DebateForm (forms.ModelForm):
                         code="already_presenting"))
                 if models.Debate.objects.filter(
                         schedule=schedule,
-                        group__position=position).exclude(pk=pk).exists():
+                        group__position=position,
+                        isPresenting=True).exclude(pk=pk).exists():
                     error.append(ValidationError(_(
                             "There is already a group with this position \
                             presenting for this time slot."),
@@ -164,13 +166,14 @@ class DebateForm (forms.ModelForm):
                             code="schedule_presenting_not_unique"))
                 if models.Debate.objects.filter(
                     group=group,
-                        isPresenting=True).exists():
+                    isPresenting=True).exists():
                     error.append(ValidationError(_(
                         "This group is already presenting"),
                         code="already_presenting"))
                 if models.Debate.objects.filter(
                     schedule=schedule,
-                        group__position=position).exists():
+                    group__position=position,
+                        isPresenting=True).exists():
                     error.append(ValidationError(_(
                         "There is already a group with this position \
                         presenting for this time slot."),
