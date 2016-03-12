@@ -131,7 +131,7 @@ class AZListDate (generic.ListView):
             qs = qs.prefetch_related(Prefetch(
                 'group__debate_set',
                 queryset=models.Debate.objects.filter(
-                    schedule__period=period).order_by('schedule__date'),
+                    schedule__period=period),
                 to_attr='p%d' % period),
                     'group__p%d__schedule__location' % period)
 
@@ -141,7 +141,6 @@ class AZListDate (generic.ListView):
         context = super().get_context_data(**kwargs)
         context['dates'] = context['dates'] = sorted(list(set([
                 i.date for i in models.Schedule.objects.all()])))
-        context['numdates'] = range(len((context['dates'])))
 
         return context
 

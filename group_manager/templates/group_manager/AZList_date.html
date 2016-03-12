@@ -20,50 +20,46 @@
             <th>period 7</th>
         </tr>
         {% for student in object_list %}
-            {% for numdate in numdates %}
-                {% with p1=student.group.p1|resolve:numdate p2=student.group.p2|resolve:numdate p3=student.group.p3|resolve:numdate p4=student.group.p4|resolve:numdate p5=student.group.p5|resolve:numdate p6=student.group.p6|resolve:numdate p7=student.group.p7|resolve:numdate %}
-                    <tr>
-                        <td>{{ student }}</td>
-                        <td>{{ student.group }}</td>
-                        <td>{{ dates|resolve:numdate }}</td>
-                        {% if student.group.p1.0.isPresenting %}
-                            <td><i>{{ p1.schedule.location }}</i></td>
-                        {% else %}
-                            <td>{{ p1.schedule.location }}</td>
-                        {% endif %}
-                         {% if p2.isPresenting %}
-                            <td><i>{{ p2.schedule.location }}</i></td>
-                        {% else %}
-                            <td>{{ p2.schedule.location }}</td>
-                        {% endif %}
-                        {% if p3.isPresenting %}
-                            <td><i>{{ p3.schedule.location }}</i></td>
-                        {% else %}
-                            <td>{{ p3.schedule.location }}</td>
-                        {% endif %}
-                        {% if p4.isPresenting %}
-                            <td><i>{{ p4.schedule.location }}</i></td>
-                        {% else %}
-                            <td>{{ p4.schedule.location }}</td>
-                        {% endif %}
-                        {% if p5.isPresenting %}
-                            <td><i>{{ p5.schedule.location }}</i></td>
-                        {% else %}
-                            <td>{{ p5.schedule.location }}</td>
-                        {% endif %}
-                        {% if p6.isPresenting %}
-                            <td><i>{{ p6.schedule.location }}</i></td>
-                        {% else %}
-                            <td>{{ p6.schedule.location }}</td>
-                        {% endif %}
-                        {% if p7.isPresenting %}
-                            <td><i>{{ p7.schedule.location }}</i></td>
-                        {% else %}
-                            <td>{{ p7.schedule.location }}</td>
-                        {% endif %}
-                    </tr>
-                {% endwith %}
-            {% endfor %}
+            <tr>
+                <td>{{ student }}</td>
+                <td>{{ student.group }}</td>
+                <td> {{ student.group.p1.0.schedule.date|date:"l" }}</td>
+                {% if student.group.p1.0.isPresenting %}
+                    <td><i>{{ student.group.p1.0.schedule.location }}</i></td>
+                {% else %}
+                    <td><i>{{ student.group.p1.0.schedule.location }}</i></td>
+                {% endif %}
+                {% if student.group.p2.0.isPresenting %}
+                    <td><i>{{ student.group.p2.0.schedule.location }}</i></td>
+                {% else %}
+                    <td><i>{{ student.group.p2.0.schedule.location }}</i></td>
+                {% endif %}
+                {% if student.group.p3.0.isPresenting %}
+                    <td><i>{{ student.group.p3.0.schedule.location }}</i></td>
+                {% else %}
+                    <td><i>{{ student.group.p3.0.schedule.location }}</i></td>
+                {% endif %}
+                {% if student.group.p4.0.isPresenting %}
+                    <td><i>{{ student.group.p4.0.schedule.location }}</i></td>
+                {% else %}
+                    <td><i>{{ student.group.p4.0.schedule.location }}</i></td>
+                {% endif %}
+                {% if student.group.p5.0.isPresenting %}
+                    <td><i>{{ student.group.p5.0.schedule.location }}</i></td>
+                {% else %}
+                    <td><i>{{ student.group.p5.0.schedule.location }}</i></td>
+                {% endif %}
+                {% if student.group.p6.0.isPresenting %}
+                    <td><i>{{ student.group.p6.0.schedule.location }}</i></td>
+                {% else %}
+                    <td><i>{{ student.group.p6.0.schedule.location }}</i></td>
+                {% endif %}
+                {% if student.group.p7.0.isPresenting %}
+                    <td><i>{{ student.group.p7.0.schedule.location }}</i></td>
+                {% else %}
+                    <td><i>{{ student.group.p7.0.schedule.location }}</i></td>
+                {% endif %}
+            </tr>
         {% endfor %}
     </table>
 {% endblock content %}
