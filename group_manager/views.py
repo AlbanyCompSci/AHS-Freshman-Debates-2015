@@ -1,9 +1,10 @@
 from django.views import generic
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
-from itertools import groupby
+from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Prefetch
 from datetime import datetime
+from itertools import groupby
+import csv
 from . import models
 
 # Create your views here.
@@ -172,3 +173,42 @@ class AZListGroup (generic.ListView):
         context['dat'] = datetime.strptime(self.kwargs['date'], "%Y-%m-%d").strftime("%A")
         return context
 
+
+class AzCsvDateView (generic.View):
+    def get(self, request, *args, **kwargs):
+        # header
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; \
+        filename="AZList by group.csv"'
+
+        # get data
+        qs = models.Student.objects.all()
+        for period in range(1, 8):
+            qs = qs.prefetch_related(Prefetch(
+                'group__debate_set',
+                queryset=models.Debate.objects.filter(
+                    schedule__period=period),
+                to_attr='p%d' % period),
+                    'group__p%d__schedule__location' % period)
+
+        # write data
+        writer = csv.writer(response)
+        writer.writerow(['name', 'team', 'date', 'period 1', 'period 2',
+            'period 3', 'period 4', 'period 5', 'period 6', 'period 7'])
+
+        for student in qs:
+            try:
+                writer.writerow([student.__str__(), student.group.__str__(),
+                    student.group.p1[0].schedule.date.strftime('%A'),
+                    student.group.p1[0].schedule.location.__str__(),
+                    student.group.p2[0].schedule.location.__str__(),
+                    student.group.p3[0].schedule.location.__str__(),
+                    student.group.p4[0].schedule.location.__str__(),
+                    student.group.p5[0].schedule.location.__str__(),
+                    student.group.p6[0].schedule.location.__str__(),
+                    student.group.p7[0].schedule.location.__str__(),
+                ])
+            except IndexError:
+                pass
+
+        return response
