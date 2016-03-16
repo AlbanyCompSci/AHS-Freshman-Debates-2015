@@ -3,6 +3,11 @@
 
 {% block title %}AZList by date{% endblock title %}
 
+{% block header %}
+    {{ block.super }} <br /><br />
+    <a href="{% url 'groups:csv_date' %}" download>Download</a>
+{% endblock header %}
+
 {% block content %}
     <h3>AZList by date</h3>
 

@@ -5,6 +5,10 @@
 {% block header %}
     {{ block.super }}
 
+    <br /><br />
+
+    <a href="{% url 'groups:csv_group' datdate %}" download>download</a><br /><br />
+
     {% for myDate in dates %}
         <br /><a href="{% url 'groups:azlist_group' myDate|date:'Y-m-d' %}">AZList for {{ myDate|date:"Y-m-d" }}</a>
     {% endfor %}

@@ -14,5 +14,8 @@ urlpatterns = [
     url(r'azlist/date/$', views.AZListDate.as_view(),
         name='azlist'),
     url(r'azlist/(?P<date>[0-9-]+)/$', views.AZListGroup.as_view(),
-        name='azlist_group')
+        name='azlist_group'),
+    url(r'azlist/csv/date/$', views.AzCsvDateView.as_view(), name='csv_date'),
+    url(r'azlist/csv/(?P<date>[0-9-]+)/$', views.AzCsvGroupView.as_view(),
+        name='csv_group')
 ]
