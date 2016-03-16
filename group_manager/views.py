@@ -171,6 +171,7 @@ class AZListGroup (generic.ListView):
                 i.date for i in models.Schedule.objects.all()
                 if str(i.date) != self.kwargs['date']])))
         context['dat'] = datetime.strptime(self.kwargs['date'], "%Y-%m-%d").strftime("%A")
+        context['datdate'] = self.kwargs['date']
         return context
 
 
