@@ -182,7 +182,7 @@ class AzCsvDateView (generic.View):
         filename="AZList by group.csv"'
 
         # get data
-        qs = models.Student.objects.all()
+        qs = models.Student.objects.exclude(group=None)
         for period in range(1, 8):
             qs = qs.prefetch_related(Prefetch(
                 'group__debate_set',
