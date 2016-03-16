@@ -198,7 +198,9 @@ class AzCsvDateView (generic.View):
 
         for student in qs:
             try:
-                writer.writerow([student.__str__(), student.group.__str__(),
+                writer.writerow([
+                    student.__str__(),
+                    student.group.__str__(),
                     student.group.p1[0].schedule.date.strftime('%A'),
                     student.group.p1[0].schedule.location.__str__(),
                     student.group.p2[0].schedule.location.__str__(),
@@ -206,9 +208,61 @@ class AzCsvDateView (generic.View):
                     student.group.p4[0].schedule.location.__str__(),
                     student.group.p5[0].schedule.location.__str__(),
                     student.group.p6[0].schedule.location.__str__(),
-                    student.group.p7[0].schedule.location.__str__(),
+                    student.group.p7[0].schedule.location.__str__()
                 ])
             except IndexError:
                 pass
 
         return response
+
+
+class AzCsvGroupView (generic.View):
+    def get(self, request, *args, **kwargs):
+        # header
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; \
+        filename="%s.csv"' % kwargs['date']
+
+        # get data
+        qs = models.Student.objects.exclude(group=None).order_by(
+            'group__teacher', 'group__number')
+        for period in range(1, 8):
+            qs = qs.prefetch_related(Prefetch(
+                'group__debate_set',
+                queryset=models.Debate.objects.filter(
+                    schedule__period=period,
+                    schedule__date=kwargs['date']),
+                to_attr='p%d' % period),
+                    'group__p%d__schedule__location' % period)
+
+
+        # write data
+        writer = csv.writer(response)
+        writer.writerow(['name', 'team', 'period 1', 'period 2', 'period 3',
+                        'period 4', 'period 5', 'period 6', 'period 7'])
+        for student in qs:
+            try:
+                writer.writerow([
+                    student.__str__(),
+                    student.group.__str__(),
+                    student.group.p1[0].schedule.location.__str__(),
+                    student.group.p2[0].schedule.location.__str__(),
+                    student.group.p3[0].schedule.location.__str__(),
+                    student.group.p4[0].schedule.location.__str__(),
+                    student.group.p5[0].schedule.location.__str__(),
+                    student.group.p6[0].schedule.location.__str__(),
+                    student.group.p7[0].schedule.location.__str__()
+                ])
+            except IndexError:
+                pass
+        return response
+
+
+
+
+
+
+
+
+
+
