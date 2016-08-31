@@ -9,14 +9,20 @@
     <p>Topic: {{ debate.schedule.topic }}</p>
 
     {% if debate and opposition %}
-        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
+        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">
+            {{ debate.group }} Vs. {{ opposition.group }}
+        </a></p>
     {% elif debate %}
-        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.schedule }}</a></p>
+        <p>Match: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">
+            {{ debate.schedule }}
+        </a></p>
     {% else %}
         <p>No match</p>
     {% endif %}
     {% if opposition %}
-        <p>Opposition: <a href="{% url 'groups:group_detail' opposition.group.pk %}">{{ opposition.group }}</a></p>
+        <p>Opposition: <a href="{% url 'groups:group_detail' opposition.group.pk %}">
+            {{ opposition.group }}
+        </a></p>
     {% endif %}
 
     {% if debate %}
@@ -27,13 +33,19 @@
 
     <p>Students:</p>
     {% for student in object.student_set.all %}
-        <li><a href="{% url 'groups:student_detail' student.pk %}">{{ student }}</a></li>
+        <li><a href="{% url 'groups:student_detail' student.pk %}">
+            {{ student }}
+        </a></li>
     {% endfor %}
 {% endblock content %}
 
 {% block footer %}
     {% if not user.is_superuser %}
-        <a href="{% url 'admin:group_manager_student_group_change' object.pk %}">Change</a><br />
+        <a href="{% url 'admin:group_manager_student_group_change' object.pk %}">
+            Change
+        </a><br />
     {% endif %}
-    <a href="{% url 'admin:group_manager_student_group_delete' object.pk %}">Delete</a>
+    <a href="{% url 'admin:group_manager_student_group_delete' object.pk %}">
+        Delete
+    </a>
 {% endblock footer %}

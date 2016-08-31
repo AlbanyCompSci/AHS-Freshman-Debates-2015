@@ -74,5 +74,3 @@ class Student_Argument(models.Model):
     def __str__(self):
         return "%s's individual score by %s" % (self.student,
                                                 self.scoring.judge.first_name)
-
-

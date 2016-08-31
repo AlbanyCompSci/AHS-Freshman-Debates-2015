@@ -58,7 +58,6 @@ class Student_Group (models.Model):
         return ('teacher__initial__startswith')
 
 
-
 class Student_Class (models.Model):
     """ A single English class period """
     ENGLISH_TYPE = 0

@@ -7,13 +7,19 @@
     <p>Email: {{ object.email }}</p>
     <p>English class: {{ object.english_class }}</p>
     <p>IHS class: {{ object.ihs_class }}</p>
-    <p>part of: <a href="{% url 'groups:group_detail' object.group.pk %}">{{ object.group }}</a></p>
+    <p>part of: <a href="{% url 'groups:group_detail' object.group.pk %}">
+        {{ object.group }}
+    </a></p>
     <p>Position: {{ object.group.position }}</p>
     <p>Topic: {{ debate.schedule.topic }}</p>
     {% if debate and opposition %}
-        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.group }} Vs. {{ opposition.group }}</a></p>
+        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">
+            {{ debate.group }} Vs. {{ opposition.group }}
+        </a></p>
     {% elif debate.schedule %}
-        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">{{ debate.schedule }}</a></p>
+        <p>Matchup: <a href="{% url 'groups:schedule_detail' debate.schedule.pk %}">
+            {{ debate.schedule }}
+        </a></p>
     {% endif %}
 
     {% if debate.schedule %}

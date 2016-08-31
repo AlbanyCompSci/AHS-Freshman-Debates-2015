@@ -3,7 +3,9 @@
 {% block title %}Home{% endblock title %}
 
 {% block header %}
-    <a href="{% url 'admin:group_manager_student_group_add' %}">Create new group!</a><br />
+    <a href="{% url 'admin:group_manager_student_group_add' %}">
+        Create new group!
+    </a><br />
     <a href="{% url 'groups:schedule' %}">View schedule</a>
     <br /><a href="{% url 'logout' %}">Logout</a>
 {% endblock header %}
@@ -13,7 +15,9 @@
         <p>Groups:</p>
         <ul>
             {% for group in object_list %}
-                <li><a href="{% url 'groups:group_detail' group.pk %}">{{ group }}</a></li>
+                <li><a href="{% url 'groups:group_detail' group.pk %}">
+                    {{ group }}
+                </a></li>
             {% endfor %}
         </ul>
     {% else %}
@@ -23,10 +27,14 @@
     <br /><a href="{% url 'groups:azlist' %}">AZList by date</a><br />
 
     {% for dat in dates %}
-        <br /><a href="{% url 'groups:azlist_group' dat|date:'Y-m-d' %}">AZList by group for {{ dat|date:"m-d-y" }}</a>
+        <br /><a href="{% url 'groups:azlist_group' dat|date:'Y-m-d' %}">
+            AZList by group for {{ dat|date:"m-d-y" }}
+        </a>
     {% endfor %}
 {% endblock content %}
 
 {% block footer %}
-    <a href="{% url 'admin:group_manager_student_changelist' %}">Manage students</a>
+    <a href="{% url 'admin:group_manager_student_changelist' %}">
+        Manage students
+    </a>
 {% endblock footer %}

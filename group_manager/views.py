@@ -15,7 +15,9 @@ class StaffIndexView (generic.ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        return qs.filter(teacher=models.Teacher.objects.get(user=self.request.user))
+        return qs.filter(
+            teacher=models.Teacher.objects.get(user=self.request.user)
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -170,7 +172,8 @@ class AZListGroup (generic.ListView):
         context['dates'] = sorted(list(set([
                 i.date for i in models.Schedule.objects.all()
                 if str(i.date) != self.kwargs['date']])))
-        context['dat'] = datetime.strptime(self.kwargs['date'], "%Y-%m-%d").strftime("%A")
+        context['dat'] = datetime.strptime(
+                self.kwargs['date'], "%Y-%m-%d").strftime("%A")
         context['datdate'] = self.kwargs['date']
         return context
 
@@ -195,7 +198,8 @@ class AzCsvDateView (generic.View):
         # write data
         writer = csv.writer(response)
         writer.writerow(['name', 'team', 'date', 'period 1', 'period 2',
-            'period 3', 'period 4', 'period 5', 'period 6', 'period 7'])
+                        'period 3', 'period 4', 'period 5',
+                        'period 6', 'period 7'])
 
         for student in qs:
             try:
@@ -236,7 +240,6 @@ class AzCsvGroupView (generic.View):
                 to_attr='p%d' % period),
                     'group__p%d__schedule__location' % period)
 
-
         # write data
         writer = csv.writer(response)
         writer.writerow(['name', 'team', 'period 1', 'period 2', 'period 3',
@@ -257,13 +260,3 @@ class AzCsvGroupView (generic.View):
             except IndexError:
                 pass
         return response
-
-
-
-
-
-
-
-
-
-
