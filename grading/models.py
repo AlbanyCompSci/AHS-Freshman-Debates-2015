@@ -6,8 +6,9 @@ from .fields import IntegerRangeField
 # Create your models here.
 
 class Scoring_Sheet(models.Model):
-    group = models.ForeignKey(groupModels.Student_Group)
-    judge = models.ForeignKey(groupModels.Judge)
+    group = models.ForeignKey(groupModels.Student_Group,
+                              on_delete=models.CASCADE)
+    judge = models.ForeignKey(groupModels.Judge, on_delete=models.CASCADE)
 
     opening = IntegerRangeField(min_value=5, max_value=10,
                                 verbose_name='opening argument slide show \
@@ -55,7 +56,7 @@ class Scoring_Sheet(models.Model):
 
 class Student_Argument(models.Model):
     student = models.CharField(max_length=140)
-    scoring = models.ForeignKey(Scoring_Sheet)
+    scoring = models.ForeignKey(Scoring_Sheet, on_delete=models.CASCADE)
 
     totalTime = models.CharField(max_length=140)
     score = IntegerRangeField(min_value=5, max_value=10,

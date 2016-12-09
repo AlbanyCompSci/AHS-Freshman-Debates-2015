@@ -1,5 +1,5 @@
 from django.views import generic
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Prefetch
 from datetime import datetime

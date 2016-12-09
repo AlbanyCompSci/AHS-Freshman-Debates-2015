@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('period', models.IntegerField()),
                 ('type', models.IntegerField(choices=[(0, 'English'), (1, 'IHS')])),
-                ('teacher', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('teacher', models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Classes',
@@ -33,12 +33,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='student',
             name='english_class',
-            field=models.ForeignKey(related_name='english_class', to='group_manager.Student_Class'),
+            field=models.ForeignKey(related_name='english_class', to='group_manager.Student_Class', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='student',
             name='ihs_class',
-            field=models.ForeignKey(to='group_manager.Student_Class'),
+            field=models.ForeignKey(to='group_manager.Student_Class', on_delete=models.CASCADE),
         ),
         migrations.DeleteModel(
             name='Class',

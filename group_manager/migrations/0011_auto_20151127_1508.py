@@ -14,11 +14,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='student',
             name='english_class',
-            field=models.ForeignKey(to='group_manager.Student_Class', blank=True, related_name='english_class', null=True),
+            field=models.ForeignKey(to='group_manager.Student_Class', blank=True, related_name='english_class', null=True, on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='student',
             name='ihs_class',
-            field=models.ForeignKey(to='group_manager.Student_Class', blank=True, null=True),
+            field=models.ForeignKey(to='group_manager.Student_Class', blank=True, null=True, on_delete=models.CASCADE),
         ),
     ]
