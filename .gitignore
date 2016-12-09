@@ -75,3 +75,6 @@ target/
 .DS_Store
 11F.csv
 9F.csv
+
+#ignore settings.py
+AHS_Freshman_Debates/settings.py
