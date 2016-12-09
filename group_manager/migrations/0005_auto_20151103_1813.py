@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='student',
             name='group',
-            field=models.ForeignKey(null=True, to='group_manager.Student_Group'),
+            field=models.ForeignKey(null=True, to='group_manager.Student_Group', on_delete=models.CASCADE),
         ),
     ]

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from datetime import datetime
 
 
@@ -10,7 +10,9 @@ from datetime import datetime
 class Teacher (models.Model):
     """ A teacher """
     user = models.OneToOneField(User, limit_choices_to={
-                'groups__name': 'teacher'})
+                                        'groups__name': 'teacher'},
+                                on_delete=models.CASCADE
+                                )
     initial = models.CharField(max_length=140, unique=True)
 
     class Meta:
@@ -34,7 +36,7 @@ class Student_Group (models.Model):
         (False, "Negative")
     )
 
-    teacher = models.ForeignKey(Teacher)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     number = models.IntegerField()
     position = models.NullBooleanField(choices=CHOICES)
 
@@ -58,7 +60,6 @@ class Student_Group (models.Model):
         return ('teacher__initial__startswith')
 
 
-
 class Student_Class (models.Model):
     """ A single English class period """
     ENGLISH_TYPE = 0
@@ -70,7 +71,7 @@ class Student_Class (models.Model):
     )
 
     teacher = models.ForeignKey(User, limit_choices_to={
-                'groups__name': 'teacher'})
+                'groups__name': 'teacher'}, on_delete=models.CASCADE)
     period = models.IntegerField(choices=tuple(zip(
                                  range(1, 8),
                                  (str(i) for i in range(1, 8)))))
@@ -108,10 +109,11 @@ class Student (models.Model):
                                       related_name="english_class",
                                       limit_choices_to={
                                         'type': Student_Class.ENGLISH_TYPE
-                                        }, null=True, blank=True)
+                                        }, null=True, blank=True,
+                                      on_delete=models.CASCADE)
     ihs_class = models.ForeignKey(Student_Class, limit_choices_to={
         'type': Student_Class.IHS_TYPE
-    }, null=True, blank=True)
+    }, null=True, blank=True, on_delete=models.CASCADE)
     group = models.ForeignKey(Student_Group, null=True, blank=True,
                               on_delete=models.SET_NULL)
 
@@ -176,10 +178,12 @@ class Schedule (models.Model):
     period = models.IntegerField(choices=tuple(zip(
                                  range(1, 8),
                                  (str(i) for i in range(1, 8)))))
-    location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
     date = models.DateField()
-    judge_group = models.ForeignKey(Judge_Group, null=True, blank=True)
-    topic = models.ForeignKey(Topic, null=True, blank=True)
+    judge_group = models.ForeignKey(Judge_Group, null=True, blank=True,
+                                    on_delete=models.CASCADE)
+    topic = models.ForeignKey(Topic, null=True, blank=True,
+                              on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Schedule"
@@ -196,8 +200,8 @@ class Schedule (models.Model):
 
 
 class Debate (models.Model):
-    schedule = models.ForeignKey(Schedule)
-    group = models.ForeignKey(Student_Group)
+    schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE)
+    group = models.ForeignKey(Student_Group, on_delete=models.CASCADE)
     isPresenting = models.BooleanField(verbose_name='group presenting?')
 
     class Meta:

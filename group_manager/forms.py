@@ -123,7 +123,7 @@ class DebateForm (forms.ModelForm):
 
             if presenting:
                 if models.Debate.objects.filter(
-                    schedule=schedule,
+                        schedule=schedule,
                         isPresenting=True).count() > 2:
                     error.append(ValidationError(_(
                         "Two group are already presenting for this schedule"),
@@ -160,8 +160,8 @@ class DebateForm (forms.ModelForm):
                             this schedule"),
                             code="schedule_presenting_not_unique"))
                 if models.Debate.objects.filter(
-                    group=group,
-                    isPresenting=True).exists():
+                        group=group,
+                        isPresenting=True).exists():
                     error.append(ValidationError(_(
                         "This group is already presenting"),
                         code="already_presenting"))

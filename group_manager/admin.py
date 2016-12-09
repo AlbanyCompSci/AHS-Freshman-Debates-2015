@@ -5,6 +5,11 @@ from . import models
 
 
 class GroupMixin (object):
+    """
+        Mixin to pass current user to template and update fieldName
+        for reverse foreign key updates
+    """
+
     fieldName = None
 
     def get_form(self, request, obj=None, **kwargs):
@@ -14,6 +19,7 @@ class GroupMixin (object):
         return form
 
     def save_related(self, request, form, formsets, change):
+        """ update fieldName to refer to this form instance """
         super().save_related(request, form, formsets, change)
         if form.fields[self.fieldName].initial:
             form.fields[self.fieldName].initial.update(group=None)
@@ -33,7 +39,8 @@ class StudentGroupAdmin (GroupMixin, admin.ModelAdmin):
         if request.user.is_superuser:
             form_uncommited.teacher = form.instance.teacher
         else:
-            form_uncommited.teacher = models.Teacher.objects.get(user=request.user)
+            form_uncommited.teacher = models.Teacher.objects.get(
+                    user=request.user)
         return form_uncommited
 
 

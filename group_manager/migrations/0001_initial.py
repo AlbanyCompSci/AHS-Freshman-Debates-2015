@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True, serialize=False)),
                 ('period', models.IntegerField()),
                 ('type', models.IntegerField(choices=[(1, 'English'), (2, 'IHS')])),
-                ('teacher', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('teacher', models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name': 'Class',
@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(max_length=140)),
                 ('last_name', models.CharField(max_length=140)),
                 ('email', models.EmailField(max_length=254, unique=True)),
-                ('english_class', models.ForeignKey(related_name='english_class', to='group_manager.Class')),
+                ('english_class', models.ForeignKey(related_name='english_class', to='group_manager.Class', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name': 'Student',
@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
             name='Student_Group',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('teacher', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('teacher', models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name': 'Student Group',
@@ -77,17 +77,17 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='student',
             name='group',
-            field=models.ForeignKey(to='group_manager.Student_Group'),
+            field=models.ForeignKey(to='group_manager.Student_Group', on_delete=models.CASCADE),
         ),
         migrations.AddField(
             model_name='student',
             name='ihs_class',
-            field=models.ForeignKey(to='group_manager.Class'),
+            field=models.ForeignKey(to='group_manager.Class', on_delete=models.CASCADE),
         ),
         migrations.AddField(
             model_name='debate_group',
             name='affTeam',
-            field=models.OneToOneField(related_name='affTeam', to='group_manager.Student_Group'),
+            field=models.OneToOneField(related_name='affTeam', to='group_manager.Student_Group', on_delete=models.CASCADE),
         ),
         migrations.AddField(
             model_name='debate_group',
@@ -97,6 +97,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='debate_group',
             name='negTeam',
-            field=models.OneToOneField(related_name='negTeam', to='group_manager.Student_Group'),
+            field=models.OneToOneField(related_name='negTeam', to='group_manager.Student_Group', on_delete=models.CASCADE),
         ),
     ]

@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["ahs-freshman-debates.herokuapp.com"]
 
@@ -42,7 +42,8 @@ DEFAULT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    'grappelli',
+    'debug_toolbar',
+    'grappelli'
 )
 
 LOCAL_APPS = (
@@ -120,6 +121,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# DEBUG TOOLBAR
+# Modify SHOW_TOOLBAR_CALLBACK at production
+
+
+def show_toolbar_overwrite(request):
+    if request.is_ajax():
+        return False
+
+    return bool(DEBUG)
+
+DEBUG_TOOLBAR_CONFIG = {
+    'DEBUG_TOOLBAR_PATCH_SETTINGS': False,
+    'SHOW_TOOLBAR_CALLBACK': show_toolbar_overwrite
+}
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+SHOW_TOOLBAR_CALLBACK = show_toolbar_overwrite
+
+
 
 # GRAPPELLI
 

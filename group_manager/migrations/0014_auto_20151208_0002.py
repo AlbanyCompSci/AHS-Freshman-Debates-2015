@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('period', models.IntegerField(choices=tuple(zip(range(1, 8), (str(i) for i in range(1, 8)))))),
                 ('date', models.DateField()),
-                ('location', models.ForeignKey(to='group_manager.Location')),
+                ('location', models.ForeignKey(to='group_manager.Location', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Schedules',
@@ -71,12 +71,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='debate',
             name='debate_group',
-            field=models.ForeignKey(to='group_manager.Debate_Group'),
+            field=models.ForeignKey(to='group_manager.Debate_Group', on_delete=models.CASCADE),
         ),
         migrations.AddField(
             model_name='debate',
             name='schedule',
-            field=models.ForeignKey(to='group_manager.Schedule'),
+            field=models.ForeignKey(to='group_manager.Schedule', on_delete=models.CASCADE),
         ),
         migrations.AlterUniqueTogether(
             name='schedule',

@@ -16,21 +16,31 @@
         <p>Debate schedule:</p>
         <ul>
             {% for schedule in object_list %}
-                <li><a href="{% url 'groups:schedule_detail' schedule.pk %}">{{ schedule }}</a></li>
+                <li><a href="{% url 'groups:schedule_detail' schedule.pk %}">
+                    {{ schedule }}
+                </a></li>
             {% endfor %}
         </ul>
     {% endif %}
         <br /><a href="{% url 'groups:azlist' %}">AZList by date</a><br />
 
         {% for dat in dates %}
-        <br /><a href="{% url 'groups:azlist_group' dat|date:'Y-m-d' %}">AZList by group for {{ dat|date:"m-d-y" }}</a>
+        <br /><a href="{% url 'groups:azlist_group' dat|date:'Y-m-d' %}">
+            AZList by group for {{ dat|date:"m-d-y" }}
+        </a>
     {% endfor %}
 {% endblock content %}
 
 {% block footer %}
     {% if user.is_superuser %}
-        <a href="{% url 'admin:group_manager_debate_add' %}">Create new debate</a><br />
-        <a href="{% url 'admin:group_manager_schedule_add' %}">Create new schedule</a><br />
-        <a href="{% url 'admin:group_manager_student_changelist' %}">Manage students</a>
+        <a href="{% url 'admin:group_manager_debate_add' %}">
+            Create new debate
+        </a><br />
+        <a href="{% url 'admin:group_manager_schedule_add' %}">
+            Create new schedule
+        </a><br />
+        <a href="{% url 'admin:group_manager_student_changelist' %}">
+            Manage students
+        </a>
     {% endif %}
 {% endblock footer %}
