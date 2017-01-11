@@ -2,10 +2,12 @@ from django.views import generic
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Prefetch
+from django.shortcuts import render
 from datetime import datetime
 from itertools import groupby
 import csv
 from . import models
+from . import forms
 
 # Create your views here.
 
@@ -260,3 +262,18 @@ class AzCsvGroupView (generic.View):
             except IndexError:
                 pass
         return response
+
+
+class StudentDataImportView (generic.View):
+    def post(self, request, *args, **kwargs):
+        form = forms.StudentDataImportForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(
+                reverse("admin:group_manager_student_changelist"))
+
+    def get(self, request, *args, **kwargs):
+        form = forms.StudentDataImportForm()
+        context = {"form": form}
+        return render(request,
+                      'group_manager/student_data_import.html', context)

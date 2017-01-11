@@ -17,5 +17,7 @@ urlpatterns = [
         name='azlist_group'),
     url(r'azlist/csv/date/$', views.AzCsvDateView.as_view(), name='csv_date'),
     url(r'azlist/csv/(?P<date>[0-9-]+)/$', views.AzCsvGroupView.as_view(),
-        name='csv_group')
+        name='csv_group'),
+    url(r'student/add/$', views.StudentDataImportView.as_view(),
+        name='student_import')
 ]
