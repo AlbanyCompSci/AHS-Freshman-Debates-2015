@@ -78,3 +78,5 @@ target/
 
 #ignore settings.py
 AHS_Freshman_Debates/settings.py
+*~
+\#*
