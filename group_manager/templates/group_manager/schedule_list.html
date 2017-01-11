@@ -41,6 +41,9 @@
         </a><br />
         <a href="{% url 'admin:group_manager_student_changelist' %}">
             Manage students
+        </a><br />
+        <a href="{% url 'groups:student_import' %}">
+            Import students from CSV
         </a>
     {% endif %}
 {% endblock footer %}

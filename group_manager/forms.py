@@ -3,6 +3,9 @@ from django.db.models import Q
 from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext as _
+from django.contrib.auth.models import User
+import csv
+import io
 from . import models
 
 
@@ -195,3 +198,30 @@ class DebateForm (forms.ModelForm):
         if error:
             raise ValidationError(error)
         return cleaned_data
+
+
+class StudentDataImportForm (forms.Form):
+    file = forms.FileField()
+
+    def save(self):
+        with csv.reader(io.StringIO(
+                self.cleaned_data["file"].read().decode("utf-8"))) as records:
+            next(records)   # skip header
+            models.Student.objects.bulk_create(
+                [models.Student(
+                    student_id=row[0],
+                    first_name=row[1],
+                    last_name=row[2],
+                    email=row[3],
+                    english_class=models.Student_Class.objects.get_or_create(
+                        teacher=User.objects.get(last_name=row[4]),
+                        period=row[5],
+                        type=models.Student_Class.ENGLISH_TYPE
+                    )[0],
+                    ihs_class=models.Student_Class.objects.get_or_create(
+                        teacher=User.objects.get(last_name=row[6]),
+                        period=row[7],
+                        type=models.Student_Class.IHS_TYPE
+                    )[0]
+                ) for row in records]
+            )
