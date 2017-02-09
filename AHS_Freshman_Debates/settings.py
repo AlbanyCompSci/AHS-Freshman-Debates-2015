@@ -42,7 +42,7 @@ DEFAULT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    'grappelli'
+    'grappelli',
 )
 
 LOCAL_APPS = (
