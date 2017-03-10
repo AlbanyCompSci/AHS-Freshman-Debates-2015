@@ -28,7 +28,7 @@
             <tr>
                 <td>{{ student }}</td>
                 <td>{{ student.group }}</td>
-                <td> {{ student.group.p1.0.schedule.date|date:"l" }}</td>
+                <td> {{ student.group.p2.0.schedule.date|date:"l" }}</td>
                 {% if student.group.p1.0.isPresenting %}
                     <td><i>{{ student.group.p1.0.schedule.location }}</i></td>
                 {% else %}
