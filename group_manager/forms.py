@@ -226,3 +226,15 @@ class StudentDataImportForm(forms.Form):
                     period=row[7],
                     type=models.Student_Class.IHS_TYPE)[0]) for row in records
         ])
+
+
+class StudentGroupMassSetDebateForm(forms.Form):
+    schedule = forms.ModelChoiceField(queryset=models.Schedule.objects.all())
+
+    def save(self):
+        scheduled = self.cleaned_data["schedule"]
+        models.Debate.objects.bulk_create(
+            models.Debate(
+                schedule=scheduled, group=group, isPresenting=False)
+            for group in models.Student_Group.objects.all()
+            if group.debate_set.first().schedule.date == scheduled.date)

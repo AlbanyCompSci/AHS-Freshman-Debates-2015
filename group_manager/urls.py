@@ -19,5 +19,7 @@ urlpatterns = [
     url(r'azlist/csv/(?P<date>[0-9-]+)/$', views.AzCsvGroupView.as_view(),
         name='csv_group'),
     url(r'student/add/$', views.StudentDataImportView.as_view(),
-        name='student_import')
+        name='student_import'),
+    url(r'group/mass-create/$', views.StudentGroupMassSetDebate.as_view(),
+        name='debate_mass_create')
 ]
