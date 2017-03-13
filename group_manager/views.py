@@ -128,7 +128,8 @@ class AZListDate(generic.ListView):
     template_name = 'group_manager/AZList_date.html'
 
     def get_queryset(self):
-        qs = self.model.objects.select_related('group__teacher')
+        qs = self.model.objects.exclude(group=None)
+        qs = qs.select_related('group__teacher')
 
         for period in range(1, 8):
             qs = qs.prefetch_related(
