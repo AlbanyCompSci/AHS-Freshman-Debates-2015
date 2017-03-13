@@ -208,23 +208,19 @@ class AzCsvDateView(generic.View):
             'name', 'team', 'date', 'period 1', 'period 2', 'period 3',
             'period 4', 'period 5', 'period 6', 'period 7'
         ])
-
         for student in qs:
-            try:
-                writer.writerow([
-                    student.__str__(), student.group.__str__(),
-                    student.group.p1[0].schedule.date.strftime('%A'),
-                    student.group.p1[0].schedule.location.__str__(),
-                    student.group.p2[0].schedule.location.__str__(),
-                    student.group.p3[0].schedule.location.__str__(),
-                    student.group.p4[0].schedule.location.__str__(),
-                    student.group.p5[0].schedule.location.__str__(),
-                    student.group.p6[0].schedule.location.__str__(),
-                    student.group.p7[0].schedule.location.__str__()
-                ])
-            except IndexError:
-                pass
-
+            if len(student.group.p2) == 0: continue
+            writer.writerow([
+                student.__str__(), student.group.__str__(),
+                student.group.p2[0].schedule.date.strftime('%A'),
+                student.group.p1[0].schedule.location.__str__() if len(student.group.p1) == 1 else "None",
+                student.group.p2[0].schedule.location.__str__() if len(student.group.p2) == 1 else "None",
+                student.group.p3[0].schedule.location.__str__() if len(student.group.p3) == 1 else "None",
+                student.group.p4[0].schedule.location.__str__() if len(student.group.p4) == 1 else "None",
+                student.group.p5[0].schedule.location.__str__() if len(student.group.p5) == 1 else "None",
+                student.group.p6[0].schedule.location.__str__() if len(student.group.p6) == 1 else "None",
+                student.group.p7[0].schedule.location.__str__() if len(student.group.p7) == 1 else "None"
+            ])
         return response
 
 
