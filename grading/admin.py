@@ -21,7 +21,7 @@ class ScoringSheetAdmin (admin.ModelAdmin):
     inlines = [StudentArgumentInline]
     fieldsets = [
         (None, {'fields': ['group', 'judge']}),
-        ('Opening Argument', {'fields': ['opening'],
+        ('Slide Show', {'fields': ['opening'],
          'classes': ('grp-collapse grp-open',)}),
         ('Argument and Counterarguments',
             {'classes': ('placeholder student_argument_set-group',),
