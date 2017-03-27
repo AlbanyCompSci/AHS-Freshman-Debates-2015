@@ -8,7 +8,7 @@ from .fields import IntegerRangeField
 class Scoring_Sheet(models.Model):
     group = models.ForeignKey(groupModels.Student_Group,
                               on_delete=models.CASCADE)
-    judge = models.ForeignKey(groupModels.Judge, on_delete=models.CASCADE)
+    judge = models.CharField(max_length=140)
 
     opening = IntegerRangeField(min_value=5, max_value=10,
                                 verbose_name='opening argument slide show \
