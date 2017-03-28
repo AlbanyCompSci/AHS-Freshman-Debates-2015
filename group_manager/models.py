@@ -44,7 +44,7 @@ class Student_Group(models.Model):
     def average(self):
         """ Get average of all related Scoreing_Sheets """
         qs = models.Scoring_Sheet.objects.filter(group=self.group)
-        return sum(i.total() for i in qs) / qs.count()
+        return sum(i.total() for i in qs) / qs.count() if qs.count > 0 else 0
 
     class Meta:
         verbose_name = "Student Group"
