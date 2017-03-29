@@ -1,0 +1,35 @@
+{% extends "grading/base.html" %}
+
+{% block title %}Score Sheets {% endblock title %}
+
+{% block content %}
+<h3>Score Sheets</h3>
+
+{% for date, data in datum.items %}
+<table border="1">
+  <caption>{{ date }}</caption>
+  <theads>
+    <tr>
+      <th></th>
+      {% for location in locations %}
+      <th>{{ location }}</th>
+      {% endfor %}
+    </tr>
+  </theads>
+  <tbody>
+    {% for period, scheds in data.items %}
+    <tr>
+      <th>{{ period }}</th>
+      {% for sched in scheds %}
+      <td>
+        <h5>{{ sched.topic }}</h5>
+        <b>{{ sched.winner }}: {{ sched.winnerS }}</b></br >
+        {{ sched.loser }}: {{ sched.loserS }}
+      </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endfor %}
+{% endblock content %}

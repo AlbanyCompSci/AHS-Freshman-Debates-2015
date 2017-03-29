@@ -20,6 +20,7 @@ from django.views.generic.base import RedirectView
 from django.conf import settings
 import django.contrib.auth.views
 import group_manager.urls
+import grading.urls
 import grappelli.urls
 
 
@@ -32,7 +33,8 @@ urlpatterns = [
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
     url(r'^account/logout/$', django.contrib.auth.views.logout,
         {'next_page': reverse_lazy('groups:index')}, name='logout'),
-    url(r'^groups/', include(group_manager.urls, namespace="groups"))
+    url(r'^groups/', include(group_manager.urls, namespace="groups")),
+    url(r'^grading/', include(grading.urls, namespace="grading"))
 ]
 
 if settings.DEBUG:

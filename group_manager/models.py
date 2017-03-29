@@ -3,16 +3,15 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime
 
-
 # Create your models here.
 
 
-class Teacher (models.Model):
+class Teacher(models.Model):
     """ A teacher """
-    user = models.OneToOneField(User, limit_choices_to={
-                                        'groups__name': 'teacher'},
-                                on_delete=models.CASCADE
-                                )
+    user = models.OneToOneField(
+        User,
+        limit_choices_to={'groups__name': 'teacher'},
+        on_delete=models.CASCADE)
     initial = models.CharField(max_length=140, unique=True)
 
     class Meta:
@@ -24,17 +23,13 @@ class Teacher (models.Model):
 
     @staticmethod
     def autocomplete_search_fields():
-        return ('initial__startswith',)
+        return ('initial__startswith', )
 
 
-class Student_Group (models.Model):
+class Student_Group(models.Model):
     """A single group of students.
     Stduents use foreign keys to refer to group"""
-    CHOICES = (
-        (None, "---"),
-        (True, "Affirmative"),
-        (False, "Negative")
-    )
+    CHOICES = ((None, "---"), (True, "Affirmative"), (False, "Negative"))
 
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     number = models.IntegerField()
@@ -45,6 +40,11 @@ class Student_Group (models.Model):
 
     def get_absolute_url(self):
         return reverse('groups:index')
+
+    def average(self):
+        """ Get average of all related Scoreing_Sheets """
+        qs = self.scoring_sheet_set.all() #models.Scoring_Sheet.objects.filter(group=self.group)
+        return sum(i.total() for i in qs) / qs.count() if qs.count() > 0 else 0
 
     class Meta:
         verbose_name = "Student Group"
@@ -60,21 +60,21 @@ class Student_Group (models.Model):
         return ('teacher__initial__startswith')
 
 
-class Student_Class (models.Model):
+class Student_Class(models.Model):
     """ A single English class period """
     ENGLISH_TYPE = 0
     IHS_TYPE = 1
 
     TYPE_CHOICES = (
         (ENGLISH_TYPE, 'English'),
-        (IHS_TYPE, 'IHS'),
-    )
+        (IHS_TYPE, 'IHS'), )
 
-    teacher = models.ForeignKey(User, limit_choices_to={
-                'groups__name': 'teacher'}, on_delete=models.CASCADE)
-    period = models.IntegerField(choices=tuple(zip(
-                                 range(1, 8),
-                                 (str(i) for i in range(1, 8)))))
+    teacher = models.ForeignKey(
+        User,
+        limit_choices_to={'groups__name': 'teacher'},
+        on_delete=models.CASCADE)
+    period = models.IntegerField(
+        choices=tuple(zip(range(1, 8), (str(i) for i in range(1, 8)))))
     type = models.IntegerField(choices=TYPE_CHOICES)
 
     class Meta:
@@ -85,12 +85,11 @@ class Student_Class (models.Model):
 
     def __str__(self):
         return "%s's %d period %s class" % (
-            self.teacher.last_name, self.period,
-            'English' if self.type == self.ENGLISH_TYPE else 'IHS'
-        )
+            self.teacher.last_name, self.period, 'English'
+            if self.type == self.ENGLISH_TYPE else 'IHS')
 
 
-class Judge_Group (models.Model):
+class Judge_Group(models.Model):
     class Meta:
         verbose_name = "Judge Group"
         verbose_name_plural = "Judge Groups"
@@ -99,23 +98,27 @@ class Judge_Group (models.Model):
         return "%s" % ', '.join([str(i) for i in self.judge_set.all()])
 
 
-class Student (models.Model):
+class Student(models.Model):
 
     student_id = models.BigIntegerField(primary_key=True, unique=True)
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
-    english_class = models.ForeignKey(Student_Class,
-                                      related_name="english_class",
-                                      limit_choices_to={
-                                        'type': Student_Class.ENGLISH_TYPE
-                                        }, null=True, blank=True,
-                                      on_delete=models.CASCADE)
-    ihs_class = models.ForeignKey(Student_Class, limit_choices_to={
-        'type': Student_Class.IHS_TYPE
-    }, null=True, blank=True, on_delete=models.CASCADE)
-    group = models.ForeignKey(Student_Group, null=True, blank=True,
-                              on_delete=models.SET_NULL)
+    english_class = models.ForeignKey(
+        Student_Class,
+        related_name="english_class",
+        limit_choices_to={'type': Student_Class.ENGLISH_TYPE},
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
+    ihs_class = models.ForeignKey(
+        Student_Class,
+        limit_choices_to={'type': Student_Class.IHS_TYPE},
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE)
+    group = models.ForeignKey(
+        Student_Group, null=True, blank=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = "Student"
@@ -130,13 +133,13 @@ class Student (models.Model):
         return ('first_name__startswith', 'last_name__startswith')
 
 
-class Judge (models.Model):
+class Judge(models.Model):
     student_id = models.BigIntegerField(primary_key=True, unique=True)
     first_name = models.CharField(max_length=140)
     last_name = models.CharField(max_length=140)
     email = models.EmailField(unique=True)
-    group = models.ForeignKey(Judge_Group, null=True, blank=True,
-                              on_delete=models.SET_NULL)
+    group = models.ForeignKey(
+        Judge_Group, null=True, blank=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = "Judge"
@@ -151,7 +154,7 @@ class Judge (models.Model):
         return ('first_name__startswith', 'last_name__startswith')
 
 
-class Location (models.Model):
+class Location(models.Model):
     location = models.CharField(max_length=140, unique=True)
 
     class Meta:
@@ -162,7 +165,7 @@ class Location (models.Model):
         return self.location
 
 
-class Topic (models.Model):
+class Topic(models.Model):
     topic = models.CharField(max_length=500, unique=True)
     detail = models.TextField(null=True, blank=True)
 
@@ -174,16 +177,15 @@ class Topic (models.Model):
         return self.topic
 
 
-class Schedule (models.Model):
-    period = models.IntegerField(choices=tuple(zip(
-                                 range(1, 8),
-                                 (str(i) for i in range(1, 8)))))
+class Schedule(models.Model):
+    period = models.IntegerField(
+        choices=tuple(zip(range(1, 8), (str(i) for i in range(1, 8)))))
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     date = models.DateField()
-    judge_group = models.ForeignKey(Judge_Group, null=True, blank=True,
-                                    on_delete=models.CASCADE)
-    topic = models.ForeignKey(Topic, null=True, blank=True,
-                              on_delete=models.CASCADE)
+    judge_group = models.ForeignKey(
+        Judge_Group, null=True, blank=True, on_delete=models.CASCADE)
+    topic = models.ForeignKey(
+        Topic, null=True, blank=True, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Schedule"
@@ -193,13 +195,11 @@ class Schedule (models.Model):
         ordering = ['date', 'period']
 
     def __str__(self):
-        return "%s, period %s, %s" % (
-                datetime.strftime(self.date, '%A'),
-                self.period,
-                self.location)
+        return "%s, period %s, %s" % (datetime.strftime(self.date, '%A'),
+                                      self.period, self.location)
 
 
-class Debate (models.Model):
+class Debate(models.Model):
     schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE)
     group = models.ForeignKey(Student_Group, on_delete=models.CASCADE)
     isPresenting = models.BooleanField(verbose_name='group presenting?')
@@ -210,8 +210,5 @@ class Debate (models.Model):
 
     def __str__(self):
         return "%s in %s at %s period %s and %s presenting" % (
-                self.group,
-                self. schedule.location,
-                self.schedule.date,
-                self.schedule.period,
-                "are" if self.isPresenting else "are not")
+            self.group, self.schedule.location, self.schedule.date,
+            self.schedule.period, "are" if self.isPresenting else "are not")

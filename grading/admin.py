@@ -15,13 +15,13 @@ class StudentArgumentInline (admin.TabularInline):
 
 @admin.register(models.Scoring_Sheet)
 class ScoringSheetAdmin (admin.ModelAdmin):
-    raw_id_fields = ('judge', 'group')
+    raw_id_fields = ('group',)
     list_display = ('group', 'judge', 'total')
     list_filter = ('group', 'judge')
     inlines = [StudentArgumentInline]
     fieldsets = [
         (None, {'fields': ['group', 'judge']}),
-        ('Opening Argument', {'fields': ['opening'],
+        ('Slide Show', {'fields': ['opening'],
          'classes': ('grp-collapse grp-open',)}),
         ('Argument and Counterarguments',
             {'classes': ('placeholder student_argument_set-group',),
@@ -35,4 +35,3 @@ class ScoringSheetAdmin (admin.ModelAdmin):
         (None, {'fields': ['participation']})
     ]
     related_lookup_fields = {'fk': ['group']}
-    autocomplete_lookup_fields = {'fk': ['judge']}
