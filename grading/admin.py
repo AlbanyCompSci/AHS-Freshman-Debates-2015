@@ -15,7 +15,7 @@ class StudentArgumentInline (admin.TabularInline):
 
 @admin.register(models.Scoring_Sheet)
 class ScoringSheetAdmin (admin.ModelAdmin):
-    raw_id_fields = ('judge', 'group')
+    raw_id_fields = ('group',)
     list_display = ('group', 'judge', 'total')
     list_filter = ('group', 'judge')
     inlines = [StudentArgumentInline]
@@ -35,4 +35,3 @@ class ScoringSheetAdmin (admin.ModelAdmin):
         (None, {'fields': ['participation']})
     ]
     related_lookup_fields = {'fk': ['group']}
-    autocomplete_lookup_fields = {'fk': ['judge']}
